@@ -8,38 +8,32 @@ on:
 jobs:
   scrape:
     runs-on: ubuntu-latest
+
     steps:
+
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '22'
 
-      - name: Instalar dependencias Node
+      - name: Instalar dependencias
         run: npm install
 
-      - name: Instalar Chrome para Puppeteer
+      - name: Instalar Chrome
         run: npx puppeteer browsers install chrome
 
       - name: Ejecutar scraper
         run: node scraper.js
-        continue-on-error: true
 
-      - name: Commit y push si hay cambios
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add public/partidos.json
-          git diff --cached --quiet || git commit -m "🏀 Actualización automática [$(date '+%d/%m/%Y %H:%M')]"
-          git push
-
-      - name: Subir capturas de debug
+      - name: Subir debug
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: debug-screenshots
-          path: debug_*.png
-          if-no-files-found: ignore
-          retention-days: 7
+          name: debug-files
+          path: |
+            debug.png
+            public/partidos.json
+          if-no-files-found: warn
