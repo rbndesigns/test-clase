@@ -6,6 +6,8 @@ const TEAM_NAME = 'HIGHSTEP ACADEMY';
 
 (async () => {
 
+  console.log('START');
+
   const browser = await puppeteer.launch({
     headless: true,
     args: [
@@ -24,26 +26,29 @@ const TEAM_NAME = 'HIGHSTEP ACADEMY';
 
       const url = response.url();
 
+      const headers = response.headers();
+
+      const contentType =
+        headers['content-type'] || '';
+
       if (
+        contentType.includes('json') ||
         url.includes('api') ||
-        url.includes('json') ||
-        url.includes('calendario') ||
-        url.includes('resultado')
+        url.includes('json')
       ) {
 
         const text = await response.text();
 
         if (
-          text.toLowerCase().includes('highstep') ||
-          text.toLowerCase().includes('academy')
+          text.toLowerCase().includes('highstep')
         ) {
+
+          console.log('FOUND HIGHSTEP');
 
           capturedResponses.push({
             url,
-            text: text.slice(0, 50000)
+            body: text.slice(0, 20000)
           });
-
-          console.log('✅ Encontrada respuesta con HIGHSTEP');
         }
       }
 
@@ -59,16 +64,30 @@ const TEAM_NAME = 'HIGHSTEP ACADEMY';
     }
   );
 
-  await new Promise(r => setTimeout(r, 10000));
-
-  fs.mkdirSync('public', { recursive: true });
-
-  fs.writeFileSync(
-    path.join('public', 'responses.json'),
-    JSON.stringify(capturedResponses, null, 2)
+  await new Promise(r =>
+    setTimeout(r, 10000)
   );
 
-  console.log(`Respuestas capturadas: ${capturedResponses.length}`);
+  fs.mkdirSync('public', {
+    recursive: true
+  });
+
+  fs.writeFileSync(
+    path.join(
+      'public',
+      'responses.json'
+    ),
+    JSON.stringify(
+      capturedResponses,
+      null,
+      2
+    )
+  );
+
+  console.log(
+    'RESPONSES:',
+    capturedResponses.length
+  );
 
   await browser.close();
 
