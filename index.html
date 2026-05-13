@@ -1,322 +1,569 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HA Basket — Próximos Partidos</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 
-<title>HA Basket</title>
-
-<style>
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-body{
-  background:#0f0f0f;
-  color:white;
-  font-family:Arial, Helvetica, sans-serif;
-  padding:40px;
-}
-
-h1{
-  font-size:48px;
-  margin-bottom:40px;
-}
-
-.grid{
-  display:grid;
-  gap:20px;
-}
-
-.card{
-  background:#1d1d1d;
-  border-radius:18px;
-  padding:24px;
-  border:1px solid #333;
-  cursor:pointer;
-  transition:.2s;
-}
-
-.card:hover{
-  border-color:#ff5c00;
-  transform:translateY(-4px);
-}
-
-.fecha{
-  color:#ff5c00;
-  margin-bottom:12px;
-  font-weight:bold;
-}
-
-.encuentro{
-  font-size:24px;
-  margin-bottom:14px;
-  line-height:1.3;
-}
-
-.categoria{
-  opacity:.7;
-  margin-bottom:14px;
-  line-height:1.4;
-}
-
-.campo{
-  opacity:.85;
-  line-height:1.5;
-}
-
-.modal{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.85);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-  z-index:999;
-}
-
-.modal-content{
-  background:#1a1a1a;
-  width:100%;
-  max-width:1000px;
-  border-radius:20px;
-  padding:30px;
-  max-height:90vh;
-  overflow:auto;
-}
-
-.close{
-  float:right;
-  cursor:pointer;
-  font-size:28px;
-}
-
-.table{
-  width:100%;
-  border-collapse:collapse;
-  margin-top:20px;
-}
-
-.table td,
-.table th{
-  border:1px solid #333;
-  padding:12px;
-  text-align:left;
-}
-
-.table th{
-  background:#ff5c00;
-}
-
-.empty{
-  opacity:.7;
-  font-size:18px;
-}
-
-</style>
-
-</head>
-
-<body>
-
-<h1>🏀 HA Basket</h1>
-
-<div class="grid" id="partidos">
-
-  <div class="empty">
-    Cargando partidos...
-  </div>
-
-</div>
-
-<div class="modal" id="modal">
-
-  <div class="modal-content">
-
-    <div class="close" onclick="cerrarModal()">
-      ✕
-    </div>
-
-    <h2 id="modal-title"></h2>
-
-    <div id="clasificacion"></div>
-
-  </div>
-
-</div>
-
-<script>
-
-let clasificaciones = [];
-
-async function cargarDatos(){
-
-  try{
-
-    // PARTIDOS
-    const partidosRes = await fetch(
-      './public/partidos.json?t=' + Date.now()
-    );
-
-    const partidosData = await partidosRes.json();
-
-    // CLASIFICACIONES
-    const clasificacionesRes = await fetch(
-      './public/clasificaciones.json?t=' + Date.now()
-    );
-
-    const clasificacionesData =
-      await clasificacionesRes.json();
-
-    clasificaciones =
-      clasificacionesData.clasificaciones || [];
-
-    const container =
-      document.getElementById('partidos');
-
-    container.innerHTML = '';
-
-    if(
-      !partidosData.partidos ||
-      partidosData.partidos.length === 0
-    ){
-
-      container.innerHTML = `
-        <div class="empty">
-          No hay partidos disponibles.
-        </div>
-      `;
-
-      return;
+  <style>
+    :root {
+      --navy:   #0F1D33;
+      --yellow: #F7D10C;
+      --bg:     #ffffff;
+      --card:   #f6f7f9;
+      --border: #e2e4e8;
+      --text:   #0F1D33;
+      --muted:  #6b7280;
+      --light:  #9ca3af;
     }
 
-    partidosData.partidos.forEach(partido => {
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Barlow', Arial, sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ─── HEADER ─── */
+    .header-wrap { border-bottom: 1px solid var(--border); }
+
+    header {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 18px clamp(20px, 5vw, 80px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 26px;
+      letter-spacing: 2px;
+      color: var(--navy);
+    }
+
+    .brand-name span { color: var(--yellow); -webkit-text-stroke: 1px var(--navy); }
+
+    .brand-sub {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 1px;
+    }
+
+    .header-url {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ─── HERO ─── */
+    .hero-wrap { border-bottom: 3px solid var(--yellow); }
+
+    .hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: clamp(32px,5vw,56px) clamp(20px,5vw,80px) clamp(24px,4vw,40px);
+    }
+
+    .hero-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(48px, 8vw, 80px);
+      line-height: 0.95;
+      letter-spacing: 1px;
+      color: var(--navy);
+    }
+
+    .hero-title em {
+      font-style: normal;
+      color: var(--yellow);
+    }
+
+    /* ─── MAIN ─── */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: clamp(28px,4vw,48px) clamp(20px,5vw,80px);
+    }
+
+    .section-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--yellow);
+      border-radius: 1px;
+    }
+
+    /* ─── GRID ─── */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      gap: 16px;
+    }
+
+    /* ─── CARD ─── */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow .18s, border-color .18s;
+      animation: fadeUp .35s ease both;
+    }
+
+    .card:hover {
+      border-color: var(--navy);
+      box-shadow: 0 4px 20px rgba(15,29,51,.1);
+    }
+
+    /* Date + time strip */
+    .card-header {
+      display: flex;
+      align-items: stretch;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .card-fecha {
+      background: var(--navy);
+      color: #fff;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-width: 66px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .fecha-dia {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 34px;
+      line-height: 1;
+    }
+
+    .fecha-mes {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      opacity: .8;
+    }
+
+    .fecha-dow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      opacity: .5;
+      margin-top: 2px;
+    }
+
+    .card-meta {
+      flex: 1;
+      padding: 10px 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    .hora-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--navy);
+    }
+
+    .cat-pill {
+      display: inline-block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      background: var(--yellow);
+      color: var(--navy);
+      padding: 2px 7px;
+      border-radius: 3px;
+      max-width: fit-content;
+    }
+
+    /* Body */
+    .card-body {
+      padding: 16px 16px 12px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .equipos { display: flex; flex-direction: column; gap: 4px; }
+
+    .equipo { display: flex; align-items: center; gap: 8px; }
+
+    .equipo-bar {
+      width: 3px;
+      height: 22px;
+      border-radius: 2px;
+      background: var(--border);
+      flex-shrink: 0;
+    }
+
+    .equipo-bar.ha { background: var(--navy); }
+
+    .equipo-nombre {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 19px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--text);
+    }
+
+    .equipo-nombre.ha { color: var(--navy); }
+
+    .vs-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding-left: 11px;
+    }
+
+    .vs-row::before, .vs-row::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .vs-label {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: var(--light);
+    }
+
+    .comp { display: flex; flex-direction: column; gap: 3px; }
+
+    .comp-nombre {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .fase-tag {
+      display: inline-block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 1px 6px;
+      border-radius: 3px;
+      max-width: fit-content;
+    }
+
+    /* Footer — venue */
+    .card-footer {
+      border-top: 1px solid var(--border);
+      padding: 10px 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
+    .venue-link {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      text-decoration: none;
+      flex: 1;
+      border-radius: 6px;
+      padding: 4px 6px;
+      margin: -4px -6px;
+      transition: background .15s;
+    }
+
+    .venue-link:hover { background: rgba(15,29,51,.06); }
+
+    .venue-link:hover .venue-nombre { color: var(--navy); text-decoration: underline; }
+
+    .venue-pin { font-size: 12px; margin-top: 1px; flex-shrink: 0; }
+
+    .venue-nombre {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    .venue-dir {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 1px;
+      line-height: 1.4;
+    }
+
+    /* ─── States ─── */
+    .estado { grid-column: 1/-1; padding: 60px 0; text-align: center; }
+
+    .estado-titulo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 32px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .estado-sub { font-size: 14px; color: var(--light); }
+
+    .skeleton {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      height: 210px;
+      animation: pulse 1.3s ease-in-out infinite;
+    }
+
+    @keyframes pulse { 0%,100%{opacity:.6} 50%{opacity:1} }
+
+    /* ─── FOOTER ─── */
+    .footer-wrap { border-top: 1px solid var(--border); }
+
+    footer {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px clamp(20px,5vw,80px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .footer-brand {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .footer-updated { font-size: 12px; color: var(--light); }
+
+    @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
+
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(14px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div >
+    <header>
+      <div>
+       
+    </header>
+  </div>
+
+  <div class="hero-wrap">
+    <section class="hero">
+      <div class="hero-label">Calendario de competición</div>
+      <h1 class="hero-title">PRÓXIMOS<br><em>PARTIDOS</em></h1>
+    </section>
+  </div>
+
+  <main>
+    <div class="section-label" id="conteo">Cargando...</div>
+
+    <div class="grid" id="partidos">
+      <div class="skeleton"></div>
+      <div class="skeleton"></div>
+      <div class="skeleton"></div>
+    </div>
+  </main>
+
+  <div class="footer-wrap">
+    <footer>
+      <span class="footer-brand">HA Basket · Highstep Academy</span>
+      <span class="footer-updated" id="updated"></span>
+    </footer>
+  </div>
+
+  <script>
+    const MESES = ['ENE','FEB','MAR','ABR','MAY','JUN','JUL','AGO','SEP','OCT','NOV','DIC'];
+    const DIAS  = ['DOM','LUN','MAR','MIÉ','JUE','VIE','SÁB'];
+
+    function parseFecha(str) {
+      const [datePart, timePart] = str.split(' ');
+      const [d, m, y] = datePart.split('/').map(Number);
+      const date = new Date(y, m - 1, d);
+      return {
+        diaNum:    String(d).padStart(2,'0'),
+        mes:       MESES[m - 1],
+        diaSemana: DIAS[date.getDay()],
+        hora:      timePart || ''
+      };
+    }
+
+    function isHA(n) { return n.toUpperCase().includes('HA BASKET'); }
+
+    function renderPartido(partido, index) {
+      const { diaNum, mes, diaSemana, hora } = parseFecha(partido.fecha);
+
+      const catLines   = partido.categoria.split('\n').map(s => s.trim()).filter(Boolean);
+      const eqLines    = partido.encuentro.split('\n').map(s => s.trim()).filter(Boolean);
+      const campoLines = partido.campo.split('\n').map(s => s.trim()).filter(Boolean);
+
+      const ageGroup    = catLines[0] || '';
+      const competicion = catLines[1] || '';
+      const fase        = catLines[2] || '';
+      const eq1         = eqLines[0]  || '';
+      const eq2         = eqLines[1]  || '';
+      const venueNombre = campoLines[0] || '';
+      const venueDir    = campoLines.slice(1).join(' — ') || '';
 
       const card = document.createElement('div');
-
       card.className = 'card';
-
-      card.onclick = () => {
-        abrirClasificacion(partido.categoria);
-      };
+      card.style.animationDelay = (index * 70) + 'ms';
 
       card.innerHTML = `
-
-        <div class="fecha">
-          ${partido.fecha}
+        <div class="card-header">
+          <div class="card-fecha">
+            <div class="fecha-dia">${diaNum}</div>
+            <div class="fecha-mes">${mes}</div>
+            <div class="fecha-dow">${diaSemana}</div>
+          </div>
+          <div class="card-meta">
+            <div class="hora-badge">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              ${hora}h
+            </div>
+            <div class="cat-pill">${ageGroup}</div>
+          </div>
         </div>
 
-        <div class="encuentro">
-          ${partido.encuentro.replace(/\n/g,' vs ')}
+        <div class="card-body">
+          <div class="equipos">
+            <div class="equipo">
+              <div class="equipo-bar ${isHA(eq1) ? 'ha' : ''}"></div>
+              <div class="equipo-nombre ${isHA(eq1) ? 'ha' : ''}">${eq1}</div>
+            </div>
+            <div class="vs-row"><span class="vs-label">VS</span></div>
+            <div class="equipo">
+              <div class="equipo-bar ${isHA(eq2) ? 'ha' : ''}"></div>
+              <div class="equipo-nombre ${isHA(eq2) ? 'ha' : ''}">${eq2}</div>
+            </div>
+          </div>
+
+          <div class="comp">
+            ${competicion ? `<div class="comp-nombre">${competicion}</div>` : ''}
+            ${fase        ? `<div class="fase-tag">${fase}</div>` : ''}
+          </div>
         </div>
 
-        <div class="categoria">
-          ${partido.categoria.replace(/\n/g,' · ')}
+        <div class="card-footer">
+          <a class="venue-link"
+             href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(venueNombre + (venueDir ? ' ' + venueDir : ''))}"
+             target="_blank"
+             rel="noopener noreferrer"
+             title="Abrir en Google Maps">
+            <span class="venue-pin">📍</span>
+            <div>
+              <div class="venue-nombre">${venueNombre}</div>
+              ${venueDir ? `<div class="venue-dir">${venueDir}</div>` : ''}
+            </div>
+          </a>
         </div>
-
-        <div class="campo">
-          📍 ${partido.campo.replace(/\n/g,' — ')}
-        </div>
-
       `;
 
-      container.appendChild(card);
+      return card;
+    }
 
-    });
+    async function cargarPartidos() {
+      try {
+        const response = await fetch('./public/partidos.json?t=' + Date.now());
+        const data     = await response.json();
+        const container = document.getElementById('partidos');
+        const conteo    = document.getElementById('conteo');
+        container.innerHTML = '';
 
-  }catch(err){
+        if (!data.partidos || data.partidos.length === 0) {
+          conteo.textContent = '0 partidos disponibles';
+          container.innerHTML = `<div class="estado"><div class="estado-titulo">Sin partidos</div><div class="estado-sub">No hay partidos programados.</div></div>`;
+          return;
+        }
 
-    console.error(err);
+        const total = data.partidos.length;
+        conteo.textContent = total + ' partido' + (total !== 1 ? 's' : '') + ' programado' + (total !== 1 ? 's' : '');
+        data.partidos.forEach((p, i) => container.appendChild(renderPartido(p, i)));
 
-    document.getElementById('partidos')
-      .innerHTML = `
-        <div class="empty">
-          Error cargando datos.
-        </div>
-      `;
+        document.getElementById('updated').textContent =
+          'Actualizado: ' + new Date(data.actualizado).toLocaleString('es-ES');
 
-  }
+      } catch (err) {
+        console.error(err);
+        document.getElementById('conteo').textContent = 'Error al cargar';
+        document.getElementById('partidos').innerHTML =
+          `<div class="estado"><div class="estado-titulo">Error</div><div class="estado-sub">No se pudo leer partidos.json</div></div>`;
+      }
+    }
 
-}
-
-function abrirClasificacion(categoria){
-
-  document.getElementById('modal')
-    .style.display = 'flex';
-
-  document.getElementById('modal-title')
-    .innerText = categoria;
-
-  const contenedor =
-    document.getElementById('clasificacion');
-
-  const clasificacion =
-    clasificaciones.find(c =>
-      c.categoria &&
-      c.categoria.includes(categoria)
-    );
-
-  if(!clasificacion){
-
-    contenedor.innerHTML =
-      '<div class="empty">No se encontró clasificación.</div>';
-
-    return;
-
-  }
-
-  let html = `
-
-    <table class="table">
-
-      <tr>
-        <th>#</th>
-        <th>Equipo</th>
-        <th>Puntos</th>
-        <th>Victorias</th>
-        <th>Derrotas</th>
-      </tr>
-
-  `;
-
-  clasificacion.tabla.forEach(eq => {
-
-    html += `
-
-      <tr>
-        <td>${eq.posicion}</td>
-        <td>${eq.equipo}</td>
-        <td>${eq.puntos}</td>
-        <td>${eq.victorias}</td>
-        <td>${eq.derrotas}</td>
-      </tr>
-
-    `;
-
-  });
-
-  html += '</table>';
-
-  contenedor.innerHTML = html;
-
-}
-
-function cerrarModal(){
-
-  document.getElementById('modal')
-    .style.display = 'none';
-
-}
-
-cargarDatos();
-
-</script>
-
+    cargarPartidos();
+  </script>
 </body>
 </html>
