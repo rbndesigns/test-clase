@@ -31,7 +31,7 @@
     }
 
     /* ─── HEADER ─── */
-
+    .header-wrap { border-bottom: 1px solid var(--border); }
 
     header {
       max-width: 1200px;
@@ -100,6 +100,7 @@
     .hero-title em {
       font-style: normal;
       color: var(--yellow);
+      -webkit-text-stroke: 1.5px var(--navy);
     }
 
     /* ─── MAIN ─── */
@@ -248,7 +249,7 @@
     .equipo { display: flex; align-items: center; gap: 8px; }
 
     .equipo-bar {
-      width: 3px
+      width: 3px;
       height: 22px;
       border-radius: 2px;
       background: var(--border);
@@ -321,6 +322,22 @@
       align-items: flex-start;
       gap: 6px;
     }
+
+    .venue-link {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      text-decoration: none;
+      flex: 1;
+      border-radius: 6px;
+      padding: 4px 6px;
+      margin: -4px -6px;
+      transition: background .15s;
+    }
+
+    .venue-link:hover { background: rgba(15,29,51,.06); }
+
+    .venue-link:hover .venue-nombre { color: var(--navy); text-decoration: underline; }
 
     .venue-pin { font-size: 12px; margin-top: 1px; flex-shrink: 0; }
 
@@ -399,7 +416,12 @@
 
   <div class="header-wrap">
     <header>
-      
+      <div>
+        <div class="brand-name">HA <span>BASKET</span></div>
+        <div class="brand-sub">Highstep Academy · Club de Baloncesto</div>
+      </div>
+      <div class="header-url">habasket.es</div>
+    </header>
   </div>
 
   <div class="hero-wrap">
@@ -499,11 +521,17 @@
         </div>
 
         <div class="card-footer">
-          <span class="venue-pin">📍</span>
-          <div>
-            <div class="venue-nombre">${venueNombre}</div>
-            ${venueDir ? `<div class="venue-dir">${venueDir}</div>` : ''}
-          </div>
+          <a class="venue-link"
+             href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(venueNombre + (venueDir ? ' ' + venueDir : ''))}"
+             target="_blank"
+             rel="noopener noreferrer"
+             title="Abrir en Google Maps">
+            <span class="venue-pin">📍</span>
+            <div>
+              <div class="venue-nombre">${venueNombre}</div>
+              ${venueDir ? `<div class="venue-dir">${venueDir}</div>` : ''}
+            </div>
+          </a>
         </div>
       `;
 
