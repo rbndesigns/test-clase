@@ -1,30 +1,34 @@
 {
-  "actualizado": "2026-05-13T11:31:46.035Z",
+  "actualizado": "2026-05-13T15:06:22.569Z",
   "total": 4,
   "partidos": [
     {
       "categoria": "Cadete Masc. Pref.\nCLASIFICACION Y DESCENSO 5ª DIVISION\nDESCENSO D2",
       "encuentro": "LA PAZ C.D. ROSA\nHA BASKET \"B\"",
       "fecha": "16/05/2026 09:00",
-      "campo": "MIGUEL DELIBES, C.P.\nFELIPE II, 15 (entrada por Jaime I El Conquistador), Parla"
+      "campo": "MIGUEL DELIBES, C.P.\nFELIPE II, 15 (entrada por Jaime I El Conquistador), Parla",
+      "compId": null
     },
     {
       "categoria": "Infantil Masc. Pref.\nCLASIFICACION Y DESCENSO 2ª DIVISION\nPUESTOS 25 AL 28",
       "encuentro": "HA BASKET\nLICEO FRANCES CLAUDIA",
       "fecha": "16/05/2026 17:15",
-      "campo": "GALLUR, PDVO. MPAL.\nGALLUR, 2, Madrid"
+      "campo": "GALLUR, PDVO. MPAL.\nGALLUR, 2, Madrid",
+      "compId": null
     },
     {
       "categoria": "Cadete Masc. Pref.\nELIMINATORIAS 1/8 FINAL 4ª DIVISION\nOCTAVOS DE FINAL",
       "encuentro": "VIRGEN DE ATOCHA C\nHA BASKET \"A\"",
       "fecha": "16/05/2026 11:30",
-      "campo": "ANTONIO FRAGUAS \"FORGES\", IES\nCALLE ALBECHE (ENTRADA FRENTE A MENDEZ ALVARO 56), Madrid"
+      "campo": "ANTONIO FRAGUAS \"FORGES\", IES\nCALLE ALBECHE (ENTRADA FRENTE A MENDEZ ALVARO 56), Madrid",
+      "compId": null
     },
     {
       "categoria": "2ª Div Aut Masc BRONCE\nELIMINATORIAS 1/8 FINAL\nOCTAVOS DE FINAL",
       "encuentro": "ARAVACA BASKET C.D.E.\nHA BASKET",
       "fecha": "17/05/2026 18:00",
-      "campo": "COLEGIO BERNADETTE, PABELLON\nCALLE SANTA BERNARDITA, 1, Aravaca"
+      "campo": "COLEGIO BERNADETTE, PABELLON\nCALLE SANTA BERNARDITA, 1, Aravaca",
+      "compId": null
     }
   ]
 }
