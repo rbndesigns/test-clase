@@ -59,9 +59,31 @@ const fs = require('fs');
   // IR A RESULTADOS Y CLASIFICACIONES
   // ========================================
 
-  await page.click('a[href="#tab2"]');
+  await page.waitForSelector('body');
 
-  await new Promise(resolve => setTimeout(resolve, 4000));
+  const tabs = await page.$$('a');
+
+  for (const tab of tabs) {
+
+    const texto = await page.evaluate(
+      el => el.innerText,
+      tab
+    );
+
+    if (
+      texto.includes('RESULTADOS Y CLASIFICACIONES')
+    ) {
+
+      await tab.click();
+      break;
+
+    }
+
+  }
+
+  await new Promise(resolve =>
+    setTimeout(resolve, 5000)
+  );
 
   // ========================================
   // EXTRAER CLASIFICACIONES
