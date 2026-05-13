@@ -100,6 +100,7 @@
     .hero-title em {
       font-style: normal;
       color: var(--yellow);
+      -webkit-text-stroke: 1.5px var(--navy);
     }
 
     /* ─── MAIN ─── */
@@ -232,7 +233,11 @@
       padding: 2px 7px;
       border-radius: 3px;
       max-width: fit-content;
+      text-decoration: none;
+      transition: opacity .15s;
     }
+
+    a.cat-pill:hover { opacity: .75; cursor: pointer; }
 
     /* Body */
     .card-body {
@@ -413,10 +418,13 @@
 </head>
 <body>
 
-  <div >
+  <div class="header-wrap">
     <header>
       <div>
-       
+        <div class="brand-name">HA <span>BASKET</span></div>
+        <div class="brand-sub">Highstep Academy · Club de Baloncesto</div>
+      </div>
+      <div class="header-url">habasket.es</div>
     </header>
   </div>
 
@@ -493,7 +501,9 @@
               <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
               ${hora}h
             </div>
-            <div class="cat-pill">${ageGroup}</div>
+            ${partido.compId
+              ? '<a class="cat-pill" href="clasificacion.html?id=' + partido.compId + '" title="Ver clasificación">' + ageGroup + '</a>'
+              : '<span class="cat-pill">' + ageGroup + '</span>'}
           </div>
         </div>
 
