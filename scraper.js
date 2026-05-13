@@ -22,9 +22,9 @@ const fs = require('fs');
 
     await new Promise(r => setTimeout(r, 5000));
 
-    // =========================
+    // ========================================
     // PARTIDOS
-    // =========================
+    // ========================================
 
     const partidos = await page.evaluate(() => {
 
@@ -74,29 +74,53 @@ const fs = require('fs');
 
     });
 
-    // =========================
-    // CLASIFICACIONES
-    // =========================
+    // ========================================
+    // CLICK EN CLASIFICACIONES
+    // ========================================
+
+    const enlaces = await page.$$('a');
+
+    for (const enlace of enlaces) {
+
+      const texto = await page.evaluate(
+        el => el.innerText,
+        enlace
+      );
+
+      if (
+        texto &&
+        texto.toLowerCase().includes('clasificaciones')
+      ) {
+
+        await enlace.click();
+
+        console.log('✅ Click en clasificaciones');
+
+        break;
+
+      }
+
+    }
+
+    await new Promise(r => setTimeout(r, 5000));
+
+    // ========================================
+    // EXTRAER CLASIFICACIONES
+    // ========================================
 
     const clasificaciones = await page.evaluate(() => {
 
       const resultado = {};
 
-      const bloques =
-        document.querySelectorAll('h3');
+      const tablas =
+        document.querySelectorAll('table');
 
-      bloques.forEach(bloque => {
-
-        const categoria =
-          bloque.innerText.trim();
-
-        const tabla =
-          bloque.parentElement.querySelector('table');
-
-        if (!tabla) return;
+      tablas.forEach((tabla, index) => {
 
         const filas =
           tabla.querySelectorAll('tbody tr');
+
+        if (filas.length < 3) return;
 
         const equipos = [];
 
@@ -104,12 +128,12 @@ const fs = require('fs');
 
           const td = fila.querySelectorAll('td');
 
-          if (td.length >= 7) {
+          if (td.length >= 5) {
 
             equipos.push({
               pos: td[0]?.innerText.trim(),
               nombre: td[1]?.innerText.trim(),
-              puntos: td[6]?.innerText.trim()
+              puntos: td[td.length - 1]?.innerText.trim()
             });
 
           }
@@ -117,7 +141,10 @@ const fs = require('fs');
         });
 
         if (equipos.length > 0) {
-          resultado[categoria] = equipos;
+
+          resultado[`clasificacion_${index}`] =
+            equipos;
+
         }
 
       });
@@ -126,13 +153,17 @@ const fs = require('fs');
 
     });
 
-    // =========================
-    // PUBLIC
-    // =========================
+    // ========================================
+    // CREAR CARPETA PUBLIC
+    // ========================================
 
     if (!fs.existsSync('public')) {
       fs.mkdirSync('public');
     }
+
+    // ========================================
+    // GUARDAR PARTIDOS
+    // ========================================
 
     fs.writeFileSync(
       'public/partidos.json',
@@ -146,6 +177,10 @@ const fs = require('fs');
         2
       )
     );
+
+    // ========================================
+    // GUARDAR CLASIFICACIONES
+    // ========================================
 
     fs.writeFileSync(
       'public/clasificaciones.json',
