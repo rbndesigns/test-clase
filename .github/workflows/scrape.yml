@@ -5,16 +5,16 @@ on:
   workflow_dispatch:
 
   schedule:
-    - cron: '0 1 * * *'
+    - cron: '0 3 * * *'
+
+permissions:
+  contents: write
 
 jobs:
 
   scrape:
 
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: write
 
     steps:
 
@@ -24,33 +24,33 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 20
 
-      - name: Instalar dependencias
-        run: npm install
-
-      - name: Instalar Chrome
-        run: npx puppeteer browsers install chrome
+      - name: Install dependencies
+        run: |
+          npm install puppeteer
 
       - name: Ejecutar scraper
-        run: node scraper.js
+        run: |
+          node scraper.js
 
-      - name: Commit partidos.json
+      - name: Commit JSON actualizado
         run: |
 
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
+          git config user.name github-actions
+          git config user.email github-actions@github.com
 
           git add public/partidos.json
+          git add public/clasificaciones.json
 
-          git commit -m "update partidos" || echo "No changes"
+          git commit -m "update partidos" || echo "Sin cambios"
 
           git push
 
-      - name: Subir artifact
-        if: always()
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: partidos
-          path: public/partidos.json
-          if-no-files-found: warn
+          path: |
+            public/partidos.json
+            public/clasificaciones.json
