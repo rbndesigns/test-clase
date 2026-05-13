@@ -2,59 +2,20 @@ const puppeteer = require('puppeteer');
 const fs = require('fs');
 const path = require('path');
 
-const TEAM_NAME = 'HIGHSTEP ACADEMY';
+const TEAM = 'HIGHSTEP ACADEMY';
+
+function delay(ms) {
+  return new Promise(r => setTimeout(r, ms));
+}
 
 (async () => {
 
-  console.log('START');
-
   const browser = await puppeteer.launch({
     headless: true,
-    args: [
-      '--no-sandbox',
-      '--disable-setuid-sandbox'
-    ]
+    args: ['--no-sandbox']
   });
 
   const page = await browser.newPage();
-
-  let capturedResponses = [];
-
-  page.on('response', async (response) => {
-
-    try {
-
-      const url = response.url();
-
-      const headers = response.headers();
-
-      const contentType =
-        headers['content-type'] || '';
-
-      if (
-        contentType.includes('json') ||
-        url.includes('api') ||
-        url.includes('json')
-      ) {
-
-        const text = await response.text();
-
-        if (
-          text.toLowerCase().includes('highstep')
-        ) {
-
-          console.log('FOUND HIGHSTEP');
-
-          capturedResponses.push({
-            url,
-            body: text.slice(0, 20000)
-          });
-        }
-      }
-
-    } catch (e) {}
-
-  });
 
   await page.goto(
     'https://www.fbm.es/es/horarios-y-resultados',
@@ -64,9 +25,96 @@ const TEAM_NAME = 'HIGHSTEP ACADEMY';
     }
   );
 
-  await new Promise(r =>
-    setTimeout(r, 10000)
+  await delay(5000);
+
+  // ====================================
+  // LEER TODOS LOS SELECTS
+  // ====================================
+
+  const selectsInfo = await page.evaluate(() => {
+
+    return Array.from(
+      document.querySelectorAll('select')
+    ).map((s, i) => ({
+      index: i,
+      options: Array.from(s.options).map(o => ({
+        value: o.value,
+        text: o.textContent.trim()
+      }))
+    }));
+
+  });
+
+  console.log(
+    'SELECTS:',
+    selectsInfo.length
   );
+
+  let partidos = [];
+
+  // ====================================
+  // ITERAR SELECTS
+  // ====================================
+
+  for (let s = 0; s < selectsInfo.length; s++) {
+
+    const select = selectsInfo[s];
+
+    for (const option of select.options) {
+
+      if (!option.value) continue;
+
+      console.log(
+        `Select ${s} -> ${option.text}`
+      );
+
+      try {
+
+        await page.select(
+          `select:nth-of-type(${s + 1})`,
+          option.value
+        );
+
+        await delay(3000);
+
+        const tablas = await page.evaluate(() => {
+
+          return Array.from(
+            document.querySelectorAll('table')
+          ).map(t =>
+            t.innerText
+          );
+
+        });
+
+        for (const tabla of tablas) {
+
+          if (
+            tabla
+              .toLowerCase()
+              .includes('highstep academy')
+          ) {
+
+            console.log(
+              'FOUND HIGHSTEP'
+            );
+
+            partidos.push(tabla);
+          }
+        }
+
+      } catch (e) {
+
+        console.log(
+          'ERROR SELECT',
+          e.message
+        );
+
+      }
+
+    }
+
+  }
 
   fs.mkdirSync('public', {
     recursive: true
@@ -78,15 +126,15 @@ const TEAM_NAME = 'HIGHSTEP ACADEMY';
       'responses.json'
     ),
     JSON.stringify(
-      capturedResponses,
+      partidos,
       null,
       2
     )
   );
 
   console.log(
-    'RESPONSES:',
-    capturedResponses.length
+    'PARTIDOS:',
+    partidos.length
   );
 
   await browser.close();
