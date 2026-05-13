@@ -3,90 +3,104 @@ const fs = require('fs');
 
 (async () => {
 
-  const browser = await puppeteer.launch({
-    headless: true,
-    args: ['--no-sandbox', '--disable-setuid-sandbox']
-  });
+  try {
 
-  const page = await browser.newPage();
+    const browser = await puppeteer.launch({
+      headless: true,
+      args: ['--no-sandbox', '--disable-setuid-sandbox']
+    });
 
-  await page.goto(
-    'https://www.fbm.es/resultados-club-20677/highstep-academy',
-    {
-      waitUntil: 'networkidle2',
-      timeout: 0
-    }
-  );
+    const page = await browser.newPage();
 
-  // Esperar a que cargue la tabla
-  await page.waitForSelector('.tabla_resultados');
-
-  const partidos = await page.evaluate(() => {
-
-    const filas = document.querySelectorAll(
-      '.tabla_resultados tbody tr'
+    await page.goto(
+      'https://www.fbm.es/resultados-club-20677/highstep-academy',
+      {
+        waitUntil: 'networkidle2',
+        timeout: 0
+      }
     );
 
-    const datos = [];
+    // Espera simple en vez de waitForSelector
+    await new Promise(r => setTimeout(r, 5000));
 
-    filas.forEach(fila => {
+    const partidos = await page.evaluate(() => {
 
-      const celdas = fila.querySelectorAll('td');
+      const filas = document.querySelectorAll('table tr');
 
-      // Solo filas válidas
-      if (celdas.length >= 4) {
+      const datos = [];
 
-        const categoria = celdas[0]?.innerText.trim();
-        const encuentro = celdas[1]?.innerText.trim();
-        const fecha = celdas[2]?.innerText.trim();
-        const campo = celdas[3]?.innerText.trim();
+      filas.forEach(fila => {
 
-        // Filtrar basura
-        if (
-          categoria &&
-          encuentro &&
-          fecha.includes('/') &&
-          campo
-        ) {
+        const celdas = fila.querySelectorAll('td');
 
-          datos.push({
-            categoria,
-            encuentro,
-            fecha,
+        if (celdas.length >= 4) {
+
+          const categoria =
+            celdas[0]?.innerText.trim();
+
+          const encuentro =
+            celdas[1]?.innerText.trim();
+
+          const fecha =
+            celdas[2]?.innerText.trim();
+
+          const campo =
+            celdas[3]?.innerText.trim();
+
+          // Solo filas reales
+          if (
+            categoria &&
+            encuentro &&
+            fecha.includes('/') &&
             campo
-          });
+          ) {
+
+            datos.push({
+              categoria,
+              encuentro,
+              fecha,
+              campo
+            });
+
+          }
 
         }
 
-      }
+      });
+
+      return datos;
 
     });
 
-    return datos;
+    if (!fs.existsSync('public')) {
+      fs.mkdirSync('public');
+    }
 
-  });
+    fs.writeFileSync(
+      'public/partidos.json',
+      JSON.stringify(
+        {
+          actualizado: new Date().toISOString(),
+          total: partidos.length,
+          partidos
+        },
+        null,
+        2
+      )
+    );
 
-  // Crear carpeta public si no existe
-  if (!fs.existsSync('public')) {
-    fs.mkdirSync('public');
+    console.log(
+      `✅ ${partidos.length} partidos guardados`
+    );
+
+    await browser.close();
+
+  } catch (err) {
+
+    console.error(err);
+
+    process.exit(1);
+
   }
-
-  // Guardar JSON
-  fs.writeFileSync(
-    'public/partidos.json',
-    JSON.stringify(
-      {
-        actualizado: new Date().toISOString(),
-        total: partidos.length,
-        partidos
-      },
-      null,
-      2
-    )
-  );
-
-  console.log(`✅ ${partidos.length} partidos guardados`);
-
-  await browser.close();
 
 })();
