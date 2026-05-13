@@ -17,16 +17,15 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Instalar dependencias
+      - name: Instalar dependencias Node
         run: npm install
 
-      - name: Instalar dependencias de sistema para Chromium
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libgbm-dev libasound2 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 libgtk-3-0 libnspr4 libnss3 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libxss1
+      - name: Instalar Chrome para Puppeteer
+        run: npx puppeteer browsers install chrome
 
       - name: Ejecutar scraper
         run: node scraper.js
+        continue-on-error: true
 
       - name: Commit y push si hay cambios
         run: |
