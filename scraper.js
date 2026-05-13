@@ -1,123 +1,83 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
-const path = require('path');
-
-const URL =
-  'https://www.fbm.es/resultados-club-20677/highstep-academy';
-
-function delay(ms) {
-  return new Promise(r => setTimeout(r, ms));
-}
 
 (async () => {
 
-  console.log('🏀 FBM Club Scraper');
-
   const browser = await puppeteer.launch({
     headless: true,
-    args: ['--no-sandbox']
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
 
   const page = await browser.newPage();
 
-  await page.goto(URL, {
-    waitUntil: 'networkidle2',
-    timeout: 60000
-  });
-
-  await delay(5000);
-
-  // ===================================
-  // IR A "PRÓXIMOS PARTIDOS"
-  // ===================================
-
-  const tabs = await page.$$('a, button');
-
-  for (const tab of tabs) {
-
-    const text = await page.evaluate(
-      el => el.innerText,
-      tab
-    );
-
-    if (!text) continue;
-
-    if (
-      text
-        .trim()
-        .toLowerCase()
-        .includes('próximos partidos')
-    ) {
-
-      await tab.click();
-
-      console.log('📅 Tab abierta');
-
-      break;
+  await page.goto(
+    'https://www.fbm.es/resultados-club-20677/highstep-academy',
+    {
+      waitUntil: 'networkidle2',
+      timeout: 0
     }
-  }
+  );
 
-  await delay(3000);
-
-  // ===================================
-  // EXTRAER TABLA
-  // ===================================
+  // Esperar a que cargue la tabla
+  await page.waitForSelector('.tabla_resultados');
 
   const partidos = await page.evaluate(() => {
 
-    const rows = Array.from(
-      document.querySelectorAll('table tr')
+    const filas = document.querySelectorAll(
+      '.tabla_resultados tbody tr'
     );
 
-    return rows
-      .map(row => {
+    const datos = [];
 
-        const cols = Array.from(
-          row.querySelectorAll('td')
-        ).map(td =>
-          td.innerText.trim()
-        );
+    filas.forEach(fila => {
 
-        if (cols.length < 4) {
-          return null;
+      const celdas = fila.querySelectorAll('td');
+
+      // Solo filas válidas
+      if (celdas.length >= 4) {
+
+        const categoria = celdas[0]?.innerText.trim();
+        const encuentro = celdas[1]?.innerText.trim();
+        const fecha = celdas[2]?.innerText.trim();
+        const campo = celdas[3]?.innerText.trim();
+
+        // Filtrar basura
+        if (
+          categoria &&
+          encuentro &&
+          fecha.includes('/') &&
+          campo
+        ) {
+
+          datos.push({
+            categoria,
+            encuentro,
+            fecha,
+            campo
+          });
+
         }
 
-        return {
-          categoria: cols[0] || '',
-          encuentro: cols[1] || '',
-          fecha: cols[2] || '',
-          campo: cols[3] || ''
-        };
+      }
 
-      })
-      .filter(Boolean);
+    });
+
+    return datos;
 
   });
 
-  console.log(
-    'PARTIDOS:',
-    partidos.length
-  );
+  // Crear carpeta public si no existe
+  if (!fs.existsSync('public')) {
+    fs.mkdirSync('public');
+  }
 
-  // ===================================
-  // GUARDAR JSON
-  // ===================================
-
-  fs.mkdirSync('public', {
-    recursive: true
-  });
-
+  // Guardar JSON
   fs.writeFileSync(
-    path.join(
-      'public',
-      'partidos.json'
-    ),
+    'public/partidos.json',
     JSON.stringify(
       {
-        actualizado:
-          new Date().toISOString(),
-        total:
-          partidos.length,
+        actualizado: new Date().toISOString(),
+        total: partidos.length,
         partidos
       },
       null,
@@ -125,9 +85,7 @@ function delay(ms) {
     )
   );
 
-  console.log(
-    '✅ partidos.json generado'
-  );
+  console.log(`✅ ${partidos.length} partidos guardados`);
 
   await browser.close();
 
