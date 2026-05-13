@@ -1,114 +1,199 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>HA Basket — Próximos partidos</title>
+  <title>HA Basket — Próximos Partidos</title>
 
-<style>
+  <style>
 
-body{
-  background:#111;
-  color:white;
-  font-family:Arial;
-  padding:40px;
-}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
-h1{
-  font-size:48px;
-  margin-bottom:40px;
-}
+    body{
+      background:#0f0f0f;
+      color:white;
+      font-family:Arial, Helvetica, sans-serif;
+      padding:40px;
+    }
 
-.grid{
-  display:grid;
-  gap:20px;
-}
+    h1{
+      font-size:48px;
+      margin-bottom:12px;
+    }
 
-.card{
-  background:#1e1e1e;
-  border-radius:16px;
-  padding:24px;
-  border:1px solid #333;
-}
+    .sub{
+      opacity:.7;
+      margin-bottom:40px;
+    }
 
-.fecha{
-  color:#ff5c00;
-  font-weight:bold;
-  margin-bottom:10px;
-}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:24px;
+    }
 
-.encuentro{
-  font-size:24px;
-  margin-bottom:12px;
-}
+    .card{
+      background:#1b1b1b;
+      border:1px solid #2d2d2d;
+      border-radius:18px;
+      padding:24px;
+      transition:.2s;
+    }
 
-.categoria{
-  opacity:.7;
-  margin-bottom:12px;
-}
+    .card:hover{
+      transform:translateY(-4px);
+      border-color:#ff5c00;
+    }
 
-.campo{
-  opacity:.8;
-  font-size:14px;
-}
+    .fecha{
+      color:#ff5c00;
+      font-weight:bold;
+      font-size:18px;
+      margin-bottom:14px;
+    }
 
-</style>
+    .encuentro{
+      font-size:24px;
+      font-weight:bold;
+      line-height:1.3;
+      margin-bottom:16px;
+    }
+
+    .categoria{
+      opacity:.75;
+      margin-bottom:16px;
+      line-height:1.4;
+    }
+
+    .campo{
+      opacity:.85;
+      font-size:14px;
+      line-height:1.5;
+    }
+
+    .empty{
+      opacity:.7;
+      font-size:18px;
+    }
+
+    .updated{
+      margin-top:40px;
+      opacity:.5;
+      font-size:14px;
+    }
+
+  </style>
 
 </head>
+
 <body>
 
-<h1>🏀 Próximos partidos</h1>
+  <h1>🏀 HA Basket</h1>
 
-<div class="grid" id="partidos"></div>
+  <div class="sub">
+    Próximos partidos actualizados automáticamente desde FBM
+  </div>
 
-<script>
+  <div class="grid" id="partidos">
 
-async function cargarPartidos(){
+    <div class="empty">
+      Cargando partidos...
+    </div>
 
-  const res = await fetch('./partidos.json');
+  </div>
 
-  const data = await res.json();
+  <div class="updated" id="updated"></div>
 
-  const container =
-    document.getElementById('partidos');
+  <script>
 
-  container.innerHTML = '';
+    async function cargarPartidos(){
 
-  data.partidos.forEach(partido => {
+      try{
 
-    container.innerHTML += `
+        const response =
+          await fetch('./public/partidos.json?t=' + Date.now());
 
-      <div class="card">
+        const data =
+          await response.json();
 
-        <div class="fecha">
-          ${partido.fecha}
-        </div>
+        const container =
+          document.getElementById('partidos');
 
-        <div class="encuentro">
-          ${partido.encuentro.replace(/\n/g,' vs ')}
-        </div>
+        container.innerHTML = '';
 
-        <div class="categoria">
-          ${partido.categoria.replace(/\n/g,' · ')}
-        </div>
+        if(
+          !data.partidos ||
+          data.partidos.length === 0
+        ){
 
-        <div class="campo">
-          📍 ${partido.campo.replace(/\n/g,' — ')}
-        </div>
+          container.innerHTML = `
+            <div class="empty">
+              No hay partidos disponibles.
+            </div>
+          `;
 
-      </div>
+          return;
+        }
 
-    `;
+        data.partidos.forEach(partido => {
 
-  });
+          container.innerHTML += `
 
-}
+            <div class="card">
 
-cargarPartidos();
+              <div class="fecha">
+                ${partido.fecha}
+              </div>
 
-</script>
+              <div class="encuentro">
+                ${partido.encuentro.replace(/\n/g,' vs ')}
+              </div>
+
+              <div class="categoria">
+                ${partido.categoria.replace(/\n/g,' · ')}
+              </div>
+
+              <div class="campo">
+                📍 ${partido.campo.replace(/\n/g,' — ')}
+              </div>
+
+            </div>
+
+          `;
+
+        });
+
+        document.getElementById('updated')
+          .innerHTML =
+            'Última actualización: ' +
+            new Date(data.actualizado)
+            .toLocaleString('es-ES');
+
+      }catch(err){
+
+        console.error(err);
+
+        document.getElementById('partidos')
+          .innerHTML = `
+            <div class="empty">
+              Error cargando partidos.json
+            </div>
+          `;
+
+      }
+
+    }
+
+    cargarPartidos();
+
+  </script>
 
 </body>
 </html>
