@@ -2,13 +2,16 @@ const puppeteer = require('puppeteer');
 const fs = require('fs');
 const path = require('path');
 
-const TEAM = 'HIGHSTEP ACADEMY';
+const URL =
+  'https://www.fbm.es/resultados-club-20677/highstep-academy';
 
 function delay(ms) {
   return new Promise(r => setTimeout(r, ms));
 }
 
 (async () => {
+
+  console.log('🏀 FBM Club Scraper');
 
   const browser = await puppeteer.launch({
     headless: true,
@@ -17,104 +20,88 @@ function delay(ms) {
 
   const page = await browser.newPage();
 
-  await page.goto(
-    'https://www.fbm.es/es/horarios-y-resultados',
-    {
-      waitUntil: 'networkidle2',
-      timeout: 60000
-    }
-  );
+  await page.goto(URL, {
+    waitUntil: 'networkidle2',
+    timeout: 60000
+  });
 
   await delay(5000);
 
-  // ====================================
-  // LEER TODOS LOS SELECTS
-  // ====================================
+  // ===================================
+  // IR A "PRÓXIMOS PARTIDOS"
+  // ===================================
 
-  const selectsInfo = await page.evaluate(() => {
+  const tabs = await page.$$('a, button');
 
-    return Array.from(
-      document.querySelectorAll('select')
-    ).map((s, i) => ({
-      index: i,
-      options: Array.from(s.options).map(o => ({
-        value: o.value,
-        text: o.textContent.trim()
-      }))
-    }));
+  for (const tab of tabs) {
+
+    const text = await page.evaluate(
+      el => el.innerText,
+      tab
+    );
+
+    if (!text) continue;
+
+    if (
+      text
+        .trim()
+        .toLowerCase()
+        .includes('próximos partidos')
+    ) {
+
+      await tab.click();
+
+      console.log('📅 Tab abierta');
+
+      break;
+    }
+  }
+
+  await delay(3000);
+
+  // ===================================
+  // EXTRAER TABLA
+  // ===================================
+
+  const partidos = await page.evaluate(() => {
+
+    const rows = Array.from(
+      document.querySelectorAll('table tr')
+    );
+
+    return rows
+      .map(row => {
+
+        const cols = Array.from(
+          row.querySelectorAll('td')
+        ).map(td =>
+          td.innerText.trim()
+        );
+
+        if (cols.length < 4) {
+          return null;
+        }
+
+        return {
+          categoria: cols[0] || '',
+          encuentro: cols[1] || '',
+          fecha: cols[2] || '',
+          campo: cols[3] || ''
+        };
+
+      })
+      .filter(Boolean);
 
   });
 
   console.log(
-    'SELECTS:',
-    selectsInfo.length
+    'PARTIDOS:',
+    partidos.length
   );
 
-  let partidos = [];
-
-  // ====================================
-  // ITERAR SELECTS
-  // ====================================
-
-  for (let s = 0; s < selectsInfo.length; s++) {
-
-    const select = selectsInfo[s];
-
-    for (const option of select.options) {
-
-      if (!option.value) continue;
-
-      console.log(
-        `Select ${s} -> ${option.text}`
-      );
-
-      try {
-
-        await page.select(
-          `select:nth-of-type(${s + 1})`,
-          option.value
-        );
-
-        await delay(3000);
-
-        const tablas = await page.evaluate(() => {
-
-          return Array.from(
-            document.querySelectorAll('table')
-          ).map(t =>
-            t.innerText
-          );
-
-        });
-
-        for (const tabla of tablas) {
-
-          if (
-            tabla
-              .toLowerCase()
-              .includes('highstep academy')
-          ) {
-
-            console.log(
-              'FOUND HIGHSTEP'
-            );
-
-            partidos.push(tabla);
-          }
-        }
-
-      } catch (e) {
-
-        console.log(
-          'ERROR SELECT',
-          e.message
-        );
-
-      }
-
-    }
-
-  }
+  // ===================================
+  // GUARDAR JSON
+  // ===================================
 
   fs.mkdirSync('public', {
     recursive: true
@@ -123,18 +110,23 @@ function delay(ms) {
   fs.writeFileSync(
     path.join(
       'public',
-      'responses.json'
+      'partidos.json'
     ),
     JSON.stringify(
-      partidos,
+      {
+        actualizado:
+          new Date().toISOString(),
+        total:
+          partidos.length,
+        partidos
+      },
       null,
       2
     )
   );
 
   console.log(
-    'PARTIDOS:',
-    partidos.length
+    '✅ partidos.json generado'
   );
 
   await browser.close();
