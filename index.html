@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HA Basket — Próximos partidos</title>
+
+<style>
+
+body{
+  background:#111;
+  color:white;
+  font-family:Arial;
+  padding:40px;
+}
+
+h1{
+  font-size:48px;
+  margin-bottom:40px;
+}
+
+.grid{
+  display:grid;
+  gap:20px;
+}
+
+.card{
+  background:#1e1e1e;
+  border-radius:16px;
+  padding:24px;
+  border:1px solid #333;
+}
+
+.fecha{
+  color:#ff5c00;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+
+.encuentro{
+  font-size:24px;
+  margin-bottom:12px;
+}
+
+.categoria{
+  opacity:.7;
+  margin-bottom:12px;
+}
+
+.campo{
+  opacity:.8;
+  font-size:14px;
+}
+
+</style>
+
+</head>
+<body>
+
+<h1>🏀 Próximos partidos</h1>
+
+<div class="grid" id="partidos"></div>
+
+<script>
+
+async function cargarPartidos(){
+
+  const res = await fetch('./partidos.json');
+
+  const data = await res.json();
+
+  const container =
+    document.getElementById('partidos');
+
+  container.innerHTML = '';
+
+  data.partidos.forEach(partido => {
+
+    container.innerHTML += `
+
+      <div class="card">
+
+        <div class="fecha">
+          ${partido.fecha}
+        </div>
+
+        <div class="encuentro">
+          ${partido.encuentro.replace(/\n/g,' vs ')}
+        </div>
+
+        <div class="categoria">
+          ${partido.categoria.replace(/\n/g,' · ')}
+        </div>
+
+        <div class="campo">
+          📍 ${partido.campo.replace(/\n/g,' — ')}
+        </div>
+
+      </div>
+
+    `;
+
+  });
+
+}
+
+cargarPartidos();
+
+</script>
+
+</body>
+</html>
