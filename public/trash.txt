@@ -1,6 +1,0 @@
-{
-  "equipo": "HIGHSTEP ACADEMY",
-  "actualizado": "2026-05-13T10:19:05.337Z",
-  "total": 0,
-  "partidos": []
-}
