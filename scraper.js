@@ -20,8 +20,11 @@ const fs = require('fs');
       }
     );
 
-    // Espera simple en vez de waitForSelector
     await new Promise(r => setTimeout(r, 5000));
+
+    // =========================
+    // PARTIDOS
+    // =========================
 
     const partidos = await page.evaluate(() => {
 
@@ -47,7 +50,6 @@ const fs = require('fs');
           const campo =
             celdas[3]?.innerText.trim();
 
-          // Solo filas reales
           if (
             categoria &&
             encuentro &&
@@ -72,6 +74,62 @@ const fs = require('fs');
 
     });
 
+    // =========================
+    // CLASIFICACIONES
+    // =========================
+
+    const clasificaciones = await page.evaluate(() => {
+
+      const resultado = {};
+
+      const bloques =
+        document.querySelectorAll('h3');
+
+      bloques.forEach(bloque => {
+
+        const categoria =
+          bloque.innerText.trim();
+
+        const tabla =
+          bloque.parentElement.querySelector('table');
+
+        if (!tabla) return;
+
+        const filas =
+          tabla.querySelectorAll('tbody tr');
+
+        const equipos = [];
+
+        filas.forEach(fila => {
+
+          const td = fila.querySelectorAll('td');
+
+          if (td.length >= 7) {
+
+            equipos.push({
+              pos: td[0]?.innerText.trim(),
+              nombre: td[1]?.innerText.trim(),
+              puntos: td[6]?.innerText.trim()
+            });
+
+          }
+
+        });
+
+        if (equipos.length > 0) {
+          resultado[categoria] = equipos;
+        }
+
+      });
+
+      return resultado;
+
+    });
+
+    // =========================
+    // PUBLIC
+    // =========================
+
     if (!fs.existsSync('public')) {
       fs.mkdirSync('public');
     }
@@ -89,9 +147,17 @@ const fs = require('fs');
       )
     );
 
-    console.log(
-      `✅ ${partidos.length} partidos guardados`
+    fs.writeFileSync(
+      'public/clasificaciones.json',
+      JSON.stringify(
+        clasificaciones,
+        null,
+        2
+      )
     );
+
+    console.log('✅ partidos.json generado');
+    console.log('✅ clasificaciones.json generado');
 
     await browser.close();
 
