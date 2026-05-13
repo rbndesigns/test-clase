@@ -1,9 +1,11 @@
 name: Scraper Partidos HA Basket
 
 on:
+
+  workflow_dispatch:
+
   schedule:
     - cron: '0 1 * * *'
-  workflow_dispatch:
 
 jobs:
 
@@ -11,15 +13,18 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+
     steps:
 
-      - name: Checkout
+      - name: Checkout repo
         uses: actions/checkout@v4
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: 22
 
       - name: Instalar dependencias
         run: npm install
@@ -29,6 +34,18 @@ jobs:
 
       - name: Ejecutar scraper
         run: node scraper.js
+
+      - name: Commit partidos.json
+        run: |
+
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+
+          git add public/partidos.json
+
+          git commit -m "update partidos" || echo "No changes"
+
+          git push
 
       - name: Subir artifact
         if: always()
