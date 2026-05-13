@@ -2,10 +2,9 @@ const puppeteer = require('puppeteer');
 const fs = require('fs');
 
 (async () => {
-
   const browser = await puppeteer.launch({
-    headless: true,
-    args: ['--no-sandbox']
+    headless: 'new',
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
 
   const page = await browser.newPage();
@@ -18,137 +17,105 @@ const fs = require('fs');
     }
   );
 
-  // ========================================
-  // EXTRAER PRÓXIMOS PARTIDOS
-  // ========================================
+  // =========================
+  // PARTIDOS
+  // =========================
+
+  await page.waitForSelector('.list-group-item');
 
   const partidos = await page.evaluate(() => {
+    const items = document.querySelectorAll('.list-group-item');
 
-    const filas =
-      document.querySelectorAll('table tbody tr');
+    return Array.from(items).map(item => {
+      const textos = item.innerText
+        .split('\n')
+        .map(t => t.trim())
+        .filter(Boolean);
 
-    const data = [];
-
-    filas.forEach(fila => {
-
-      const td = fila.querySelectorAll('td');
-
-      if (td.length >= 4) {
-
-        data.push({
-          categoria: td[0]?.innerText.trim(),
-          encuentro: td[1]?.innerText.trim(),
-          fecha: td[2]?.innerText.trim(),
-          campo: td[3]?.innerText.trim()
-        });
-
-      }
-
+      return {
+        categoria: textos[0] || '',
+        encuentro: textos[1] || '',
+        fecha: textos[2] || '',
+        campo: textos.slice(3).join(' ')
+      };
     });
-
-    return data;
-
   });
 
   fs.writeFileSync(
-    './partidos.json',
-    JSON.stringify(partidos, null, 2)
-  );
-
-  // ========================================
-  // IR A RESULTADOS Y CLASIFICACIONES
-  // ========================================
-
-  await page.waitForSelector('body');
-
-  const tabs = await page.$$('a');
-
-  for (const tab of tabs) {
-
-    const texto = await page.evaluate(
-      el => el.innerText,
-      tab
-    );
-
-    if (
-      texto.includes('RESULTADOS Y CLASIFICACIONES')
-    ) {
-
-      await tab.click();
-      break;
-
-    }
-
-  }
-
-  await new Promise(resolve =>
-    setTimeout(resolve, 5000)
-  );
-
-  // ========================================
-  // EXTRAER CLASIFICACIONES
-  // ========================================
-
-  const clasificaciones = await page.evaluate(() => {
-
-    const resultado = {};
-
-    const bloques =
-      document.querySelectorAll('.contenedor_clasificacion');
-
-    bloques.forEach(bloque => {
-
-      const titulo =
-        bloque.querySelector('h4');
-
-      if (!titulo) return;
-
-      const categoria =
-        titulo.innerText
-          .split('-')[0]
-          .trim();
-
-      const filas =
-        bloque.querySelectorAll('table tbody tr');
-
-      const equipos = [];
-
-      filas.forEach(fila => {
-
-        const td = fila.querySelectorAll('td');
-
-        if (td.length >= 6) {
-
-          equipos.push({
-            pos: td[0]?.innerText.trim(),
-            nombre: td[1]?.innerText.trim(),
-            puntos: td[5]?.innerText.trim()
-          });
-
-        }
-
-      });
-
-      if (equipos.length > 0) {
-
-        resultado[categoria] = equipos;
-
-      }
-
-    });
-
-    return resultado;
-
-  });
-
-  fs.writeFileSync(
-    './clasificaciones.json',
-    JSON.stringify(clasificaciones, null, 2)
+    'partidos.json',
+    JSON.stringify(
+      {
+        actualizado: new Date().toISOString(),
+        total: partidos.length,
+        partidos
+      },
+      null,
+      2
+    )
   );
 
   console.log('✅ partidos.json generado');
+
+  // =========================
+  // CLASIFICACIONES
+  // =========================
+
+  const resultado = {};
+
+  const bloques = await page.$$('.panel.panel-default');
+
+  for (const bloque of bloques) {
+    try {
+      const tituloHandle = await bloque.$('h4');
+
+      if (!tituloHandle) continue;
+
+      const titulo = await page.evaluate(
+        el => el.innerText,
+        tituloHandle
+      );
+
+      if (!titulo) continue;
+
+      const categoria = titulo
+        .replace(/\n/g, ' ')
+        .trim();
+
+      const tablas = await bloque.$$('table');
+
+      if (tablas.length < 2) continue;
+
+      const clasificacion = tablas[1];
+
+      const equipos = await clasificacion.$$eval(
+        'tbody tr',
+        rows =>
+          rows.map(row => {
+            const cols = row.querySelectorAll('td');
+
+            return {
+              pos: cols[0]?.innerText.trim() || '',
+              nombre: cols[1]?.innerText.trim() || '',
+              puntos: cols[6]?.innerText.trim() || ''
+            };
+          })
+      );
+
+      resultado[categoria] = equipos;
+
+      console.log('✅ Clasificación:', categoria);
+
+    } catch (e) {
+      console.log('❌ Error en bloque');
+    }
+  }
+
+  fs.writeFileSync(
+    'clasificaciones.json',
+    JSON.stringify(resultado, null, 2)
+  );
+
   console.log('✅ clasificaciones.json generado');
 
   await browser.close();
-
 })();
