@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Clasificación</title>
+
+<style>
+
+body{
+  margin:0;
+  background:#0b0b0b;
+  color:white;
+  font-family:Arial,sans-serif;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+a{
+  color:white;
+  text-decoration:none;
+}
+
+.back{
+  opacity:.6;
+}
+
+.back:hover{
+  opacity:1;
+}
+
+h1{
+  margin:25px 0 40px;
+  font-size:48px;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  background:#151515;
+  border-radius:14px;
+  overflow:hidden;
+}
+
+th{
+  background:#1f1f1f;
+  padding:16px;
+  text-align:left;
+}
+
+td{
+  padding:14px 16px;
+  border-top:1px solid #2a2a2a;
+}
+
+tr:hover{
+  background:#1c1c1c;
+}
+
+.pos{
+  width:60px;
+}
+
+.pts{
+  width:100px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <a href="./" class="back">
+    ← Volver
+  </a>
+
+  <h1 id="titulo">
+    Clasificación
+  </h1>
+
+  <div id="contenido">
+    Cargando...
+  </div>
+
+</div>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+
+const categoria = params.get('categoria');
+
+document.getElementById('titulo').textContent =
+  categoria;
+
+async function cargar(){
+
+  try{
+
+    const res = await fetch('./public/clasificaciones.json?t=' + Date.now());
+
+    const data = await res.json();
+
+    const clasificacion = data[categoria];
+
+    if(!clasificacion){
+
+      document.getElementById('contenido').innerHTML =
+        'No hay clasificación disponible.';
+
+      return;
+
+    }
+
+    let html = `
+      <table>
+        <thead>
+          <tr>
+            <th class="pos">#</th>
+            <th>Equipo</th>
+            <th class="pts">Puntos</th>
+          </tr>
+        </thead>
+        <tbody>
+    `;
+
+    clasificacion.forEach(eq => {
+
+      html += `
+        <tr>
+          <td>${eq.pos}</td>
+          <td>${eq.nombre}</td>
+          <td>${eq.puntos}</td>
+        </tr>
+      `;
+
+    });
+
+    html += `
+        </tbody>
+      </table>
+    `;
+
+    document.getElementById('contenido').innerHTML =
+      html;
+
+  }catch(err){
+
+    console.error(err);
+
+    document.getElementById('contenido').innerHTML =
+      'Error cargando clasificación.';
+
+  }
+
+}
+
+cargar();
+
+</script>
+
+</body>
+</html>
