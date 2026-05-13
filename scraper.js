@@ -1,5 +1,5 @@
 /**
- * HA Basket — FBM Scraper
+ * HA Basket — FBM Scraper v3
  */
 
 const puppeteer = require('puppeteer');
@@ -12,7 +12,7 @@ const OUTPUT_DIR  = path.join(__dirname, 'public');
 const OUTPUT_FILE = path.join(OUTPUT_DIR, 'partidos.json');
 
 async function main() {
-  console.log('🏀 HA Basket Scraper — iniciando...\n');
+  console.log('🏀 HA Basket Scraper v3 — iniciando...\n');
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 
   const browser = await puppeteer.launch({
@@ -26,113 +26,105 @@ async function main() {
 
   console.log(`📡 Cargando: ${FBM_URL}`);
   await page.goto(FBM_URL, { waitUntil: 'networkidle2', timeout: 30000 });
-
-  console.log('⏳ Esperando contenido dinámico...');
-  await new Promise(r => setTimeout(r, 4000));
-
-  await page.screenshot({ path: path.join(__dirname, 'debug_loaded.png'), fullPage: false });
-  console.log('📸 Captura guardada: debug_loaded.png');
-
-  // Rellenar el campo de búsqueda sin click (evita el error "not clickable")
-  const searchResult = await page.evaluate((teamName) => {
-    const inputs = Array.from(document.querySelectorAll('input[type="text"], input[type="search"], input:not([type])'));
-    for (const input of inputs) {
-      const nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
-      nativeInputValueSetter.call(input, teamName);
-      input.dispatchEvent(new Event('input', { bubbles: true }));
-      input.dispatchEvent(new Event('change', { bubbles: true }));
-      return `Rellenado input: ${input.className || input.id || '(sin clase)'}`;
-    }
-    return 'No se encontró campo de búsqueda';
-  }, TEAM_NAME);
-
-  console.log(`🔍 ${searchResult}`);
   await new Promise(r => setTimeout(r, 3000));
 
-  await page.screenshot({ path: path.join(__dirname, 'debug_filtered.png'), fullPage: false });
-  console.log('📸 Captura guardada: debug_filtered.png');
+  // 1. ACEPTAR COOKIES
+  try {
+    const cookieBtn = await page.$('button#aceptarCookies, button.aceptar, a.aceptar, input[value="Aceptar"], button[contains(text,"Aceptar")]');
+    if (cookieBtn) {
+      await cookieBtn.click();
+      console.log('🍪 Cookies aceptadas');
+    } else {
+      // Buscar por texto
+      const btns = await page.$$('button, a, input[type="button"]');
+      for (const btn of btns) {
+        const txt = await page.evaluate(el => el.innerText || el.value || '', btn);
+        if (txt.trim().toLowerCase() === 'aceptar') {
+          await btn.click();
+          console.log('🍪 Cookies aceptadas (por texto)');
+          break;
+        }
+      }
+    }
+  } catch(e) {
+    console.log('⚠️  No se encontró banner de cookies o ya estaba aceptado');
+  }
+  await new Promise(r => setTimeout(r, 1500));
 
-  console.log('📋 Extrayendo datos...');
+  // 2. IR A LA PESTAÑA CALENDARIO
+  console.log('📅 Buscando pestaña CALENDARIO...');
+  try {
+    const tabs = await page.$$('a, button, li, span');
+    for (const tab of tabs) {
+      const txt = await page.evaluate(el => (el.innerText || '').trim().toUpperCase(), tab);
+      if (txt === 'CALENDARIO') {
+        await tab.click();
+        console.log('✅ Pestaña CALENDARIO activada');
+        await new Promise(r => setTimeout(r, 2000));
+        break;
+      }
+    }
+  } catch(e) {
+    console.log('⚠️  No se pudo hacer clic en CALENDARIO:', e.message);
+  }
 
-  const todosLosTextos = await page.evaluate(() => {
-    const resultados = [];
+  await page.screenshot({ path: path.join(__dirname, 'debug_calendario.png') });
+  console.log('📸 debug_calendario.png guardado');
 
-    document.querySelectorAll('[class*="partido"]').forEach(el => {
-      if (el.children.length > 0 && el.children.length < 20)
-        resultados.push({ selector: 'partido', text: (el.innerText || '').trim() });
-    });
-
-    document.querySelectorAll('tr').forEach(row => {
-      const cells = Array.from(row.querySelectorAll('td')).map(c => (c.innerText || '').trim());
-      if (cells.length >= 3)
-        resultados.push({ selector: 'tr', text: row.innerText.trim(), cells });
-    });
-
-    ['match', 'game', 'event', 'schedule', 'encuentro', 'jornada'].forEach(word => {
-      document.querySelectorAll(`[class*="${word}"]`).forEach(el => {
-        const text = (el.innerText || '').trim();
-        if (text.length > 10 && el.children.length > 0 && el.children.length < 20)
-          resultados.push({ selector: word, text });
-      });
-    });
-
-    return resultados;
+  // 3. OBTENER TODAS LAS OPCIONES DEL DROPDOWN DE CATEGORÍA
+  console.log('\n🔎 Buscando categorías disponibles...');
+  const categorias = await page.evaluate(() => {
+    const selects = document.querySelectorAll('select');
+    for (const sel of selects) {
+      const options = Array.from(sel.options).map(o => ({ value: o.value, text: o.text.trim() }));
+      // El selector de categoría suele tener más de 5 opciones
+      if (options.length > 4) return { id: sel.id, name: sel.name, options };
+    }
+    return null;
   });
 
-  console.log(`  → ${todosLosTextos.length} elementos extraídos en total`);
-
-  const coincidencias = todosLosTextos.filter(item =>
-    item.text.toLowerCase().includes(TEAM_NAME.toLowerCase())
-  );
-
-  console.log(`  → ${coincidencias.length} elementos contienen "${TEAM_NAME}"`);
-
-  const partidos = coincidencias
-    .map((item, i) => {
-      const text  = item.text;
-      const cells = item.cells || [];
-      const fechaMatch = text.match(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})/);
-      const horaMatch  = text.match(/\b(\d{1,2}:\d{2})\b/);
-      const vsMatch    = text.match(/(.+?)\s+(?:[-–]|vs\.?)\s+(.+?)(?:\n|$)/im);
-      return {
-        id:          i + 1,
-        fecha:       fechaMatch ? fechaMatch[0] : (cells[0] || 'Por confirmar'),
-        hora:        horaMatch  ? horaMatch[1]  : (cells[1] || 'Por confirmar'),
-        local:       vsMatch    ? vsMatch[1].trim() : (cells[2] || TEAM_NAME),
-        visitante:   vsMatch    ? vsMatch[2].trim() : (cells[3] || 'Por confirmar'),
-        pabellon:    cells[4] || 'Por confirmar',
-        competicion: cells[5] || 'FBM',
-        raw_text:    text.slice(0, 300),
-      };
-    })
-    .filter((p, i, arr) => arr.findIndex(q => q.raw_text === p.raw_text) === i);
-
-  const output = {
-    equipo:      TEAM_NAME,
-    fuente:      FBM_URL,
-    actualizado: new Date().toISOString(),
-    total:       partidos.length,
-    partidos,
-  };
-
-  fs.writeFileSync(OUTPUT_FILE, JSON.stringify(output, null, 2), 'utf8');
-
-  console.log('\n──────────────────────────────────────────');
-  if (partidos.length > 0) {
-    console.log(`✅ ${partidos.length} partido(s) guardados en partidos.json`);
-    partidos.slice(0, 3).forEach(p =>
-      console.log(`   ${p.fecha} ${p.hora}  ${p.local} vs ${p.visitante}`)
-    );
+  if (categorias) {
+    console.log(`  → ${categorias.options.length} categorías encontradas`);
   } else {
-    console.log('⚠️  0 partidos encontrados.');
-    console.log('   Revisa debug_loaded.png y debug_filtered.png en los Artifacts.');
+    console.log('  → No se encontró dropdown de categorías');
   }
-  console.log('──────────────────────────────────────────');
 
-  await browser.close();
-}
+  // 4. ITERAR CATEGORÍAS Y BUSCAR EL EQUIPO
+  const partidos = [];
+  const categoriasAProbar = categorias ? categorias.options : [{ value: '', text: 'default' }];
 
-main().catch(err => {
-  console.error('💥 Error fatal:', err.message);
-  process.exit(1);
-});
+  for (const cat of categoriasAProbar) {
+    if (!cat.value) continue;
+
+    // Seleccionar categoría
+    if (categorias) {
+      await page.evaluate((selName, val) => {
+        const sel = document.querySelector(`select[id="${selName}"], select[name="${selName}"]`);
+        if (sel) { sel.value = val; sel.dispatchEvent(new Event('change', { bubbles: true })); }
+      }, categorias.id || categorias.name, cat.value);
+      await new Promise(r => setTimeout(r, 1500));
+    }
+
+    // Extraer filas de la tabla
+    const filas = await page.evaluate((teamName) => {
+      const rows = Array.from(document.querySelectorAll('tr'));
+      return rows
+        .filter(r => (r.innerText || '').toLowerCase().includes(teamName.toLowerCase()))
+        .map(r => {
+          const cells = Array.from(r.querySelectorAll('td')).map(c => c.innerText.trim());
+          return { text: r.innerText.trim(), cells };
+        });
+    }, TEAM_NAME);
+
+    if (filas.length > 0) {
+      console.log(`  ✅ "${cat.text}" → ${filas.length} fila(s) con ${TEAM_NAME}`);
+      filas.forEach(fila => {
+        const cells = fila.cells;
+        const fechaMatch = fila.text.match(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})/);
+        const horaMatch  = fila.text.match(/\b(\d{1,2}:\d{2})\b/);
+        partidos.push({
+          id:          partidos.length + 1,
+          fecha:       cells[0] || (fechaMatch ? fechaMatch[0] : 'Por confirmar'),
+          hora:        cells[1] || (horaMatch  ? horaMatch[1]  : 'Por confirmar'),
+          local:       cells[2] || 'Por confirmar',
+          visitante:   cells
