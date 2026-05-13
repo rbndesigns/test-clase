@@ -6,7 +6,9 @@ on:
   workflow_dispatch:
 
 jobs:
+
   scrape:
+
     runs-on: ubuntu-latest
 
     steps:
@@ -28,10 +30,10 @@ jobs:
       - name: Ejecutar scraper
         run: node scraper.js
 
-      - name: Subir responses
+      - name: Subir artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: responses
-          path: public/responses.json
+          name: partidos
+          path: public/partidos.json
           if-no-files-found: warn
