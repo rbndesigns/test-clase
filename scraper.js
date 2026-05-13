@@ -1,130 +1,218 @@
-/**
- * HA Basket — FBM Scraper v3
- */
-
 const puppeteer = require('puppeteer');
-const fs        = require('fs');
-const path      = require('path');
+const fs = require('fs');
+const path = require('path');
 
-const TEAM_NAME   = 'HIGHSTEP ACADEMY';
-const FBM_URL     = 'https://www.fbm.es/es/horarios-y-resultados';
-const OUTPUT_DIR  = path.join(__dirname, 'public');
-const OUTPUT_FILE = path.join(OUTPUT_DIR, 'partidos.json');
+const TEAM_NAME = 'HIGHSTEP ACADEMY';
 
-async function main() {
-  console.log('🏀 HA Basket Scraper v3 — iniciando...\n');
-  fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+async function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+(async () => {
+
+  console.log('🏀 Iniciando scraper FBM...');
 
   const browser = await puppeteer.launch({
-    headless: 'new',
-    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--disable-gpu'],
+    headless: true,
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage'
+    ]
   });
 
   const page = await browser.newPage();
-  await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36');
-  await page.setViewport({ width: 1440, height: 900 });
 
-  console.log(`📡 Cargando: ${FBM_URL}`);
-  await page.goto(FBM_URL, { waitUntil: 'networkidle2', timeout: 30000 });
-  await new Promise(r => setTimeout(r, 3000));
+  await page.setViewport({
+    width: 1440,
+    height: 1000
+  });
 
-  // 1. ACEPTAR COOKIES
-  try {
-    const cookieBtn = await page.$('button#aceptarCookies, button.aceptar, a.aceptar, input[value="Aceptar"], button[contains(text,"Aceptar")]');
-    if (cookieBtn) {
-      await cookieBtn.click();
-      console.log('🍪 Cookies aceptadas');
-    } else {
-      // Buscar por texto
-      const btns = await page.$$('button, a, input[type="button"]');
-      for (const btn of btns) {
-        const txt = await page.evaluate(el => el.innerText || el.value || '', btn);
-        if (txt.trim().toLowerCase() === 'aceptar') {
-          await btn.click();
-          console.log('🍪 Cookies aceptadas (por texto)');
-          break;
-        }
-      }
+  await page.goto(
+    'https://www.fbm.es/es/horarios-y-resultados',
+    {
+      waitUntil: 'networkidle2',
+      timeout: 60000
     }
-  } catch(e) {
-    console.log('⚠️  No se encontró banner de cookies o ya estaba aceptado');
-  }
-  await new Promise(r => setTimeout(r, 1500));
+  );
 
-  // 2. IR A LA PESTAÑA CALENDARIO
-  console.log('📅 Buscando pestaña CALENDARIO...');
+  console.log('✅ Página cargada');
+
+  await delay(4000);
+
+  // =========================
+  // COOKIES
+  // =========================
+
   try {
-    const tabs = await page.$$('a, button, li, span');
-    for (const tab of tabs) {
-      const txt = await page.evaluate(el => (el.innerText || '').trim().toUpperCase(), tab);
-      if (txt === 'CALENDARIO') {
-        await tab.click();
-        console.log('✅ Pestaña CALENDARIO activada');
-        await new Promise(r => setTimeout(r, 2000));
+
+    const botones = await page.$$('button, a');
+
+    for (const boton of botones) {
+
+      const texto = await page.evaluate(
+        el => el.innerText,
+        boton
+      );
+
+      if (!texto) continue;
+
+      const limpio = texto.trim().toLowerCase();
+
+      if (
+        limpio.includes('aceptar') ||
+        limpio.includes('accept')
+      ) {
+
+        await boton.click();
+
+        console.log('🍪 Cookies aceptadas');
+
         break;
       }
     }
-  } catch(e) {
-    console.log('⚠️  No se pudo hacer clic en CALENDARIO:', e.message);
+
+  } catch (e) {
+
+    console.log('⚠️ Cookies no encontradas');
+
   }
 
-  await page.screenshot({ path: path.join(__dirname, 'debug_calendario.png') });
-  console.log('📸 debug_calendario.png guardado');
+  await delay(3000);
 
-  // 3. OBTENER TODAS LAS OPCIONES DEL DROPDOWN DE CATEGORÍA
-  console.log('\n🔎 Buscando categorías disponibles...');
-  const categorias = await page.evaluate(() => {
-    const selects = document.querySelectorAll('select');
-    for (const sel of selects) {
-      const options = Array.from(sel.options).map(o => ({ value: o.value, text: o.text.trim() }));
-      // El selector de categoría suele tener más de 5 opciones
-      if (options.length > 4) return { id: sel.id, name: sel.name, options };
+  // =========================
+  // CALENDARIO
+  // =========================
+
+  try {
+
+    const elementos = await page.$$('a, button, span, div');
+
+    for (const el of elementos) {
+
+      const texto = await page.evaluate(
+        e => e.innerText,
+        el
+      );
+
+      if (!texto) continue;
+
+      if (
+        texto.trim().toUpperCase() === 'CALENDARIO'
+      ) {
+
+        await el.click();
+
+        console.log('📅 CALENDARIO abierto');
+
+        break;
+      }
     }
-    return null;
+
+  } catch (e) {
+
+    console.log('⚠️ No se pudo abrir CALENDARIO');
+
+  }
+
+  await delay(5000);
+
+  // =========================
+  // SCREENSHOT DEBUG
+  // =========================
+
+  await page.screenshot({
+    path: 'debug.png',
+    fullPage: true
   });
 
-  if (categorias) {
-    console.log(`  → ${categorias.options.length} categorías encontradas`);
-  } else {
-    console.log('  → No se encontró dropdown de categorías');
-  }
+  console.log('📸 Screenshot guardado');
 
-  // 4. ITERAR CATEGORÍAS Y BUSCAR EL EQUIPO
-  const partidos = [];
-  const categoriasAProbar = categorias ? categorias.options : [{ value: '', text: 'default' }];
+  // =========================
+  // EXTRAER TABLA
+  // =========================
 
-  for (const cat of categoriasAProbar) {
-    if (!cat.value) continue;
+  const filas = await page.evaluate(() => {
 
-    // Seleccionar categoría
-    if (categorias) {
-      await page.evaluate((selName, val) => {
-        const sel = document.querySelector(`select[id="${selName}"], select[name="${selName}"]`);
-        if (sel) { sel.value = val; sel.dispatchEvent(new Event('change', { bubbles: true })); }
-      }, categorias.id || categorias.name, cat.value);
-      await new Promise(r => setTimeout(r, 1500));
-    }
+    const rows = Array.from(
+      document.querySelectorAll('tr')
+    );
 
-    // Extraer filas de la tabla
-    const filas = await page.evaluate((teamName) => {
-      const rows = Array.from(document.querySelectorAll('tr'));
-      return rows
-        .filter(r => (r.innerText || '').toLowerCase().includes(teamName.toLowerCase()))
-        .map(r => {
-          const cells = Array.from(r.querySelectorAll('td')).map(c => c.innerText.trim());
-          return { text: r.innerText.trim(), cells };
-        });
-    }, TEAM_NAME);
+    return rows.map(row => {
 
-    if (filas.length > 0) {
-      console.log(`  ✅ "${cat.text}" → ${filas.length} fila(s) con ${TEAM_NAME}`);
-      filas.forEach(fila => {
-        const cells = fila.cells;
-        const fechaMatch = fila.text.match(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})/);
-        const horaMatch  = fila.text.match(/\b(\d{1,2}:\d{2})\b/);
-        partidos.push({
-          id:          partidos.length + 1,
-          fecha:       cells[0] || (fechaMatch ? fechaMatch[0] : 'Por confirmar'),
-          hora:        cells[1] || (horaMatch  ? horaMatch[1]  : 'Por confirmar'),
-          local:       cells[2] || 'Por confirmar',
-          visitante:   cells
+      const cells = Array.from(
+        row.querySelectorAll('td')
+      ).map(td => td.innerText.trim());
+
+      return {
+        text: row.innerText.trim(),
+        cells
+      };
+
+    });
+
+  });
+
+  console.log(`📋 Filas encontradas: ${filas.length}`);
+
+  // =========================
+  // FILTRAR EQUIPO
+  // =========================
+
+  const partidos = filas
+    .filter(f =>
+      f.text.toLowerCase().includes('highstep academy')
+    )
+    .map((f, index) => ({
+
+      id: index + 1,
+
+      fecha:
+        f.cells[0] || 'Por confirmar',
+
+      hora:
+        f.cells[1] || 'Por confirmar',
+
+      local:
+        f.cells[2] || 'Por confirmar',
+
+      visitante:
+        f.cells[3] || 'Por confirmar',
+
+      pabellon:
+        f.cells[4] || 'Por confirmar',
+
+      raw:
+        f.text
+
+    }));
+
+  console.log(`🏀 Partidos encontrados: ${partidos.length}`);
+
+  // =========================
+  // GUARDAR JSON
+  // =========================
+
+  const output = {
+    equipo: TEAM_NAME,
+    actualizado: new Date().toISOString(),
+    total: partidos.length,
+    partidos
+  };
+
+  const outputDir = path.join(__dirname, 'public');
+
+  fs.mkdirSync(outputDir, {
+    recursive: true
+  });
+
+  fs.writeFileSync(
+    path.join(outputDir, 'partidos.json'),
+    JSON.stringify(output, null, 2)
+  );
+
+  console.log('✅ partidos.json guardado');
+
+  await browser.close();
+
+})();
