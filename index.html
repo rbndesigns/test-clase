@@ -1,4 +1,255 @@
 <!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HA Basket</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#0f0f0f;
+  color:white;
+  font-family:Arial, Helvetica, sans-serif;
+  padding:40px;
+}
+
+h1{
+  font-size:48px;
+  margin-bottom:40px;
+}
+
+.grid{
+  display:grid;
+  gap:20px;
+}
+
+.card{
+  background:#1d1d1d;
+  border-radius:18px;
+  padding:24px;
+  border:1px solid #333;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.card:hover{
+  border-color:#ff5c00;
+  transform:translateY(-4px);
+}
+
+.fecha{
+  color:#ff5c00;
+  margin-bottom:12px;
+  font-weight:bold;
+}
+
+.encuentro{
+  font-size:24px;
+  margin-bottom:14px;
+  line-height:1.3;
+}
+
+.categoria{
+  opacity:.7;
+  margin-bottom:14px;
+  line-height:1.4;
+}
+
+.campo{
+  opacity:.85;
+  line-height:1.5;
+}
+
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  z-index:999;
+}
+
+.modal-content{
+  background:#1a1a1a;
+  width:100%;
+  max-width:1000px;
+  border-radius:20px;
+  padding:30px;
+  max-height:90vh;
+  overflow:auto;
+}
+
+.close{
+  float:right;
+  cursor:pointer;
+  font-size:28px;
+}
+
+.table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:20px;
+}
+
+.table td,
+.table th{
+  border:1px solid #333;
+  padding:12px;
+  text-align:left;
+}
+
+.table th{
+  background:#ff5c00;
+}
+
+.empty{
+  opacity:.7;
+  font-size:18px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>🏀 HA Basket</h1>
+
+<div class="grid" id="partidos">
+
+  <div class="empty">
+    Cargando partidos...
+  </div>
+
+</div>
+
+<div class="modal" id="modal">
+
+  <div class="modal-content">
+
+    <div class="close" onclick="cerrarModal()">
+      ✕
+    </div>
+
+    <h2 id="modal-title"></h2>
+
+    <div id="clasificacion"></div>
+
+  </div>
+
+</div>
+
+<script>
+
+let clasificaciones = [];
+
+async function cargarDatos(){
+
+  try{
+
+    // PARTIDOS
+    const partidosRes = await fetch(
+      './public/partidos.json?t=' + Date.now()
+    );
+
+    const partidosData = await partidosRes.json();
+
+    // CLASIFICACIONES
+    const clasificacionesRes = await fetch(
+      './public/clasificaciones.json?t=' + Date.now()
+    );
+
+    const clasificacionesData =
+      await clasificacionesRes.json();
+
+    clasificaciones =
+      clasificacionesData.clasificaciones || [];
+
+    const container =
+      document.getElementById('partidos');
+
+    container.innerHTML = '';
+
+    if(
+      !partidosData.partidos ||
+      partidosData.partidos.length === 0
+    ){
+
+      container.innerHTML = `
+        <div class="empty">
+          No hay partidos disponibles.
+        </div>
+      `;
+
+      return;
+    }
+
+    partidosData.partidos.forEach(partido => {
+
+      const card = document.createElement('div');
+
+      card.className = 'card';
+
+      card.onclick = () => {
+        abrirClasificacion(partido.categoria);
+      };
+
+      card.innerHTML = `
+
+        <div class="fecha">
+          ${partido.fecha}
+        </div>
+
+        <div class="encuentro">
+          ${partido.encuentro.replace(/\n/g,' vs ')}
+        </div>
+
+        <div class="categoria">
+          ${partido.categoria.replace(/\n/g,' · ')}
+        </div>
+
+        <div class="campo">
+          📍 ${partido.campo.replace(/\n/g,' — ')}
+        </div>
+
+      `;
+
+      container.appendChild(card);
+
+    });
+
+  }catch(err){
+
+    console.error(err);
+
+    document.getElementById('partidos')
+      .innerHTML = `
+        <div class="empty">
+          Error cargando datos.
+        </div>
+      `;
+
+  }
+
+}
+
+function abrirClasificacion(categoria){
+
+  document.getElementById('modal')
+    .style.display = 'flex';
+
   document.getElementById('modal-title')
     .innerText = categoria;
 
@@ -7,15 +258,17 @@
 
   const clasificacion =
     clasificaciones.find(c =>
+      c.categoria &&
       c.categoria.includes(categoria)
     );
 
   if(!clasificacion){
 
     contenedor.innerHTML =
-      'No se encontró clasificación';
+      '<div class="empty">No se encontró clasificación.</div>';
 
     return;
+
   }
 
   let html = `
@@ -64,5 +317,6 @@ function cerrarModal(){
 cargarDatos();
 
 </script>
+
 </body>
 </html>
