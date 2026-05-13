@@ -2,120 +2,105 @@ const puppeteer = require('puppeteer');
 const fs = require('fs');
 
 (async () => {
-  const browser = await puppeteer.launch({
-    headless: 'new',
-    args: ['--no-sandbox', '--disable-setuid-sandbox']
-  });
 
-  const page = await browser.newPage();
+  try {
 
-  await page.goto(
-    'https://www.fbm.es/resultados-club-20677/highstep-academy',
-    {
-      waitUntil: 'networkidle2',
-      timeout: 0
-    }
-  );
-
-  // =========================
-  // PARTIDOS
-  // =========================
-
-  await page.waitForSelector('.list-group-item');
-
-  const partidos = await page.evaluate(() => {
-    const items = document.querySelectorAll('.list-group-item');
-
-    return Array.from(items).map(item => {
-      const textos = item.innerText
-        .split('\n')
-        .map(t => t.trim())
-        .filter(Boolean);
-
-      return {
-        categoria: textos[0] || '',
-        encuentro: textos[1] || '',
-        fecha: textos[2] || '',
-        campo: textos.slice(3).join(' ')
-      };
+    const browser = await puppeteer.launch({
+      headless: true,
+      args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
-  });
 
-  fs.writeFileSync(
-    'partidos.json',
-    JSON.stringify(
+    const page = await browser.newPage();
+
+    await page.goto(
+      'https://www.fbm.es/resultados-club-20677/highstep-academy',
       {
-        actualizado: new Date().toISOString(),
-        total: partidos.length,
-        partidos
-      },
-      null,
-      2
-    )
-  );
+        waitUntil: 'networkidle2',
+        timeout: 0
+      }
+    );
 
-  console.log('✅ partidos.json generado');
+    // Espera simple en vez de waitForSelector
+    await new Promise(r => setTimeout(r, 5000));
 
-  // =========================
-  // CLASIFICACIONES
-  // =========================
+    const partidos = await page.evaluate(() => {
 
-  const resultado = {};
+      const filas = document.querySelectorAll('table tr');
 
-  const bloques = await page.$$('.panel.panel-default');
+      const datos = [];
 
-  for (const bloque of bloques) {
-    try {
-      const tituloHandle = await bloque.$('h4');
+      filas.forEach(fila => {
 
-      if (!tituloHandle) continue;
+        const celdas = fila.querySelectorAll('td');
 
-      const titulo = await page.evaluate(
-        el => el.innerText,
-        tituloHandle
-      );
+        if (celdas.length >= 4) {
 
-      if (!titulo) continue;
+          const categoria =
+            celdas[0]?.innerText.trim();
 
-      const categoria = titulo
-        .replace(/\n/g, ' ')
-        .trim();
+          const encuentro =
+            celdas[1]?.innerText.trim();
 
-      const tablas = await bloque.$$('table');
+          const fecha =
+            celdas[2]?.innerText.trim();
 
-      if (tablas.length < 2) continue;
+          const campo =
+            celdas[3]?.innerText.trim();
 
-      const clasificacion = tablas[1];
+          // Solo filas reales
+          if (
+            categoria &&
+            encuentro &&
+            fecha.includes('/') &&
+            campo
+          ) {
 
-      const equipos = await clasificacion.$$eval(
-        'tbody tr',
-        rows =>
-          rows.map(row => {
-            const cols = row.querySelectorAll('td');
+            datos.push({
+              categoria,
+              encuentro,
+              fecha,
+              campo
+            });
 
-            return {
-              pos: cols[0]?.innerText.trim() || '',
-              nombre: cols[1]?.innerText.trim() || '',
-              puntos: cols[6]?.innerText.trim() || ''
-            };
-          })
-      );
+          }
 
-      resultado[categoria] = equipos;
+        }
 
-      console.log('✅ Clasificación:', categoria);
+      });
 
-    } catch (e) {
-      console.log('❌ Error en bloque');
+      return datos;
+
+    });
+
+    if (!fs.existsSync('public')) {
+      fs.mkdirSync('public');
     }
+
+    fs.writeFileSync(
+      'public/partidos.json',
+      JSON.stringify(
+        {
+          actualizado: new Date().toISOString(),
+          total: partidos.length,
+          partidos
+        },
+        null,
+        2
+      )
+    );
+
+    console.log(
+      `✅ ${partidos.length} partidos guardados`
+    );
+
+    await browser.close();
+
+  } catch (err) {
+
+    console.error(err);
+
+    process.exit(1);
+
   }
 
-  fs.writeFileSync(
-    'clasificaciones.json',
-    JSON.stringify(resultado, null, 2)
-  );
-
-  console.log('✅ clasificaciones.json generado');
-
-  await browser.close();
 })();
