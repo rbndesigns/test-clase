@@ -1,0 +1,16 @@
+{
+  "name": "ha-basket-scraper",
+  "version": "1.0.0",
+  "description": "Scraper de partidos de HA Basket desde FBM",
+  "main": "scraper.js",
+  "scripts": {
+    "scrape": "node scraper.js",
+    "start": "node scraper.js"
+  },
+  "dependencies": {
+    "puppeteer": "^22.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

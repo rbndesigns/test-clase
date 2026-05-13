@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HA Basket — Próximos Partidos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg:     #0c0c0c;
+      --bg2:    #131313;
+      --bg3:    #1a1a1a;
+      --border: #242424;
+      --orange: #f05a1a;
+      --amber:  #ffb347;
+      --white:  #ede9e0;
+      --muted:  #5a5a5a;
+      --green:  #4caf7d;
+      --fhead:  'Bebas Neue', sans-serif;
+      --fsub:   'Barlow Condensed', sans-serif;
+      --fmono:  'DM Mono', monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--white); font-family: var(--fsub); overflow-x: hidden; }
+    body::after {
+      content: ''; position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      opacity: 0.03; pointer-events: none; z-index: 9998;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+      height: 60px; display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; background: rgba(12,12,12,.88); backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .logo { font-family: var(--fhead); font-size: 1.5rem; letter-spacing: .06em; color: var(--white); text-decoration: none; }
+    .logo em { color: var(--orange); font-style: normal; }
+    .nav-links { display: flex; gap: 28px; align-items: center; list-style: none; }
+    .nav-links a { font-family: var(--fsub); font-weight: 700; font-size: .8rem; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color .2s; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-badge { border: 1px solid var(--border) !important; padding: 7px 16px; color: var(--muted) !important; transition: border-color .2s, color .2s !important; }
+    .nav-badge:hover { border-color: var(--white) !important; color: var(--white) !important; }
+
+    /* HERO */
+    .hero {
+      position: relative; min-height: 100vh; display: flex;
+      flex-direction: column; justify-content: flex-end;
+      padding: 0 56px 72px; overflow: hidden;
+    }
+    .hero::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, transparent 10%, var(--orange) 50%, transparent 90%); }
+    .court-bg { position: absolute; inset: 0; display: flex; align-items: center; justify-content: flex-end; padding-right: 4%; pointer-events: none; }
+    .court-bg svg { width: 58%; opacity: .055; }
+    .ghost-num { position: absolute; right: 3%; top: 50%; transform: translateY(-50%); font-family: var(--fhead); font-size: clamp(160px, 22vw, 340px); color: var(--white); opacity: .022; line-height: 1; pointer-events: none; user-select: none; }
+
+    .eyebrow { font-family: var(--fmono); font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--orange); margin-bottom: 14px; opacity: 0; animation: up .7s .15s forwards; }
+    h1 { font-family: var(--fhead); font-size: clamp(72px, 13vw, 180px); line-height: .92; margin-bottom: 24px; opacity: 0; animation: up .7s .3s forwards; }
+    h1 .outline { -webkit-text-stroke: 1.5px var(--white); color: transparent; }
+    h1 .accent { color: var(--orange); }
+    .hero-p { font-size: clamp(.95rem, 1.4vw, 1.15rem); font-weight: 600; color: var(--muted); max-width: 440px; letter-spacing: .04em; line-height: 1.65; margin-bottom: 40px; opacity: 0; animation: up .7s .45s forwards; }
+    .cta-row { display: flex; gap: 14px; flex-wrap: wrap; opacity: 0; animation: up .7s .6s forwards; }
+    .btn { display: inline-block; font-family: var(--fsub); font-weight: 800; font-size: .85rem; letter-spacing: .14em; text-transform: uppercase; text-decoration: none; padding: 13px 32px; transition: all .2s; }
+    .btn-fill { background: var(--orange); color: var(--bg); }
+    .btn-fill:hover { background: var(--amber); transform: translateY(-2px); }
+    .btn-line { border: 1px solid var(--border); color: var(--muted); }
+    .btn-line:hover { border-color: var(--white); color: var(--white); }
+
+    /* TICKER */
+    .ticker-wrap { overflow: hidden; background: var(--orange); padding: 9px 0; }
+    .ticker-track { display: flex; animation: ticker 20s linear infinite; width: max-content; }
+    .ticker-item { font-family: var(--fhead); font-size: .9rem; letter-spacing: .12em; color: var(--bg); padding: 0 36px; white-space: nowrap; }
+    .ticker-item::after { content: '◆'; margin-left: 36px; opacity: .45; }
+
+    /* SECTIONS */
+    .section { padding: 88px 56px; }
+    .section-alt { background: var(--bg2); }
+    .s-head { display: flex; align-items: baseline; gap: 18px; margin-bottom: 48px; }
+    .s-tag { font-family: var(--fmono); font-size: .66rem; letter-spacing: .22em; text-transform: uppercase; color: var(--orange); border: 1px solid var(--orange); padding: 4px 9px; flex-shrink: 0; }
+    .s-title { font-family: var(--fhead); font-size: clamp(2.2rem, 5vw, 5rem); letter-spacing: .02em; line-height: 1; }
+    .s-rule { flex: 1; height: 1px; background: var(--border); }
+
+    /* STATUS BAR */
+    .status-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 10px 16px; background: var(--bg3);
+      border: 1px solid var(--border); border-bottom: none;
+      font-family: var(--fmono); font-size: .7rem; color: var(--muted);
+    }
+    .status-dot {
+      display: inline-block; width: 7px; height: 7px;
+      border-radius: 50%; background: var(--green);
+      margin-right: 7px; animation: pulse 2s ease-in-out infinite;
+    }
+    .status-dot.error { background: #e55; animation: none; }
+    .status-dot.loading { background: var(--amber); }
+
+    /* PARTIDOS GRID */
+    .partidos-container {
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--orange);
+      background: var(--bg3);
+      min-height: 400px;
+    }
+
+    /* Estado de carga */
+    .state-msg {
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; gap: 16px; padding: 80px 40px;
+      font-family: var(--fmono); font-size: .8rem; color: var(--muted);
+      text-align: center; min-height: 400px;
+    }
+    .spinner {
+      width: 40px; height: 40px;
+      border: 2px solid var(--border);
+      border-top-color: var(--orange);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    .state-msg .big { font-family: var(--fhead); font-size: 1.6rem; color: var(--white); letter-spacing: .04em; }
+
+    /* Tarjetas de partido */
+    .partido-card {
+      display: grid;
+      grid-template-columns: 140px 1fr auto;
+      gap: 0;
+      border-bottom: 1px solid var(--border);
+      transition: background .2s;
+    }
+    .partido-card:last-child { border-bottom: none; }
+    .partido-card:hover { background: rgba(240,90,26,.04); }
+
+    .partido-fecha-col {
+      padding: 24px 20px;
+      border-right: 1px solid var(--border);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 4px; text-align: center;
+    }
+    .partido-dia { font-family: var(--fhead); font-size: 2.4rem; line-height: 1; color: var(--orange); }
+    .partido-mes { font-family: var(--fmono); font-size: .65rem; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); }
+    .partido-hora-badge { margin-top: 6px; font-family: var(--fmono); font-size: .7rem; background: rgba(240,90,26,.12); color: var(--orange); padding: 3px 8px; letter-spacing: .08em; }
+
+    .partido-info {
+      padding: 20px 24px;
+      display: flex; flex-direction: column; justify-content: center; gap: 6px;
+    }
+    .partido-equipos {
+      font-family: var(--fhead); font-size: clamp(1.1rem, 2vw, 1.5rem);
+      letter-spacing: .03em; line-height: 1.1;
+    }
+    .partido-equipos .vs { color: var(--muted); font-size: .75em; margin: 0 8px; }
+    .partido-equipos .highlight { color: var(--orange); }
+
+    .partido-meta {
+      display: flex; gap: 16px; flex-wrap: wrap;
+    }
+    .meta-item {
+      font-family: var(--fmono); font-size: .68rem; color: var(--muted);
+      letter-spacing: .08em; display: flex; align-items: center; gap: 5px;
+    }
+    .meta-icon { opacity: .6; }
+
+    .partido-comp-col {
+      padding: 20px 20px;
+      border-left: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      min-width: 110px;
+    }
+    .comp-badge {
+      font-family: var(--fmono); font-size: .62rem; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--muted);
+      border: 1px solid var(--border); padding: 4px 8px;
+      text-align: center; writing-mode: vertical-lr;
+    }
+
+    /* STATS */
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--border); }
+    .stat { padding: 44px 32px; border-right: 1px solid var(--border); position: relative; transition: background .25s; overflow: hidden; }
+    .stat:last-child { border-right: none; }
+    .stat::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--orange); transform: scaleX(0); transform-origin: left; transition: transform .3s; }
+    .stat:hover { background: var(--bg3); }
+    .stat:hover::after { transform: scaleX(1); }
+    .stat-n { font-family: var(--fhead); font-size: clamp(2.8rem, 4.5vw, 5rem); line-height: 1; margin-bottom: 6px; }
+    .stat-n em { color: var(--orange); font-style: normal; }
+    .stat-l { font-weight: 700; font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+    #stat-total { transition: all .3s; }
+
+    /* ABOUT */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .about-vis { position: relative; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; }
+    .ring { position: absolute; border-radius: 50%; border: 1.5px solid var(--border); }
+    .ring-1 { width: 82%; aspect-ratio: 1; animation: spinSlow 28s linear infinite; }
+    .ring-1::before { content: ''; position: absolute; top: -5px; left: 50%; transform: translateX(-50%); width: 10px; height: 10px; border-radius: 50%; background: var(--orange); }
+    .ring-2 { width: 58%; aspect-ratio: 1; animation: spinSlow 18s linear infinite reverse; border-color: rgba(240,90,26,.18); }
+    .wordmark { font-family: var(--fhead); font-size: clamp(3rem, 6vw, 6.5rem); text-align: center; z-index: 1; line-height: 1; }
+    .wordmark span { display: block; font-size: .45em; letter-spacing: .3em; color: var(--orange); }
+    .about-text p { font-size: 1.05rem; font-weight: 400; color: var(--muted); line-height: 1.85; margin-bottom: 18px; }
+    .about-text strong { color: var(--white); font-weight: 700; }
+
+    /* FOOTER */
+    footer { padding: 40px 56px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .foot-logo { font-family: var(--fhead); font-size: 1.3rem; letter-spacing: .06em; }
+    .foot-logo em { color: var(--orange); font-style: normal; }
+    .foot-note { font-family: var(--fmono); font-size: .68rem; color: var(--muted); letter-spacing: .08em; text-align: right; line-height: 1.8; }
+    .foot-note a { color: var(--orange); text-decoration: none; }
+
+    /* KEYFRAMES */
+    @keyframes up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes spinSlow { to { transform: rotate(360deg); } }
+    @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:.4; } }
+
+    /* RESPONSIVE */
+    @media (max-width: 860px) {
+      nav { padding: 0 20px; }
+      .nav-links li:not(:last-child) { display: none; }
+      .hero, .section, footer { padding-left: 22px; padding-right: 22px; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .stat:nth-child(even) { border-right: none; }
+      .stat { border-bottom: 1px solid var(--border); }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-vis { display: none; }
+      footer { flex-direction: column; text-align: center; }
+      .foot-note { text-align: center; }
+      .partido-card { grid-template-columns: 100px 1fr; }
+      .partido-comp-col { display: none; }
+      .status-bar { flex-direction: column; gap: 4px; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="#">HA<em>.</em>BASKET</a>
+  <ul class="nav-links">
+    <li><a href="#partidos">Partidos</a></li>
+    <li><a href="#club">El Club</a></li>
+    <li><a href="https://www.fbm.es" target="_blank" class="nav-badge">FBM ↗</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="court-bg">
+    <svg viewBox="0 0 780 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="778" height="498" stroke="white" stroke-width="2"/>
+      <line x1="389" y1="1" x2="389" y2="499" stroke="white" stroke-width="2"/>
+      <circle cx="389" cy="250" r="62" stroke="white" stroke-width="2"/>
+      <circle cx="389" cy="250" r="5" fill="white"/>
+      <rect x="1" y="148" width="168" height="204" stroke="white" stroke-width="2"/>
+      <rect x="611" y="148" width="168" height="204" stroke="white" stroke-width="2"/>
+      <path d="M1,148 Q95,250 1,352" stroke="white" stroke-width="2" fill="none"/>
+      <path d="M779,148 Q685,250 779,352" stroke="white" stroke-width="2" fill="none"/>
+      <circle cx="84" cy="250" r="38" stroke="white" stroke-width="2"/>
+      <circle cx="694" cy="250" r="38" stroke="white" stroke-width="2"/>
+    </svg>
+  </div>
+  <div class="ghost-num">5</div>
+  <span class="eyebrow">Federación de Baloncesto de Madrid · Temporada 2025/26</span>
+  <h1>HA<br><span class="outline">BAS</span><span class="accent">KET</span></h1>
+  <p class="hero-p">Próximos partidos actualizados automáticamente cada noche desde la FBM. Sin intervención manual.</p>
+  <div class="cta-row">
+    <a href="#partidos" class="btn btn-fill">Ver Partidos</a>
+    <a href="#club" class="btn btn-line">El Club</a>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="ticker-item">HA Basket</span><span class="ticker-item">Próximos Partidos</span><span class="ticker-item">Com. de Madrid</span><span class="ticker-item">Actualización Nocturna</span><span class="ticker-item">Baloncesto de Base</span><span class="ticker-item">Automático</span>
+    <span class="ticker-item">HA Basket</span><span class="ticker-item">Próximos Partidos</span><span class="ticker-item">Com. de Madrid</span><span class="ticker-item">Actualización Nocturna</span><span class="ticker-item">Baloncesto de Base</span><span class="ticker-item">Automático</span>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="section" style="padding-bottom: 0; padding-top: 72px;">
+  <div class="stats-grid">
+    <div class="stat"><div class="stat-n" id="stat-total">—</div><div class="stat-l">Próximos partidos</div></div>
+    <div class="stat"><div class="stat-n">24<em>h</em></div><div class="stat-l">Ciclo de actualización</div></div>
+    <div class="stat"><div class="stat-n">0<em>€</em></div><div class="stat-l">Coste del sistema</div></div>
+    <div class="stat"><div class="stat-n"><span id="stat-updated">—</span></div><div class="stat-l">Última actualización</div></div>
+  </div>
+</div>
+
+<!-- PARTIDOS -->
+<section id="partidos" class="section section-alt" style="margin-top: 56px;">
+  <div class="s-head">
+    <span class="s-tag">Live</span>
+    <h2 class="s-title">Próximos Partidos</h2>
+    <div class="s-rule"></div>
+  </div>
+
+  <!-- Status bar — se actualiza via JS -->
+  <div class="status-bar">
+    <span><span class="status-dot loading" id="status-dot"></span><span id="status-text">Cargando datos...</span></span>
+    <span id="status-source"></span>
+  </div>
+
+  <!-- Contenedor dinámico -->
+  <div class="partidos-container" id="partidos-container">
+    <div class="state-msg">
+      <div class="spinner"></div>
+      <span>Cargando partidos de HA Basket...</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="club" class="section">
+  <div class="about-grid">
+    <div class="about-vis">
+      <div class="ring ring-1"></div>
+      <div class="ring ring-2"></div>
+      <div class="wordmark">HA<span>BASKET</span></div>
+    </div>
+    <div class="about-text">
+      <div class="s-head" style="margin-bottom: 28px;">
+        <span class="s-tag">Club</span>
+        <h2 class="s-title">El Club</h2>
+      </div>
+      <p><strong>HA Basket</strong> es un club de baloncesto de base afiliado a la <strong>Federación de Baloncesto de Madrid</strong>.</p>
+      <p>Los datos de esta página los extrae un <strong>scraper automático</strong> de la FBM cada noche. Ningún miembro del club tiene que actualizar nada manualmente.</p>
+      <p>Para seguir los partidos con estadísticas en vivo, descarga la app <strong>SWISH by NBN23</strong>.</p>
+      <a href="https://swishbynbn23.com/es" target="_blank" class="btn btn-fill" style="margin-top: 10px;">Descargar SWISH ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-logo">HA<em>.</em>BASKET</div>
+  <div class="foot-note">
+    Datos extraídos automáticamente de <a href="https://www.fbm.es" target="_blank">fbm.es</a><br>
+    Actualización nocturna vía GitHub Actions · FBM 2025/26
+  </div>
+</footer>
+
+<!-- ── JS: CARGA Y RENDERIZA partidos.json ─────────────────── -->
+<script>
+(async function () {
+  const container    = document.getElementById('partidos-container');
+  const statusDot    = document.getElementById('status-dot');
+  const statusText   = document.getElementById('status-text');
+  const statusSource = document.getElementById('status-source');
+  const statTotal    = document.getElementById('stat-total');
+  const statUpdated  = document.getElementById('stat-updated');
+
+  const MESES = ['ENE','FEB','MAR','ABR','MAY','JUN','JUL','AGO','SEP','OCT','NOV','DIC'];
+
+  function setStatus(state, text, source) {
+    statusDot.className = 'status-dot ' + state;
+    statusText.textContent = text;
+    if (source) statusSource.textContent = source;
+  }
+
+  function parseFecha(fechaStr) {
+    if (!fechaStr || fechaStr === 'Por confirmar') return null;
+    // Soporta DD/MM/YYYY, DD-MM-YYYY, YYYY-MM-DD
+    let m = fechaStr.match(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})/);
+    if (m) {
+      let d = parseInt(m[1]), mo = parseInt(m[2]), y = parseInt(m[3]);
+      if (y < 100) y += 2000;
+      // Si el año parece el primer campo (ISO format)
+      if (m[1].length === 4) { y = parseInt(m[1]); mo = parseInt(m[2]); d = parseInt(m[3]); }
+      return { dia: d, mes: mo - 1, anio: y };
+    }
+    return null;
+  }
+
+  function renderPartidos(data) {
+    const { partidos, actualizado, fuente } = data;
+
+    // Actualizar stats
+    statTotal.textContent = partidos.length;
+    if (actualizado) {
+      const d = new Date(actualizado);
+      statUpdated.textContent = d.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit' });
+    }
+
+    // Formatear fecha del status
+    const fechaActualizado = actualizado
+      ? new Date(actualizado).toLocaleString('es-ES', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' })
+      : '—';
+
+    setStatus('', `Datos actualizados el ${fechaActualizado}`, fuente || 'fbm.es');
+    statusDot.className = 'status-dot'; // verde
+
+    if (!partidos || partidos.length === 0) {
+      container.innerHTML = `
+        <div class="state-msg">
+          <div class="big">Sin partidos publicados</div>
+          <p>La FBM aún no ha publicado los próximos partidos de HA Basket.<br>
+          El scraper vuelve a intentarlo esta noche automáticamente.</p>
+        </div>`;
+      return;
+    }
+
+    // Renderizar tarjetas
+    const html = partidos.map(p => {
+      const f = parseFecha(p.fecha);
+      const dia = f ? f.dia : '—';
+      const mes = f ? MESES[f.mes] : '';
+
+      const esLocal = p.local && p.local.toLowerCase().includes('ha basket');
+      const rival   = esLocal ? p.visitante : p.local;
+      const signo   = esLocal ? 'vs' : '@';
+
+      return `
+        <div class="partido-card">
+          <div class="partido-fecha-col">
+            <div class="partido-dia">${dia}</div>
+            <div class="partido-mes">${mes}</div>
+            <div class="partido-hora-badge">${p.hora || '?:??'}</div>
+          </div>
+          <div class="partido-info">
+            <div class="partido-equipos">
+              <span class="highlight">HA Basket</span>
+              <span class="vs">${signo}</span>
+              ${rival || 'Por confirmar'}
+            </div>
+            <div class="partido-meta">
+              <span class="meta-item"><span class="meta-icon">📍</span>${p.pabellon || 'Por confirmar'}</span>
+              <span class="meta-item"><span class="meta-icon">🗓</span>${p.fecha || '—'}</span>
+            </div>
+          </div>
+          <div class="partido-comp-col">
+            <span class="comp-badge">${p.competicion || 'FBM'}</span>
+          </div>
+        </div>`;
+    }).join('');
+
+    container.innerHTML = html;
+  }
+
+  function renderError(msg) {
+    setStatus('error', 'No se pudieron cargar los datos');
+    container.innerHTML = `
+      <div class="state-msg">
+        <div class="big">Error al cargar</div>
+        <p>${msg}</p>
+        <p style="margin-top:8px; font-size:.65rem;">Recarga la página o espera a la próxima actualización nocturna.</p>
+      </div>`;
+  }
+
+  // ── FETCH del JSON generado por el scraper ─────────────────
+  try {
+    // En producción (GitHub Pages), el JSON está en la misma carpeta.
+    // En local, asegúrate de servir con: npx serve public/
+    const res = await fetch('partidos.json?' + Date.now()); // cache-bust
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    renderPartidos(data);
+  } catch (err) {
+    console.error('Error cargando partidos.json:', err);
+    renderError('No se encontró el archivo <code>partidos.json</code>. Ejecuta el scraper primero.');
+  }
+})();
+</script>
+
+</body>
+</html>
