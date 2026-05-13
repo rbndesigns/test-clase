@@ -1,1 +1,3278 @@
-{}
+{
+  "clasificacion_2": [
+    {
+      "pos": "1",
+      "nombre": "HA BASKET \"B\"",
+      "puntos": "5"
+    },
+    {
+      "pos": "2",
+      "nombre": "LA PAZ C.D. ROSA",
+      "puntos": "4"
+    },
+    {
+      "pos": "3",
+      "nombre": "SAN BLAS BASKET",
+      "puntos": "4"
+    },
+    {
+      "pos": "4",
+      "nombre": "CB NAVALCARNERO D",
+      "puntos": "2"
+    }
+  ],
+  "clasificacion_4": [
+    {
+      "pos": "1",
+      "nombre": "HA BASKET \"A\"",
+      "puntos": "43"
+    },
+    {
+      "pos": "2",
+      "nombre": "EXTRANJERÍA JUSTA C.B. VALDEBASKET LAGOMAR",
+      "puntos": "43"
+    },
+    {
+      "pos": "3",
+      "nombre": "SEVERO TORREJON MAURI",
+      "puntos": "40"
+    },
+    {
+      "pos": "4",
+      "nombre": "CB POZUELO A",
+      "puntos": "38"
+    },
+    {
+      "pos": "5",
+      "nombre": "PARLA BASQUET RED",
+      "puntos": "34"
+    },
+    {
+      "pos": "6",
+      "nombre": "RECUERDO S.A.D. C",
+      "puntos": "30"
+    },
+    {
+      "pos": "7",
+      "nombre": "C.B. ALCORCON 2011",
+      "puntos": "30"
+    },
+    {
+      "pos": "8",
+      "nombre": "MOVISTAR ESTUDIANTES ARRANZ",
+      "puntos": "29"
+    },
+    {
+      "pos": "9",
+      "nombre": "MOVISTAR ESTUDIANTES MIMOUN",
+      "puntos": "29"
+    },
+    {
+      "pos": "10",
+      "nombre": "DISTRITO CARABANCHEL B",
+      "puntos": "28"
+    },
+    {
+      "pos": "11",
+      "nombre": "BALONCESTO ARISTOS C",
+      "puntos": "28"
+    },
+    {
+      "pos": "12",
+      "nombre": "DISTRITO CARABANCHEL C",
+      "puntos": "23"
+    }
+  ],
+  "clasificacion_6": [
+    {
+      "pos": "1",
+      "nombre": "HA BASKET",
+      "puntos": "6"
+    },
+    {
+      "pos": "2",
+      "nombre": "COLEGIO MIRAMADRID PARACUELLOS \"A\"",
+      "puntos": "5"
+    },
+    {
+      "pos": "3",
+      "nombre": "C.B. MORATALAZ \"B\"",
+      "puntos": "4"
+    },
+    {
+      "pos": "4",
+      "nombre": "LICEO FRANCES CLAUDIA",
+      "puntos": "3"
+    }
+  ],
+  "clasificacion_8": [
+    {
+      "pos": "1",
+      "nombre": "SAN AGUSTIN MADRID \"B\"",
+      "puntos": "44"
+    },
+    {
+      "pos": "2",
+      "nombre": "BALONCESTO FUENLABRADA ''C''",
+      "puntos": "42"
+    },
+    {
+      "pos": "3",
+      "nombre": "SAN AGUSTIN DEL GUADALIX \"B\"",
+      "puntos": "38"
+    },
+    {
+      "pos": "4",
+      "nombre": "CABRINI A.P.A. BLANCO",
+      "puntos": "38"
+    },
+    {
+      "pos": "5",
+      "nombre": "U.B. TORABASKET",
+      "puntos": "34"
+    },
+    {
+      "pos": "6",
+      "nombre": "C.B. MORATALAZ \"C\"",
+      "puntos": "34"
+    },
+    {
+      "pos": "7",
+      "nombre": "PARQUE CATALUÑA TORREJÓN NEGRO",
+      "puntos": "33"
+    },
+    {
+      "pos": "8",
+      "nombre": "C.B. GETAFE \"C\"",
+      "puntos": "32"
+    },
+    {
+      "pos": "9",
+      "nombre": "PARLA BASQUET LIONS",
+      "puntos": "28"
+    },
+    {
+      "pos": "10",
+      "nombre": "HA BASKET \"B\"",
+      "puntos": "27"
+    },
+    {
+      "pos": "11",
+      "nombre": "COBEÑA BASKET SPORT C.D.E.",
+      "puntos": "23"
+    },
+    {
+      "pos": "12",
+      "nombre": "CB NAVALCARNERO D",
+      "puntos": "22"
+    }
+  ],
+  "clasificacion_10": [
+    {
+      "pos": "1",
+      "nombre": "UROS DE RIVAS",
+      "puntos": "41"
+    },
+    {
+      "pos": "2",
+      "nombre": "CD CALDEIRO",
+      "puntos": "40"
+    },
+    {
+      "pos": "3",
+      "nombre": "BALONCESTO DAGANZO ISUZU REVEIN",
+      "puntos": "39"
+    },
+    {
+      "pos": "4",
+      "nombre": "ESCUELA BARRIO DEL PILAR",
+      "puntos": "36"
+    },
+    {
+      "pos": "5",
+      "nombre": "HA BASKET",
+      "puntos": "34"
+    },
+    {
+      "pos": "6",
+      "nombre": "MEJORADA 2012 C.B.",
+      "puntos": "34"
+    },
+    {
+      "pos": "7",
+      "nombre": "PENGUINS BASKETBALL CLUB",
+      "puntos": "31"
+    },
+    {
+      "pos": "8",
+      "nombre": "C.D.I. ROZASBASKET",
+      "puntos": "30"
+    },
+    {
+      "pos": "9",
+      "nombre": "JESUS MARIA",
+      "puntos": "30"
+    },
+    {
+      "pos": "10",
+      "nombre": "TRES CANTOS",
+      "puntos": "28"
+    },
+    {
+      "pos": "11",
+      "nombre": "COSLADA C.B. SERRACINES",
+      "puntos": "27"
+    },
+    {
+      "pos": "12",
+      "nombre": "COLEGIO CALASANCIO",
+      "puntos": "25"
+    }
+  ],
+  "clasificacion_14": [
+    {
+      "pos": "1",
+      "nombre": "RICOPIA FUNBAL ALCALA CBJA \"A\"",
+      "puntos": "43"
+    },
+    {
+      "pos": "2",
+      "nombre": "BASKET TORREJON \"A\"",
+      "puntos": "43"
+    },
+    {
+      "pos": "3",
+      "nombre": "MOVISTAR ESTUDIANTES SAGI VELA",
+      "puntos": "38"
+    },
+    {
+      "pos": "4",
+      "nombre": "LA PAZ C.D.",
+      "puntos": "38"
+    },
+    {
+      "pos": "5",
+      "nombre": "ARGANZUELA CENTRO BLANCO",
+      "puntos": "37"
+    },
+    {
+      "pos": "6",
+      "nombre": "COLEGIO ESTUDIANTES LAS TABLAS \"A\"",
+      "puntos": "31"
+    },
+    {
+      "pos": "7",
+      "nombre": "C.B. CIUDAD DE MÓSTOLES \"B\"",
+      "puntos": "29"
+    },
+    {
+      "pos": "8",
+      "nombre": "REVOLUTION",
+      "puntos": "29"
+    },
+    {
+      "pos": "9",
+      "nombre": "BOADILLA MONSTERS",
+      "puntos": "29"
+    },
+    {
+      "pos": "10",
+      "nombre": "PUREZA DE MARIA",
+      "puntos": "28"
+    },
+    {
+      "pos": "11",
+      "nombre": "HA BASKET",
+      "puntos": "26"
+    },
+    {
+      "pos": "12",
+      "nombre": "C.B. MORATALAZ \"B\"",
+      "puntos": "24"
+    }
+  ],
+  "clasificacion_15": [
+    {
+      "pos": "TRES CANTOS",
+      "nombre": "72",
+      "puntos": "LA LUZ, PABELLON PISTA 1AVENIDA DE LA LUZ, 6, Tres Cantos"
+    },
+    {
+      "pos": "COLEGIO CALASANCIO",
+      "nombre": "43",
+      "puntos": "CALASANCIO, PABELLON COLEGIOGENERAL DIAZ PORLIER, 56-58, Madrid"
+    },
+    {
+      "pos": "CD CALDEIRO",
+      "nombre": "66",
+      "puntos": "JESUS MARIA, PABELLON COLEGIOCALLE NUÑEZ DE BALBOA, 90, Madrid"
+    },
+    {
+      "pos": "UROS DE RIVAS",
+      "nombre": "79",
+      "puntos": "LOS ALMENDROS, PABELLONAIGUES TORTES, S/N, Rivas-Vaciamadrid"
+    },
+    {
+      "pos": "JESUS MARIA",
+      "nombre": "44",
+      "puntos": "JESUS MARIA, PABELLON COLEGIOCALLE NUÑEZ DE BALBOA, 90, Madrid"
+    },
+    {
+      "pos": "HA BASKET",
+      "nombre": "56",
+      "puntos": "GREENFIELD, PABELLON COLEGIOCARR. DE CARABANCHEL A VILLAVERDE, 82, Madrid"
+    }
+  ],
+  "clasificacion_16": [
+    {
+      "pos": "COSLADA C.B. SERRACINES",
+      "nombre": "64",
+      "puntos": "C.E.I.P. SERRACINESROMERAL, 15, Serracines"
+    },
+    {
+      "pos": "PENGUINS BASKETBALL CLUB",
+      "nombre": "54",
+      "puntos": "GREENFIELD, PABELLON COLEGIOCARR. DE CARABANCHEL A VILLAVERDE, 82, Madrid"
+    },
+    {
+      "pos": "C.D.I. ROZASBASKET",
+      "nombre": "37",
+      "puntos": "I.E.S. JOSE GARCIA NIETO, PABELLONCAMILO JOSE CELA, 24, Rozas de Madrid, Las"
+    },
+    {
+      "pos": "BALONCESTO DAGANZO ISUZU REVEIN",
+      "nombre": "71",
+      "puntos": "DAGANZO, PABELLON MUNICIPALCALLE DON QUIJOTE DE LA MANCHA, 1, Daganzo de Arriba"
+    },
+    {
+      "pos": "MEJORADA 2012 C.B.",
+      "nombre": "61",
+      "puntos": "MEJORADA, PABELLON MPAL.JOAN MIRO, S/N, Mejorada del Campo"
+    },
+    {
+      "pos": "ESCUELA BARRIO DEL PILAR",
+      "nombre": "71",
+      "puntos": "VICENTE DEL BOSQUE, CDM (PABELLON)AVDA. MONFORTE DE LEMOS, 13, Madrid"
+    }
+  ],
+  "clasificacion_17": [
+    {
+      "pos": "TRES CANTOS",
+      "nombre": "90",
+      "puntos": "LA LUZ, PABELLON PISTA 3AVENIDA DE LA LUZ, 6, Tres Cantos"
+    },
+    {
+      "pos": "CD CALDEIRO",
+      "nombre": "96",
+      "puntos": "JESUS MARIA, PABELLON COLEGIOCALLE NUÑEZ DE BALBOA, 90, Madrid"
+    },
+    {
+      "pos": "UROS DE RIVAS",
+      "nombre": "79",
+      "puntos": "FUHEM HIPATIA, COLEGIOAVDA. OCHO DE MARZO, S/N, Rivas-Vaciamadrid"
+    },
+    {
+      "pos": "JESUS MARIA",
+      "nombre": "43",
+      "puntos": "JESUS MARIA, PABELLON COLEGIOCALLE NUÑEZ DE BALBOA, 90, Madrid"
+    },
+    {
+      "pos": "HA BASKET",
+      "nombre": "74",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    },
+    {
+      "pos": "COSLADA C.B. SERRACINES",
+      "nombre": "79",
+      "puntos": "C.E.I.P. SERRACINESROMERAL, 15, Serracines"
+    }
+  ],
+  "clasificacion_18": [
+    {
+      "pos": "PENGUINS BASKETBALL CLUB",
+      "nombre": "59",
+      "puntos": "GREENFIELD, PABELLON COLEGIOCARR. DE CARABANCHEL A VILLAVERDE, 82, Madrid"
+    },
+    {
+      "pos": "C.D.I. ROZASBASKET",
+      "nombre": "73",
+      "puntos": "I.E.S. JOSE GARCIA NIETO, PABELLONCAMILO JOSE CELA, 24, Rozas de Madrid, Las"
+    },
+    {
+      "pos": "BALONCESTO DAGANZO ISUZU REVEIN",
+      "nombre": "60",
+      "puntos": "DAGANZO, PABELLON MUNICIPALCALLE DON QUIJOTE DE LA MANCHA, 1, Daganzo de Arriba"
+    },
+    {
+      "pos": "MEJORADA 2012 C.B.",
+      "nombre": "55",
+      "puntos": "MEJORADA, PABELLON MPAL.JOAN MIRO, S/N, Mejorada del Campo"
+    },
+    {
+      "pos": "ESCUELA BARRIO DEL PILAR",
+      "nombre": "55",
+      "puntos": "VICENTE DEL BOSQUE, CDM (PABELLON)AVDA. MONFORTE DE LEMOS, 13, Madrid"
+    },
+    {
+      "pos": "COLEGIO CALASANCIO",
+      "nombre": "44",
+      "puntos": "CALASANCIO, PABELLON COLEGIOGENERAL DIAZ PORLIER, 56-58, Madrid"
+    }
+  ],
+  "clasificacion_19": [
+    {
+      "pos": "TRES CANTOS",
+      "nombre": "88",
+      "puntos": "LA LUZ, PABELLON PISTA 3AVENIDA DE LA LUZ, 6, Tres Cantos"
+    },
+    {
+      "pos": "UROS DE RIVAS",
+      "nombre": "82",
+      "puntos": "FUHEM HIPATIA, COLEGIOAVDA. OCHO DE MARZO, S/N, Rivas-Vaciamadrid"
+    },
+    {
+      "pos": "JESUS MARIA",
+      "nombre": "61",
+      "puntos": "JESUS MARIA, PABELLON COLEGIOCALLE NUÑEZ DE BALBOA, 90, Madrid"
+    },
+    {
+      "pos": "HA BASKET",
+      "nombre": "58",
+      "puntos": "GREENFIELD, PABELLON COLEGIOCARR. DE CARABANCHEL A VILLAVERDE, 82, Madrid"
+    },
+    {
+      "pos": "COSLADA C.B. SERRACINES",
+      "nombre": "73",
+      "puntos": "C.E.I.P. SERRACINESROMERAL, 15, Serracines"
+    },
+    {
+      "pos": "PENGUINS BASKETBALL CLUB",
+      "nombre": "34",
+      "puntos": "GREENFIELD, PABELLON COLEGIOCARR. DE CARABANCHEL A VILLAVERDE, 82, Madrid"
+    }
+  ],
+  "clasificacion_20": [
+    {
+      "pos": "C.D.I. ROZASBASKET",
+      "nombre": "61",
+      "puntos": "I.E.S. JOSE GARCIA NIETO, PABELLONCAMILO JOSE CELA, 24, Rozas de Madrid, Las"
+    },
+    {
+      "pos": "BALONCESTO DAGANZO ISUZU REVEIN",
+      "nombre": "69",
+      "puntos": "DAGANZO, PABELLON MUNICIPALCALLE DON QUIJOTE DE LA MANCHA, 1, Daganzo de Arriba"
+    },
+    {
+      "pos": "MEJORADA 2012 C.B.",
+      "nombre": "54",
+      "puntos": "VELILLA SAN ANTONIO, PABELLONPASEO PABLO PICASSO, S/N, Velilla de San Antonio"
+    },
+    {
+      "pos": "ESCUELA BARRIO DEL PILAR",
+      "nombre": "67",
+      "puntos": "VICENTE DEL BOSQUE, CDM (PABELLON)AVDA. MONFORTE DE LEMOS, 13, Madrid"
+    },
+    {
+      "pos": "COLEGIO CALASANCIO",
+      "nombre": "46",
+      "puntos": "CALASANCIO, PABELLON COLEGIOGENERAL DIAZ PORLIER, 56-58, Madrid"
+    },
+    {
+      "pos": "CD CALDEIRO",
+      "nombre": "53",
+      "puntos": "CORAZON INMACULADO, PABELLON COLEGIOLOPEZ DE HOYOS, 59 c.v. C/ JOSEP PLA, Madrid"
+    }
+  ],
+  "clasificacion_21": [
+    {
+      "pos": "TRES CANTOS",
+      "nombre": "55",
+      "puntos": "LA LUZ, PABELLON PISTA 3AVENIDA DE LA LUZ, 6, Tres Cantos"
+    },
+    {
+      "pos": "JESUS MARIA",
+      "nombre": "83",
+      "puntos": "JESUS MARIA, PABELLON COLEGIOCALLE NUÑEZ DE BALBOA, 90, Madrid"
+    },
+    {
+      "pos": "HA BASKET",
+      "nombre": "54",
+      "puntos": "GREENFIELD, PABELLON COLEGIOCARR. DE CARABANCHEL A VILLAVERDE, 82, Madrid"
+    },
+    {
+      "pos": "COSLADA C.B. SERRACINES",
+      "nombre": "75",
+      "puntos": "C.E.I.P. SERRACINESROMERAL, 15, Serracines"
+    },
+    {
+      "pos": "PENGUINS BASKETBALL CLUB",
+      "nombre": "53",
+      "puntos": "GREENFIELD, PABELLON COLEGIOCARR. DE CARABANCHEL A VILLAVERDE, 82, Madrid"
+    },
+    {
+      "pos": "C.D.I. ROZASBASKET",
+      "nombre": "68",
+      "puntos": "I.E.S. JOSE GARCIA NIETO, PABELLONCAMILO JOSE CELA, 24, Rozas de Madrid, Las"
+    }
+  ],
+  "clasificacion_22": [
+    {
+      "pos": "BALONCESTO DAGANZO ISUZU REVEIN",
+      "nombre": "55",
+      "puntos": "DAGANZO, PABELLON MUNICIPALCALLE DON QUIJOTE DE LA MANCHA, 1, Daganzo de Arriba"
+    },
+    {
+      "pos": "MEJORADA 2012 C.B.",
+      "nombre": "68",
+      "puntos": "MEJORADA, PABELLON MPAL.JOAN MIRO, S/N, Mejorada del Campo"
+    },
+    {
+      "pos": "ESCUELA BARRIO DEL PILAR",
+      "nombre": "72",
+      "puntos": "VICENTE DEL BOSQUE, CDM (PABELLON)AVDA. MONFORTE DE LEMOS, 13, Madrid"
+    },
+    {
+      "pos": "COLEGIO CALASANCIO",
+      "nombre": "69",
+      "puntos": "CALASANCIO, PABELLON COLEGIOGENERAL DIAZ PORLIER, 56-58, Madrid"
+    },
+    {
+      "pos": "CD CALDEIRO",
+      "nombre": "73",
+      "puntos": "CORAZON INMACULADO, PABELLON COLEGIOLOPEZ DE HOYOS, 59 c.v. C/ JOSEP PLA, Madrid"
+    },
+    {
+      "pos": "UROS DE RIVAS",
+      "nombre": "73",
+      "puntos": "FUHEM HIPATIA, COLEGIOAVDA. OCHO DE MARZO, S/N, Rivas-Vaciamadrid"
+    }
+  ],
+  "clasificacion_23": [
+    {
+      "pos": "TRES CANTOS",
+      "nombre": "53",
+      "puntos": "LA LUZ, PABELLON PISTA 3AVENIDA DE LA LUZ, 6, Tres Cantos"
+    },
+    {
+      "pos": "HA BASKET",
+      "nombre": "69",
+      "puntos": "ARGANZUELA, CENTRO INTEGRADOC/ PALOS DE LA FRONTERA, 40, Madrid"
+    },
+    {
+      "pos": "COSLADA C.B. SERRACINES",
+      "nombre": "58",
+      "puntos": "C.E.I.P. SERRACINESROMERAL, 15, Serracines"
+    },
+    {
+      "pos": "PENGUINS BASKETBALL CLUB",
+      "nombre": "67",
+      "puntos": "MORATALAZ, PDVO. MPAL.VALDEBERNARDO, S/N, Madrid"
+    },
+    {
+      "pos": "C.D.I. ROZASBASKET",
+      "nombre": "81",
+      "puntos": "I.E.S. JOSE GARCIA NIETO, PABELLONCAMILO JOSE CELA, 24, Rozas de Madrid, Las"
+    },
+    {
+      "pos": "BALONCESTO DAGANZO ISUZU REVEIN",
+      "nombre": "63",
+      "puntos": "DAGANZO, PABELLON MUNICIPALCALLE DON QUIJOTE DE LA MANCHA, 1, Daganzo de Arriba"
+    }
+  ],
+  "clasificacion_24": [
+    {
+      "pos": "TRES CANTOS",
+      "nombre": "72",
+      "puntos": "LA LUZ, PABELLON PISTA 3AVENIDA DE LA LUZ, 6, Tres Cantos"
+    },
+    {
+      "pos": "ESCUELA BARRIO DEL PILAR",
+      "nombre": "76",
+      "puntos": "VICENTE DEL BOSQUE, CDM (PABELLON)AVDA. MONFORTE DE LEMOS, 13, Madrid"
+    },
+    {
+      "pos": "COLEGIO CALASANCIO",
+      "nombre": "49",
+      "puntos": "CALASANCIO, PABELLON COLEGIOGENERAL DIAZ PORLIER, 56-58, Madrid"
+    },
+    {
+      "pos": "CD CALDEIRO",
+      "nombre": "68",
+      "puntos": "JESUS MARIA, PABELLON COLEGIOCALLE NUÑEZ DE BALBOA, 90, Madrid"
+    },
+    {
+      "pos": "UROS DE RIVAS",
+      "nombre": "68",
+      "puntos": "FUHEM HIPATIA, COLEGIOAVDA. OCHO DE MARZO, S/N, Rivas-Vaciamadrid"
+    },
+    {
+      "pos": "JESUS MARIA",
+      "nombre": "72",
+      "puntos": "JESUS MARIA, PABELLON COLEGIOCALLE NUÑEZ DE BALBOA, 90, Madrid"
+    }
+  ],
+  "clasificacion_25": [
+    {
+      "pos": "HA BASKET",
+      "nombre": "79",
+      "puntos": "ARGANZUELA, CENTRO INTEGRADOC/ PALOS DE LA FRONTERA, 40, Madrid"
+    },
+    {
+      "pos": "COSLADA C.B. SERRACINES",
+      "nombre": "44",
+      "puntos": "C.E.I.P. SERRACINESROMERAL, 15, Serracines"
+    },
+    {
+      "pos": "PENGUINS BASKETBALL CLUB",
+      "nombre": "41",
+      "puntos": "GREENFIELD, PABELLON COLEGIOCARR. DE CARABANCHEL A VILLAVERDE, 82, Madrid"
+    },
+    {
+      "pos": "C.D.I. ROZASBASKET",
+      "nombre": "61",
+      "puntos": "I.E.S. JOSE GARCIA NIETO, PABELLONCAMILO JOSE CELA, 24, Rozas de Madrid, Las"
+    },
+    {
+      "pos": "BALONCESTO DAGANZO ISUZU REVEIN",
+      "nombre": "84",
+      "puntos": "DAGANZO, PABELLON MUNICIPALCALLE DON QUIJOTE DE LA MANCHA, 1, Daganzo de Arriba"
+    },
+    {
+      "pos": "MEJORADA 2012 C.B.",
+      "nombre": "73",
+      "puntos": "MEJORADA, PABELLON MPAL.JOAN MIRO, S/N, Mejorada del Campo"
+    }
+  ],
+  "clasificacion_26": [
+    {
+      "pos": "ESCUELA BARRIO DEL PILAR",
+      "nombre": "70",
+      "puntos": "VICENTE DEL BOSQUE, CDM (PABELLON)AVDA. MONFORTE DE LEMOS, 13, Madrid"
+    },
+    {
+      "pos": "MEJORADA 2012 C.B.",
+      "nombre": "71",
+      "puntos": "MEJORADA, PABELLON MPAL.JOAN MIRO, S/N, Mejorada del Campo"
+    },
+    {
+      "pos": "BALONCESTO DAGANZO ISUZU REVEIN",
+      "nombre": "60",
+      "puntos": "DAGANZO, PABELLON MUNICIPALCALLE DON QUIJOTE DE LA MANCHA, 1, Daganzo de Arriba"
+    },
+    {
+      "pos": "C.D.I. ROZASBASKET",
+      "nombre": "50",
+      "puntos": "I.E.S. JOSE GARCIA NIETO, PABELLONCAMILO JOSE CELA, 24, Rozas de Madrid, Las"
+    },
+    {
+      "pos": "PENGUINS BASKETBALL CLUB",
+      "nombre": "64",
+      "puntos": "GREENFIELD, PABELLON COLEGIOCARR. DE CARABANCHEL A VILLAVERDE, 82, Madrid"
+    },
+    {
+      "pos": "COSLADA C.B. SERRACINES",
+      "nombre": "59",
+      "puntos": "C.E.I.P. SERRACINESROMERAL, 15, Serracines"
+    }
+  ],
+  "clasificacion_27": [
+    {
+      "pos": "TRES CANTOS",
+      "nombre": "54",
+      "puntos": "LA LUZ, PABELLON PISTA 1AVENIDA DE LA LUZ, 6, Tres Cantos"
+    },
+    {
+      "pos": "HA BASKET",
+      "nombre": "48",
+      "puntos": "GREENFIELD, PABELLON COLEGIOCARR. DE CARABANCHEL A VILLAVERDE, 82, Madrid"
+    },
+    {
+      "pos": "JESUS MARIA",
+      "nombre": "53",
+      "puntos": "JESUS MARIA, PABELLON COLEGIOCALLE NUÑEZ DE BALBOA, 90, Madrid"
+    },
+    {
+      "pos": "UROS DE RIVAS",
+      "nombre": "72",
+      "puntos": "FUHEM HIPATIA, COLEGIOAVDA. OCHO DE MARZO, S/N, Rivas-Vaciamadrid"
+    },
+    {
+      "pos": "CD CALDEIRO",
+      "nombre": "74",
+      "puntos": "CORAZON INMACULADO, PABELLON COLEGIOLOPEZ DE HOYOS, 59 c.v. C/ JOSEP PLA, Madrid"
+    },
+    {
+      "pos": "COLEGIO CALASANCIO",
+      "nombre": "78",
+      "puntos": "CALASANCIO, PABELLON COLEGIOGENERAL DIAZ PORLIER, 56-58, Madrid"
+    }
+  ],
+  "clasificacion_28": [
+    {
+      "pos": "COLEGIO CALASANCIO",
+      "nombre": "79",
+      "puntos": "CALASANCIO, PABELLON COLEGIOGENERAL DIAZ PORLIER, 56-58, Madrid"
+    },
+    {
+      "pos": "ESCUELA BARRIO DEL PILAR",
+      "nombre": "49",
+      "puntos": "VICENTE DEL BOSQUE, CDM (PABELLON)AVDA. MONFORTE DE LEMOS, 13, Madrid"
+    },
+    {
+      "pos": "MEJORADA 2012 C.B.",
+      "nombre": "65",
+      "puntos": "MEJORADA, PABELLON MPAL.JOAN MIRO, S/N, Mejorada del Campo"
+    },
+    {
+      "pos": "BALONCESTO DAGANZO ISUZU REVEIN",
+      "nombre": "88",
+      "puntos": "DAGANZO, PABELLON MUNICIPALCALLE DON QUIJOTE DE LA MANCHA, 1, Daganzo de Arriba"
+    },
+    {
+      "pos": "C.D.I. ROZASBASKET",
+      "nombre": "59",
+      "puntos": "I.E.S. JOSE GARCIA NIETO, PABELLONCAMILO JOSE CELA, 24, Rozas de Madrid, Las"
+    },
+    {
+      "pos": "PENGUINS BASKETBALL CLUB",
+      "nombre": "40",
+      "puntos": "GREENFIELD, PABELLON COLEGIOCARR. DE CARABANCHEL A VILLAVERDE, 82, Madrid"
+    }
+  ],
+  "clasificacion_29": [
+    {
+      "pos": "TRES CANTOS",
+      "nombre": "56",
+      "puntos": "LA LUZ, PABELLON PISTA 3AVENIDA DE LA LUZ, 6, Tres Cantos"
+    },
+    {
+      "pos": "COSLADA C.B. SERRACINES",
+      "nombre": "64",
+      "puntos": "C.E.I.P. SERRACINESROMERAL, 15, Serracines"
+    },
+    {
+      "pos": "HA BASKET",
+      "nombre": "61",
+      "puntos": "ARGANZUELA, CENTRO INTEGRADOC/ PALOS DE LA FRONTERA, 40, Madrid"
+    },
+    {
+      "pos": "JESUS MARIA",
+      "nombre": "66",
+      "puntos": "JESUS MARIA, PABELLON COLEGIOCALLE NUÑEZ DE BALBOA, 90, Madrid"
+    },
+    {
+      "pos": "UROS DE RIVAS",
+      "nombre": "63",
+      "puntos": "LOS ALMENDROS, PABELLONAIGUES TORTES, S/N, Rivas-Vaciamadrid"
+    },
+    {
+      "pos": "CD CALDEIRO",
+      "nombre": "74",
+      "puntos": "CORAZON INMACULADO, PABELLON COLEGIOLOPEZ DE HOYOS, 59 c.v. C/ JOSEP PLA, Madrid"
+    }
+  ],
+  "clasificacion_30": [
+    {
+      "pos": "CD CALDEIRO",
+      "nombre": "82",
+      "puntos": "JESUS MARIA, PABELLON COLEGIOCALLE NUÑEZ DE BALBOA, 90, Madrid"
+    },
+    {
+      "pos": "COLEGIO CALASANCIO",
+      "nombre": "58",
+      "puntos": "CALASANCIO, PABELLON COLEGIOGENERAL DIAZ PORLIER, 56-58, Madrid"
+    },
+    {
+      "pos": "ESCUELA BARRIO DEL PILAR",
+      "nombre": "72",
+      "puntos": "VICENTE DEL BOSQUE, CDM (PABELLON)AVDA. MONFORTE DE LEMOS, 13, Madrid"
+    },
+    {
+      "pos": "MEJORADA 2012 C.B.",
+      "nombre": "61",
+      "puntos": "MEJORADA, PABELLON MPAL.JOAN MIRO, S/N, Mejorada del Campo"
+    },
+    {
+      "pos": "BALONCESTO DAGANZO ISUZU REVEIN",
+      "nombre": "69",
+      "puntos": "DAGANZO, PABELLON MUNICIPALCALLE DON QUIJOTE DE LA MANCHA, 1, Daganzo de Arriba"
+    },
+    {
+      "pos": "C.D.I. ROZASBASKET",
+      "nombre": "40",
+      "puntos": "I.E.S. JOSE GARCIA NIETO, PABELLONCAMILO JOSE CELA, 24, Rozas de Madrid, Las"
+    }
+  ],
+  "clasificacion_31": [
+    {
+      "pos": "TRES CANTOS",
+      "nombre": "84",
+      "puntos": "LA LUZ, PABELLON PISTA 1AVENIDA DE LA LUZ, 6, Tres Cantos"
+    },
+    {
+      "pos": "PENGUINS BASKETBALL CLUB",
+      "nombre": "70",
+      "puntos": "MORATALAZ, PDVO. MPAL.VALDEBERNARDO, S/N, Madrid"
+    },
+    {
+      "pos": "COSLADA C.B. SERRACINES",
+      "nombre": "65",
+      "puntos": "C.E.I.P. SERRACINESROMERAL, 15, Serracines"
+    },
+    {
+      "pos": "HA BASKET",
+      "nombre": "70",
+      "puntos": "ARGANZUELA, CENTRO INTEGRADOC/ PALOS DE LA FRONTERA, 40, Madrid"
+    },
+    {
+      "pos": "JESUS MARIA",
+      "nombre": "57",
+      "puntos": "JESUS MARIA, PABELLON COLEGIOCALLE NUÑEZ DE BALBOA, 90, Madrid"
+    },
+    {
+      "pos": "UROS DE RIVAS",
+      "nombre": "59",
+      "puntos": "LOS ALMENDROS, PABELLONAIGUES TORTES, S/N, Rivas-Vaciamadrid"
+    }
+  ],
+  "clasificacion_32": [
+    {
+      "pos": "UROS DE RIVAS",
+      "nombre": "85",
+      "puntos": "LOS ALMENDROS, PABELLONAIGUES TORTES, S/N, Rivas-Vaciamadrid"
+    },
+    {
+      "pos": "CD CALDEIRO",
+      "nombre": "20",
+      "puntos": "CORAZON INMACULADO, PABELLON COLEGIOLOPEZ DE HOYOS, 59 c.v. C/ JOSEP PLA, Madrid"
+    },
+    {
+      "pos": "COLEGIO CALASANCIO",
+      "nombre": "54",
+      "puntos": "CALASANCIO, PABELLON COLEGIOGENERAL DIAZ PORLIER, 56-58, Madrid"
+    },
+    {
+      "pos": "ESCUELA BARRIO DEL PILAR",
+      "nombre": "77",
+      "puntos": "VICENTE DEL BOSQUE, CDM (PABELLON)AVDA. MONFORTE DE LEMOS, 13, Madrid"
+    },
+    {
+      "pos": "MEJORADA 2012 C.B.",
+      "nombre": "80",
+      "puntos": "MEJORADA, PABELLON MPAL.JOAN MIRO, S/N, Mejorada del Campo"
+    },
+    {
+      "pos": "BALONCESTO DAGANZO ISUZU REVEIN",
+      "nombre": "92",
+      "puntos": "DAGANZO, PABELLON MUNICIPALCALLE DON QUIJOTE DE LA MANCHA, 1, Daganzo de Arriba"
+    }
+  ],
+  "clasificacion_33": [
+    {
+      "pos": "TRES CANTOS",
+      "nombre": "64",
+      "puntos": "LA LUZ, PABELLON PISTA 3AVENIDA DE LA LUZ, 6, Tres Cantos"
+    },
+    {
+      "pos": "C.D.I. ROZASBASKET",
+      "nombre": "58",
+      "puntos": "I.E.S. JOSE GARCIA NIETO, PABELLONCAMILO JOSE CELA, 24, Rozas de Madrid, Las"
+    },
+    {
+      "pos": "PENGUINS BASKETBALL CLUB",
+      "nombre": "73",
+      "puntos": "MORATALAZ, PDVO. MPAL.VALDEBERNARDO, S/N, Madrid"
+    },
+    {
+      "pos": "COSLADA C.B. SERRACINES",
+      "nombre": "52",
+      "puntos": "C.E.I.P. SERRACINESROMERAL, 15, Serracines"
+    },
+    {
+      "pos": "HA BASKET",
+      "nombre": "57",
+      "puntos": "ARGANZUELA, CENTRO INTEGRADOC/ PALOS DE LA FRONTERA, 40, Madrid"
+    },
+    {
+      "pos": "JESUS MARIA",
+      "nombre": "47",
+      "puntos": "JESUS MARIA, PABELLON COLEGIOCALLE NUÑEZ DE BALBOA, 90, Madrid"
+    }
+  ],
+  "clasificacion_34": [
+    {
+      "pos": "JESUS MARIA",
+      "nombre": "58",
+      "puntos": "JESUS MARIA, PABELLON COLEGIOCALLE NUÑEZ DE BALBOA, 90, Madrid"
+    },
+    {
+      "pos": "UROS DE RIVAS",
+      "nombre": "67",
+      "puntos": "LOS ALMENDROS, PABELLONAIGUES TORTES, S/N, Rivas-Vaciamadrid"
+    },
+    {
+      "pos": "CD CALDEIRO",
+      "nombre": "59",
+      "puntos": "JESUS MARIA, PABELLON COLEGIOCALLE NUÑEZ DE BALBOA, 90, Madrid"
+    },
+    {
+      "pos": "COLEGIO CALASANCIO",
+      "nombre": "41",
+      "puntos": "CALASANCIO, PABELLON COLEGIOGENERAL DIAZ PORLIER, 56-58, Madrid"
+    },
+    {
+      "pos": "ESCUELA BARRIO DEL PILAR",
+      "nombre": "81",
+      "puntos": "VICENTE DEL BOSQUE, CDM (PABELLON)AVDA. MONFORTE DE LEMOS, 13, Madrid"
+    },
+    {
+      "pos": "MEJORADA 2012 C.B.",
+      "nombre": "71",
+      "puntos": "MEJORADA, PABELLON MPAL.JOAN MIRO, S/N, Mejorada del Campo"
+    }
+  ],
+  "clasificacion_35": [
+    {
+      "pos": "MEJORADA 2012 C.B.",
+      "nombre": "85",
+      "puntos": "MEJORADA, PABELLON MPAL.JOAN MIRO, S/N, Mejorada del Campo"
+    },
+    {
+      "pos": "BALONCESTO DAGANZO ISUZU REVEIN",
+      "nombre": "56",
+      "puntos": "DAGANZO, PABELLON MUNICIPALCALLE DON QUIJOTE DE LA MANCHA, 1, Daganzo de Arriba"
+    },
+    {
+      "pos": "C.D.I. ROZASBASKET",
+      "nombre": "69",
+      "puntos": "I.E.S. JOSE GARCIA NIETO, PABELLONCAMILO JOSE CELA, 24, Rozas de Madrid, Las"
+    },
+    {
+      "pos": "PENGUINS BASKETBALL CLUB",
+      "nombre": "52",
+      "puntos": "MORATALAZ, PDVO. MPAL.VALDEBERNARDO, S/N, Madrid"
+    },
+    {
+      "pos": "COSLADA C.B. SERRACINES",
+      "nombre": "60",
+      "puntos": "C.E.I.P. SERRACINESROMERAL, 15, Serracines"
+    },
+    {
+      "pos": "HA BASKET",
+      "nombre": "38",
+      "puntos": "ARGANZUELA, CENTRO INTEGRADOC/ PALOS DE LA FRONTERA, 40, Madrid"
+    }
+  ],
+  "clasificacion_36": [
+    {
+      "pos": "TRES CANTOS",
+      "nombre": "52",
+      "puntos": "LA LUZ, PABELLON PISTA 3AVENIDA DE LA LUZ, 6, Tres Cantos"
+    },
+    {
+      "pos": "JESUS MARIA",
+      "nombre": "69",
+      "puntos": "JESUS MARIA, PABELLON COLEGIOCALLE NUÑEZ DE BALBOA, 90, Madrid"
+    },
+    {
+      "pos": "UROS DE RIVAS",
+      "nombre": "83",
+      "puntos": "LOS ALMENDROS, PABELLONAIGUES TORTES, S/N, Rivas-Vaciamadrid"
+    },
+    {
+      "pos": "CD CALDEIRO",
+      "nombre": "70",
+      "puntos": "JESUS MARIA, PABELLON COLEGIOCALLE NUÑEZ DE BALBOA, 90, Madrid"
+    },
+    {
+      "pos": "COLEGIO CALASANCIO",
+      "nombre": "60",
+      "puntos": "CALASANCIO, PABELLON COLEGIOGENERAL DIAZ PORLIER, 56-58, Madrid"
+    },
+    {
+      "pos": "ESCUELA BARRIO DEL PILAR",
+      "nombre": "82",
+      "puntos": "VICENTE DEL BOSQUE, CDM (PABELLON)AVDA. MONFORTE DE LEMOS, 13, Madrid"
+    }
+  ],
+  "clasificacion_37": [
+    {
+      "pos": "DINAMICA MADRID",
+      "nombre": "67",
+      "puntos": "SAN PEDRO APOSTOL, COLEGIOBABILONIA, 19, Madrid"
+    },
+    {
+      "pos": "PARQUE CATALUÑA TORREJÓN",
+      "nombre": "52",
+      "puntos": "PARQUE DE CATALUÑA, CLUB DEPORTIVOCALLE HILADOS, 2, Torrejón de Ardoz"
+    },
+    {
+      "pos": "RESTAURANTE PAIPAI PUREZA DE MARIA",
+      "nombre": "63",
+      "puntos": "RECUERDO, PABELLON COLEGIOPLAZA DUQUE DE PASTRANA, 5, Madrid"
+    },
+    {
+      "pos": "ESCUADRA CHAMBERI ALCALA",
+      "nombre": "75",
+      "puntos": "COMPLEJO DEPORTIVO FUNDACIÓN MONTEMADRIDAVENIDA DE MECO Km 0,700, Alcalá de Henares"
+    },
+    {
+      "pos": "MEJORADA 2012 C.B.",
+      "nombre": "53",
+      "puntos": "MEJORADA, PABELLON MPAL.JOAN MIRO, S/N, Mejorada del Campo"
+    },
+    {
+      "pos": "OLIMPICO ALCOBENDAS",
+      "nombre": "62",
+      "puntos": "DISTRITO CENTRO, PABELLONAVDA. OLIMPICA, 22 (pasaje), Alcobendas"
+    },
+    {
+      "pos": "HA BASKET",
+      "nombre": "44",
+      "puntos": "ARGANZUELA, CENTRO INTEGRADOC/ PALOS DE LA FRONTERA, 40, Madrid"
+    },
+    {
+      "pos": "ESCOLAPIOS DE ALCALA C.D.C.",
+      "nombre": "77",
+      "puntos": "ESCOLAPIOS DE ALCALA, COLEGIOAVDA. LOPE DE FIGUEROA, 27, Alcalá de Henares"
+    }
+  ],
+  "clasificacion_38": [
+    {
+      "pos": "BALONCESTO FUTURAS",
+      "nombre": "",
+      "puntos": "STELLA MARIS LA GAVIA, PABELLON COLEGIOPEÑARANDA DE BRACAMONTE, 9, Madrid"
+    },
+    {
+      "pos": "UROS DE RIVAS",
+      "nombre": "",
+      "puntos": "CERRO DEL TELEGRAFO, PABELLONAVDA. DE LOS ALMENDROS, S/N, Rivas-Vaciamadrid"
+    },
+    {
+      "pos": "BALONCESTO RIVAS SURESTE C",
+      "nombre": "",
+      "puntos": "PARQUE DEL SURESTE, PABELLON (PISTA CENTRAL)MIRADOR Frente al nº 25, Rivas-Vaciamadrid"
+    },
+    {
+      "pos": "CD CALDEIRO",
+      "nombre": "",
+      "puntos": "JESUS MARIA, PABELLON COLEGIOCALLE NUÑEZ DE BALBOA, 90, Madrid"
+    },
+    {
+      "pos": "C.B. MORATALAZ",
+      "nombre": "",
+      "puntos": "JOSE LUIS FERNANDEZ CANO, PABELLONHACIENDA DE PAVONES, 223, Madrid"
+    },
+    {
+      "pos": "BALONCESTO DAGANZO ISUZU REVEIN",
+      "nombre": "",
+      "puntos": "DAGANZO, PABELLON MUNICIPALCALLE DON QUIJOTE DE LA MANCHA, 1, Daganzo de Arriba"
+    },
+    {
+      "pos": "ARAVACA BASKET C.D.E.",
+      "nombre": "",
+      "puntos": "COLEGIO BERNADETTE, PABELLONCALLE SANTA BERNARDITA, 1, Aravaca"
+    },
+    {
+      "pos": "ESCUELA BARRIO DEL PILAR",
+      "nombre": "",
+      "puntos": "VICENTE DEL BOSQUE, CDM (PABELLON)AVDA. MONFORTE DE LEMOS, 13, Madrid"
+    }
+  ],
+  "clasificacion_39": [
+    {
+      "pos": "EXTRANJERÍA JUSTA C.B. VALDEBASKET LAGOMAR",
+      "nombre": "72",
+      "puntos": "LAGOMAR, PABELLON COLEGIOAV. DEL MAR ADRIATICO, 5, Valdemoro"
+    },
+    {
+      "pos": "DISTRITO CARABANCHEL B",
+      "nombre": "67",
+      "puntos": "FRANCISCO FERNANDEZ OCHOA, PABELLONDE LAS 14 OLIVAS, S/N, Madrid"
+    },
+    {
+      "pos": "SEVERO TORREJON MAURI",
+      "nombre": "48",
+      "puntos": "SEVERO OCHOA, C.E.I.P.LONDRES, 7-9, Torrejón de Ardoz"
+    },
+    {
+      "pos": "C.B. ALCORCON 2011",
+      "nombre": "26",
+      "puntos": "LOS CANTOS, PABELLON PISTA 5LOS CANTOS, 28, Alcorcón"
+    },
+    {
+      "pos": "MOVISTAR ESTUDIANTES MIMOUN",
+      "nombre": "50",
+      "puntos": "MOVISTAR ACADEMY MAGARIÑOS, Pista 2C/ SERRANO, 129, Madrid"
+    },
+    {
+      "pos": "HA BASKET \"A\"",
+      "nombre": "97",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    }
+  ],
+  "clasificacion_40": [
+    {
+      "pos": "RECUERDO S.A.D. C",
+      "nombre": "27",
+      "puntos": "RECUERDO, COLEGIO (Descubierto)PLAZA DUQUE DE PASTRANA, 5, Madrid"
+    },
+    {
+      "pos": "MOVISTAR ESTUDIANTES ARRANZ",
+      "nombre": "15",
+      "puntos": "LA CAJA MAGICA INDOOR NORTE Pista 5CAMINO DE PERALES, 23, Madrid"
+    },
+    {
+      "pos": "PARLA BASQUET RED",
+      "nombre": "49",
+      "puntos": "MIGUEL DELIBES, C.P.FELIPE II, 15 (entrada por Jaime I El Conquistador), Parla"
+    },
+    {
+      "pos": "BALONCESTO ARISTOS C",
+      "nombre": "30",
+      "puntos": "ANDRES CASADO, PABELLONAVDA. JUAN CARLOS I, 12, Getafe"
+    },
+    {
+      "pos": "DISTRITO CARABANCHEL C",
+      "nombre": "12",
+      "puntos": "FRANCISCO FERNANDEZ OCHOA, PABELLONDE LAS 14 OLIVAS, S/N, Madrid"
+    },
+    {
+      "pos": "CB POZUELO A",
+      "nombre": "87",
+      "puntos": "GERARDO DIEGO, I.E.S.IRLANDA, S/N, Pozuelo de Alarcón"
+    }
+  ],
+  "clasificacion_41": [
+    {
+      "pos": "EXTRANJERÍA JUSTA C.B. VALDEBASKET LAGOMAR",
+      "nombre": "82",
+      "puntos": "LAGOMAR, PABELLON COLEGIOAV. DEL MAR ADRIATICO, 5, Valdemoro"
+    },
+    {
+      "pos": "SEVERO TORREJON MAURI",
+      "nombre": "53",
+      "puntos": "SEVERO OCHOA, C.E.I.P.LONDRES, 7-9, Torrejón de Ardoz"
+    },
+    {
+      "pos": "C.B. ALCORCON 2011",
+      "nombre": "77",
+      "puntos": "FUENTE DEL PALOMAR, CEIPCAMILO JOSE CELA, 2, Alcorcón"
+    },
+    {
+      "pos": "MOVISTAR ESTUDIANTES MIMOUN",
+      "nombre": "42",
+      "puntos": "LA CAJA MAGICA INDOOR NORTE Pista 5CAMINO DE PERALES, 23, Madrid"
+    },
+    {
+      "pos": "HA BASKET \"A\"",
+      "nombre": "75",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    },
+    {
+      "pos": "RECUERDO S.A.D. C",
+      "nombre": "39",
+      "puntos": "RECUERDO, COLEGIO (Descubierto)PLAZA DUQUE DE PASTRANA, 5, Madrid"
+    }
+  ],
+  "clasificacion_42": [
+    {
+      "pos": "MOVISTAR ESTUDIANTES ARRANZ",
+      "nombre": "22",
+      "puntos": "LA CAJA MAGICA INDOOR NORTE Pista 5CAMINO DE PERALES, 23, Madrid"
+    },
+    {
+      "pos": "PARLA BASQUET RED",
+      "nombre": "55",
+      "puntos": "MIGUEL DELIBES, C.P.FELIPE II, 15 (entrada por Jaime I El Conquistador), Parla"
+    },
+    {
+      "pos": "BALONCESTO ARISTOS C",
+      "nombre": "22",
+      "puntos": "ANDRES CASADO, PABELLONAVDA. JUAN CARLOS I, 12, Getafe"
+    },
+    {
+      "pos": "DISTRITO CARABANCHEL C",
+      "nombre": "20",
+      "puntos": "FRANCISCO FERNANDEZ OCHOA, PABELLONDE LAS 14 OLIVAS, S/N, Madrid"
+    },
+    {
+      "pos": "CB POZUELO A",
+      "nombre": "82",
+      "puntos": "GERARDO DIEGO, I.E.S.IRLANDA, S/N, Pozuelo de Alarcón"
+    },
+    {
+      "pos": "DISTRITO CARABANCHEL B",
+      "nombre": "27",
+      "puntos": "FRANCISCO FERNANDEZ OCHOA, PABELLONDE LAS 14 OLIVAS, S/N, Madrid"
+    }
+  ],
+  "clasificacion_43": [
+    {
+      "pos": "EXTRANJERÍA JUSTA C.B. VALDEBASKET LAGOMAR",
+      "nombre": "75",
+      "puntos": "LAGOMAR, PABELLON COLEGIOAV. DEL MAR ADRIATICO, 5, Valdemoro"
+    },
+    {
+      "pos": "C.B. ALCORCON 2011",
+      "nombre": "29",
+      "puntos": "LOS CANTOS, PABELLON PISTA 5LOS CANTOS, 28, Alcorcón"
+    },
+    {
+      "pos": "MOVISTAR ESTUDIANTES MIMOUN",
+      "nombre": "25",
+      "puntos": "LA CAJA MAGICA INDOOR NORTE Pista 5CAMINO DE PERALES, 23, Madrid"
+    },
+    {
+      "pos": "HA BASKET \"A\"",
+      "nombre": "102",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    },
+    {
+      "pos": "RECUERDO S.A.D. C",
+      "nombre": "49",
+      "puntos": "RECUERDO, COLEGIO (Descubierto)PLAZA DUQUE DE PASTRANA, 5, Madrid"
+    },
+    {
+      "pos": "MOVISTAR ESTUDIANTES ARRANZ",
+      "nombre": "25",
+      "puntos": "LA CAJA MAGICA INDOOR NORTE Pista 5CAMINO DE PERALES, 23, Madrid"
+    }
+  ],
+  "clasificacion_44": [
+    {
+      "pos": "PARLA BASQUET RED",
+      "nombre": "27",
+      "puntos": "MIGUEL DELIBES, C.P.FELIPE II, 15 (entrada por Jaime I El Conquistador), Parla"
+    },
+    {
+      "pos": "BALONCESTO ARISTOS C",
+      "nombre": "43",
+      "puntos": "ANDRES CASADO, PABELLONAVDA. JUAN CARLOS I, 12, Getafe"
+    },
+    {
+      "pos": "DISTRITO CARABANCHEL C",
+      "nombre": "21",
+      "puntos": "FRANCISCO FERNANDEZ OCHOA, PABELLONDE LAS 14 OLIVAS, S/N, Madrid"
+    },
+    {
+      "pos": "CB POZUELO A",
+      "nombre": "45",
+      "puntos": "GERARDO DIEGO, I.E.S.IRLANDA, S/N, Pozuelo de Alarcón"
+    },
+    {
+      "pos": "DISTRITO CARABANCHEL B",
+      "nombre": "34",
+      "puntos": "FRANCISCO FERNANDEZ OCHOA, PABELLONDE LAS 14 OLIVAS, S/N, Madrid"
+    },
+    {
+      "pos": "SEVERO TORREJON MAURI",
+      "nombre": "67",
+      "puntos": "SEVERO OCHOA, C.E.I.P.LONDRES, 7-9, Torrejón de Ardoz"
+    }
+  ],
+  "clasificacion_45": [
+    {
+      "pos": "EXTRANJERÍA JUSTA C.B. VALDEBASKET LAGOMAR",
+      "nombre": "92",
+      "puntos": "LAGOMAR, PABELLON COLEGIOAV. DEL MAR ADRIATICO, 5, Valdemoro"
+    },
+    {
+      "pos": "MOVISTAR ESTUDIANTES MIMOUN",
+      "nombre": "36",
+      "puntos": "MOVISTAR ACADEMY MAGARIÑOS, Pista 2C/ SERRANO, 129, Madrid"
+    },
+    {
+      "pos": "HA BASKET \"A\"",
+      "nombre": "72",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    },
+    {
+      "pos": "RECUERDO S.A.D. C",
+      "nombre": "30",
+      "puntos": "RECUERDO, COLEGIO (Descubierto)PLAZA DUQUE DE PASTRANA, 5, Madrid"
+    },
+    {
+      "pos": "MOVISTAR ESTUDIANTES ARRANZ",
+      "nombre": "51",
+      "puntos": "LA CAJA MAGICA INDOOR NORTE Pista 5CAMINO DE PERALES, 23, Madrid"
+    },
+    {
+      "pos": "PARLA BASQUET RED",
+      "nombre": "63",
+      "puntos": "MIGUEL DELIBES, C.P.FELIPE II, 15 (entrada por Jaime I El Conquistador), Parla"
+    }
+  ],
+  "clasificacion_46": [
+    {
+      "pos": "BALONCESTO ARISTOS C",
+      "nombre": "21",
+      "puntos": "ANDRES CASADO, PABELLONAVDA. JUAN CARLOS I, 12, Getafe"
+    },
+    {
+      "pos": "DISTRITO CARABANCHEL C",
+      "nombre": "39",
+      "puntos": "FRANCISCO FERNANDEZ OCHOA, PABELLONDE LAS 14 OLIVAS, S/N, Madrid"
+    },
+    {
+      "pos": "CB POZUELO A",
+      "nombre": "57",
+      "puntos": "GERARDO DIEGO, I.E.S.IRLANDA, S/N, Pozuelo de Alarcón"
+    },
+    {
+      "pos": "DISTRITO CARABANCHEL B",
+      "nombre": "51",
+      "puntos": "FRANCISCO FERNANDEZ OCHOA, PABELLONDE LAS 14 OLIVAS, S/N, Madrid"
+    },
+    {
+      "pos": "SEVERO TORREJON MAURI",
+      "nombre": "38",
+      "puntos": "SEVERO OCHOA, C.E.I.P.LONDRES, 7-9, Torrejón de Ardoz"
+    },
+    {
+      "pos": "C.B. ALCORCON 2011",
+      "nombre": "36",
+      "puntos": "FUENTE DEL PALOMAR, CEIPCAMILO JOSE CELA, 2, Alcorcón"
+    }
+  ],
+  "clasificacion_47": [
+    {
+      "pos": "EXTRANJERÍA JUSTA C.B. VALDEBASKET LAGOMAR",
+      "nombre": "82",
+      "puntos": "LAGOMAR, PABELLON COLEGIOAV. DEL MAR ADRIATICO, 5, Valdemoro"
+    },
+    {
+      "pos": "HA BASKET \"A\"",
+      "nombre": "82",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    },
+    {
+      "pos": "RECUERDO S.A.D. C",
+      "nombre": "31",
+      "puntos": "RECUERDO, COLEGIO (Descubierto)PLAZA DUQUE DE PASTRANA, 5, Madrid"
+    },
+    {
+      "pos": "MOVISTAR ESTUDIANTES ARRANZ",
+      "nombre": "43",
+      "puntos": "LA CAJA MAGICA INDOOR NORTE Pista 5CAMINO DE PERALES, 23, Madrid"
+    },
+    {
+      "pos": "PARLA BASQUET RED",
+      "nombre": "32",
+      "puntos": "SUPERA, PABELLONAVDA. DE LOS PLANETAS, 42, Parla"
+    },
+    {
+      "pos": "BALONCESTO ARISTOS C",
+      "nombre": "68",
+      "puntos": "ANDRES CASADO, PABELLONAVDA. JUAN CARLOS I, 12, Getafe"
+    }
+  ],
+  "clasificacion_48": [
+    {
+      "pos": "EXTRANJERÍA JUSTA C.B. VALDEBASKET LAGOMAR",
+      "nombre": "112",
+      "puntos": "LAGOMAR, PABELLON COLEGIOAV. DEL MAR ADRIATICO, 5, Valdemoro"
+    },
+    {
+      "pos": "CB POZUELO A",
+      "nombre": "60",
+      "puntos": "GERARDO DIEGO, I.E.S.IRLANDA, S/N, Pozuelo de Alarcón"
+    },
+    {
+      "pos": "DISTRITO CARABANCHEL B",
+      "nombre": "42",
+      "puntos": "FRANCISCO FERNANDEZ OCHOA, PABELLONDE LAS 14 OLIVAS, S/N, Madrid"
+    },
+    {
+      "pos": "SEVERO TORREJON MAURI",
+      "nombre": "67",
+      "puntos": "SEVERO OCHOA, C.E.I.P.LONDRES, 7-9, Torrejón de Ardoz"
+    },
+    {
+      "pos": "C.B. ALCORCON 2011",
+      "nombre": "44",
+      "puntos": "LOS CANTOS, PABELLON PISTA 4LOS CANTOS, 28, Alcorcón"
+    },
+    {
+      "pos": "MOVISTAR ESTUDIANTES MIMOUN",
+      "nombre": "40",
+      "puntos": "LA CAJA MAGICA INDOOR NORTE Pista 5CAMINO DE PERALES, 23, Madrid"
+    }
+  ],
+  "clasificacion_49": [
+    {
+      "pos": "HA BASKET \"A\"",
+      "nombre": "50",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    },
+    {
+      "pos": "RECUERDO S.A.D. C",
+      "nombre": "39",
+      "puntos": "RECUERDO, COLEGIO (Descubierto)PLAZA DUQUE DE PASTRANA, 5, Madrid"
+    },
+    {
+      "pos": "MOVISTAR ESTUDIANTES ARRANZ",
+      "nombre": "45",
+      "puntos": "LA CAJA MAGICA INDOOR NORTE Pista 5CAMINO DE PERALES, 23, Madrid"
+    },
+    {
+      "pos": "PARLA BASQUET RED",
+      "nombre": "47",
+      "puntos": "MIGUEL DELIBES, C.P.FELIPE II, 15 (entrada por Jaime I El Conquistador), Parla"
+    },
+    {
+      "pos": "BALONCESTO ARISTOS C",
+      "nombre": "41",
+      "puntos": "ANDRES CASADO, PABELLONAVDA. JUAN CARLOS I, 12, Getafe"
+    },
+    {
+      "pos": "DISTRITO CARABANCHEL C",
+      "nombre": "21",
+      "puntos": "ESCUELAS PIAS CARABANCHEL, PABELLON COLEGIOAVDA. EUGENIA DE MONTIJO, 83, Madrid"
+    }
+  ],
+  "clasificacion_50": [
+    {
+      "pos": "CB POZUELO A",
+      "nombre": "50",
+      "puntos": "FRANCISCO DE VITORIA, UNIVERSIDADCTRA. POZUELO A MAJADAHONDA Km. 1,8, Pozuelo de Alarcón"
+    },
+    {
+      "pos": "DISTRITO CARABANCHEL C",
+      "nombre": "37",
+      "puntos": "FRANCISCO FERNANDEZ OCHOA, PABELLONDE LAS 14 OLIVAS, S/N, Madrid"
+    },
+    {
+      "pos": "BALONCESTO ARISTOS C",
+      "nombre": "45",
+      "puntos": "ANDRES CASADO, PABELLONAVDA. JUAN CARLOS I, 12, Getafe"
+    },
+    {
+      "pos": "PARLA BASQUET RED",
+      "nombre": "32",
+      "puntos": "SUPERA, PABELLONAVDA. DE LOS PLANETAS, 42, Parla"
+    },
+    {
+      "pos": "MOVISTAR ESTUDIANTES ARRANZ",
+      "nombre": "30",
+      "puntos": "LA CAJA MAGICA INDOOR NORTE Pista 5CAMINO DE PERALES, 23, Madrid"
+    },
+    {
+      "pos": "RECUERDO S.A.D. C",
+      "nombre": "46",
+      "puntos": "RECUERDO, COLEGIO (Descubierto)PLAZA DUQUE DE PASTRANA, 5, Madrid"
+    }
+  ],
+  "clasificacion_51": [
+    {
+      "pos": "EXTRANJERÍA JUSTA C.B. VALDEBASKET LAGOMAR",
+      "nombre": "71",
+      "puntos": "LAGOMAR, PABELLON COLEGIOAV. DEL MAR ADRIATICO, 5, Valdemoro"
+    },
+    {
+      "pos": "HA BASKET \"A\"",
+      "nombre": "96",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    },
+    {
+      "pos": "MOVISTAR ESTUDIANTES MIMOUN",
+      "nombre": "25",
+      "puntos": "I.E.S. BLANCA FERNANDEZ OCHOACALLE DEL MONASTERIO DE EL PAULAR, 3, Madrid"
+    },
+    {
+      "pos": "C.B. ALCORCON 2011",
+      "nombre": "48",
+      "puntos": "LOS CANTOS, PABELLON PISTA 5LOS CANTOS, 28, Alcorcón"
+    },
+    {
+      "pos": "SEVERO TORREJON MAURI",
+      "nombre": "95",
+      "puntos": "SEVERO OCHOA, C.E.I.P.LONDRES, 7-9, Torrejón de Ardoz"
+    },
+    {
+      "pos": "DISTRITO CARABANCHEL B",
+      "nombre": "23",
+      "puntos": "FRANCISCO FERNANDEZ OCHOA, PABELLONDE LAS 14 OLIVAS, S/N, Madrid"
+    }
+  ],
+  "clasificacion_52": [
+    {
+      "pos": "DISTRITO CARABANCHEL B",
+      "nombre": "36",
+      "puntos": "FRANCISCO FERNANDEZ OCHOA, PABELLONDE LAS 14 OLIVAS, S/N, Madrid"
+    },
+    {
+      "pos": "CB POZUELO A",
+      "nombre": "29",
+      "puntos": "FRANCISCO DE VITORIA, UNIVERSIDADCTRA. POZUELO A MAJADAHONDA Km. 1,8, Pozuelo de Alarcón"
+    },
+    {
+      "pos": "DISTRITO CARABANCHEL C",
+      "nombre": "25",
+      "puntos": "FRANCISCO FERNANDEZ OCHOA, PABELLONDE LAS 14 OLIVAS, S/N, Madrid"
+    },
+    {
+      "pos": "BALONCESTO ARISTOS C",
+      "nombre": "39",
+      "puntos": "ANDRES CASADO, PABELLONAVDA. JUAN CARLOS I, 12, Getafe"
+    },
+    {
+      "pos": "PARLA BASQUET RED",
+      "nombre": "34",
+      "puntos": "MIGUEL DELIBES, C.P.FELIPE II, 15 (entrada por Jaime I El Conquistador), Parla"
+    },
+    {
+      "pos": "MOVISTAR ESTUDIANTES ARRANZ",
+      "nombre": "49",
+      "puntos": "LA CAJA MAGICA INDOOR NORTE Pista 5CAMINO DE PERALES, 23, Madrid"
+    }
+  ],
+  "clasificacion_53": [
+    {
+      "pos": "EXTRANJERÍA JUSTA C.B. VALDEBASKET LAGOMAR",
+      "nombre": "80",
+      "puntos": "LAGOMAR, PABELLON COLEGIOAV. DEL MAR ADRIATICO, 5, Valdemoro"
+    },
+    {
+      "pos": "RECUERDO S.A.D. C",
+      "nombre": "37",
+      "puntos": "RECUERDO, COLEGIO (Descubierto)PLAZA DUQUE DE PASTRANA, 5, Madrid"
+    },
+    {
+      "pos": "HA BASKET \"A\"",
+      "nombre": "98",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    },
+    {
+      "pos": "MOVISTAR ESTUDIANTES MIMOUN",
+      "nombre": "65",
+      "puntos": "LA CAJA MAGICA INDOOR NORTE Pista 5CAMINO DE PERALES, 23, Madrid"
+    },
+    {
+      "pos": "C.B. ALCORCON 2011",
+      "nombre": "37",
+      "puntos": "LA CANALEJA, PABELLON PISTA 2AVENIDA CIRCUNVALACION NORTE, 1, Alcorcón"
+    },
+    {
+      "pos": "SEVERO TORREJON MAURI",
+      "nombre": "35",
+      "puntos": "SEVERO OCHOA, C.E.I.P.LONDRES, 7-9, Torrejón de Ardoz"
+    }
+  ],
+  "clasificacion_54": [
+    {
+      "pos": "SEVERO TORREJON MAURI",
+      "nombre": "29",
+      "puntos": "SEVERO OCHOA, C.E.I.P.LONDRES, 7-9, Torrejón de Ardoz"
+    },
+    {
+      "pos": "DISTRITO CARABANCHEL B",
+      "nombre": "35",
+      "puntos": "FRANCISCO FERNANDEZ OCHOA, PABELLONDE LAS 14 OLIVAS, S/N, Madrid"
+    },
+    {
+      "pos": "CB POZUELO A",
+      "nombre": "55",
+      "puntos": "FRANCISCO DE VITORIA, UNIVERSIDADCTRA. POZUELO A MAJADAHONDA Km. 1,8, Pozuelo de Alarcón"
+    },
+    {
+      "pos": "DISTRITO CARABANCHEL C",
+      "nombre": "19",
+      "puntos": "FRANCISCO FERNANDEZ OCHOA, PABELLONDE LAS 14 OLIVAS, S/N, Madrid"
+    },
+    {
+      "pos": "BALONCESTO ARISTOS C",
+      "nombre": "42",
+      "puntos": "ANDRES CASADO, PABELLONAVDA. JUAN CARLOS I, 12, Getafe"
+    },
+    {
+      "pos": "PARLA BASQUET RED",
+      "nombre": "52",
+      "puntos": "SUPERA, PABELLONAVDA. DE LOS PLANETAS, 42, Parla"
+    }
+  ],
+  "clasificacion_55": [
+    {
+      "pos": "EXTRANJERÍA JUSTA C.B. VALDEBASKET LAGOMAR",
+      "nombre": "69",
+      "puntos": "LAGOMAR, PABELLON COLEGIOAV. DEL MAR ADRIATICO, 5, Valdemoro"
+    },
+    {
+      "pos": "MOVISTAR ESTUDIANTES ARRANZ",
+      "nombre": "55",
+      "puntos": "LA CAJA MAGICA INDOOR NORTE Pista 5CAMINO DE PERALES, 23, Madrid"
+    },
+    {
+      "pos": "RECUERDO S.A.D. C",
+      "nombre": "98",
+      "puntos": "RECUERDO, COLEGIO (Descubierto)PLAZA DUQUE DE PASTRANA, 5, Madrid"
+    },
+    {
+      "pos": "HA BASKET \"A\"",
+      "nombre": "77",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    },
+    {
+      "pos": "MOVISTAR ESTUDIANTES MIMOUN",
+      "nombre": "27",
+      "puntos": "I.E.S. BLANCA FERNANDEZ OCHOACALLE DEL MONASTERIO DE EL PAULAR, 3, Madrid"
+    },
+    {
+      "pos": "C.B. ALCORCON 2011",
+      "nombre": "35",
+      "puntos": "LOS CANTOS, PABELLON PISTA 5LOS CANTOS, 28, Alcorcón"
+    }
+  ],
+  "clasificacion_56": [
+    {
+      "pos": "C.B. ALCORCON 2011",
+      "nombre": "49",
+      "puntos": "LOS CANTOS, PABELLON PISTA 6LOS CANTOS, 28, Alcorcón"
+    },
+    {
+      "pos": "SEVERO TORREJON MAURI",
+      "nombre": "40",
+      "puntos": "SEVERO OCHOA, C.E.I.P.LONDRES, 7-9, Torrejón de Ardoz"
+    },
+    {
+      "pos": "DISTRITO CARABANCHEL B",
+      "nombre": "33",
+      "puntos": "SAN GABRIEL, COLEGIOAVDA. EUGENIA DE MONTIJO, 92, Madrid"
+    },
+    {
+      "pos": "CB POZUELO A",
+      "nombre": "69",
+      "puntos": "FRANCISCO DE VITORIA, UNIVERSIDADCTRA. POZUELO A MAJADAHONDA Km. 1,8, Pozuelo de Alarcón"
+    },
+    {
+      "pos": "DISTRITO CARABANCHEL C",
+      "nombre": "37",
+      "puntos": "ESCUELAS PIAS CARABANCHEL, PABELLON COLEGIOAVDA. EUGENIA DE MONTIJO, 83, Madrid"
+    },
+    {
+      "pos": "BALONCESTO ARISTOS C",
+      "nombre": "37",
+      "puntos": "ANDRES CASADO, PABELLONAVDA. JUAN CARLOS I, 12, Getafe"
+    }
+  ],
+  "clasificacion_57": [
+    {
+      "pos": "EXTRANJERÍA JUSTA C.B. VALDEBASKET LAGOMAR",
+      "nombre": "88",
+      "puntos": "LAGOMAR, PABELLON COLEGIOAV. DEL MAR ADRIATICO, 5, Valdemoro"
+    },
+    {
+      "pos": "PARLA BASQUET RED",
+      "nombre": "114",
+      "puntos": "SUPERA, PABELLONAVDA. DE LOS PLANETAS, 42, Parla"
+    },
+    {
+      "pos": "MOVISTAR ESTUDIANTES ARRANZ",
+      "nombre": "51",
+      "puntos": "MOVISTAR ACADEMY MAGARIÑOS, Pista 2C/ SERRANO, 129, Madrid"
+    },
+    {
+      "pos": "RECUERDO S.A.D. C",
+      "nombre": "58",
+      "puntos": "RECUERDO, COLEGIO (Descubierto)PLAZA DUQUE DE PASTRANA, 5, Madrid"
+    },
+    {
+      "pos": "HA BASKET \"A\"",
+      "nombre": "61",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    },
+    {
+      "pos": "MOVISTAR ESTUDIANTES MIMOUN",
+      "nombre": "43",
+      "puntos": "MOVISTAR ACADEMY MAGARIÑOS, Pista 2C/ SERRANO, 129, Madrid"
+    }
+  ],
+  "clasificacion_58": [
+    {
+      "pos": "MOVISTAR ESTUDIANTES MIMOUN",
+      "nombre": "20",
+      "puntos": "I.E.S. BLANCA FERNANDEZ OCHOACALLE DEL MONASTERIO DE EL PAULAR, 3, Madrid"
+    },
+    {
+      "pos": "C.B. ALCORCON 2011",
+      "nombre": "30",
+      "puntos": "LOS CANTOS, PABELLON PISTA 4LOS CANTOS, 28, Alcorcón"
+    },
+    {
+      "pos": "SEVERO TORREJON MAURI",
+      "nombre": "61",
+      "puntos": "SEVERO OCHOA, C.E.I.P.LONDRES, 7-9, Torrejón de Ardoz"
+    },
+    {
+      "pos": "DISTRITO CARABANCHEL B",
+      "nombre": "44",
+      "puntos": "FRANCISCO FERNANDEZ OCHOA, PABELLONDE LAS 14 OLIVAS, S/N, Madrid"
+    },
+    {
+      "pos": "CB POZUELO A",
+      "nombre": "71",
+      "puntos": "GERARDO DIEGO, I.E.S.IRLANDA, S/N, Pozuelo de Alarcón"
+    },
+    {
+      "pos": "DISTRITO CARABANCHEL C",
+      "nombre": "28",
+      "puntos": "FRANCISCO FERNANDEZ OCHOA, PABELLONDE LAS 14 OLIVAS, S/N, Madrid"
+    }
+  ],
+  "clasificacion_59": [
+    {
+      "pos": "DISTRITO CARABANCHEL C",
+      "nombre": "15",
+      "puntos": "ESCUELAS PIAS CARABANCHEL, PABELLON COLEGIOAVDA. EUGENIA DE MONTIJO, 83, Madrid"
+    },
+    {
+      "pos": "BALONCESTO ARISTOS C",
+      "nombre": "37",
+      "puntos": "ANDRES CASADO, PABELLONAVDA. JUAN CARLOS I, 12, Getafe"
+    },
+    {
+      "pos": "PARLA BASQUET RED",
+      "nombre": "50",
+      "puntos": "SUPERA, PABELLONAVDA. DE LOS PLANETAS, 42, Parla"
+    },
+    {
+      "pos": "MOVISTAR ESTUDIANTES ARRANZ",
+      "nombre": "37",
+      "puntos": "RAMIRO DE MAEZTU 1, INSTITUTOSERRANO, 129, Madrid"
+    },
+    {
+      "pos": "RECUERDO S.A.D. C",
+      "nombre": "49",
+      "puntos": "RECUERDO, COLEGIO (Descubierto)PLAZA DUQUE DE PASTRANA, 5, Madrid"
+    },
+    {
+      "pos": "HA BASKET \"A\"",
+      "nombre": "57",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    }
+  ],
+  "clasificacion_60": [
+    {
+      "pos": "EXTRANJERÍA JUSTA C.B. VALDEBASKET LAGOMAR",
+      "nombre": "57",
+      "puntos": "LAGOMAR, PABELLON COLEGIOAV. DEL MAR ADRIATICO, 5, Valdemoro"
+    },
+    {
+      "pos": "MOVISTAR ESTUDIANTES MIMOUN",
+      "nombre": "70",
+      "puntos": "MOVISTAR ACADEMY MAGARIÑOS, Pista 2C/ SERRANO, 129, Madrid"
+    },
+    {
+      "pos": "C.B. ALCORCON 2011",
+      "nombre": "25",
+      "puntos": "LOS CANTOS, PABELLON PISTA 5LOS CANTOS, 28, Alcorcón"
+    },
+    {
+      "pos": "SEVERO TORREJON MAURI",
+      "nombre": "73",
+      "puntos": "SEVERO OCHOA, C.E.I.P.LONDRES, 7-9, Torrejón de Ardoz"
+    },
+    {
+      "pos": "DISTRITO CARABANCHEL B",
+      "nombre": "50",
+      "puntos": "FRANCISCO FERNANDEZ OCHOA, PABELLONDE LAS 14 OLIVAS, S/N, Madrid"
+    },
+    {
+      "pos": "CB POZUELO A",
+      "nombre": "105",
+      "puntos": "GERARDO DIEGO, I.E.S.IRLANDA, S/N, Pozuelo de Alarcón"
+    }
+  ],
+  "clasificacion_61": [
+    {
+      "pos": "CABRINI A.P.A. BLANCO",
+      "nombre": "53",
+      "puntos": "CABRINI, COLEGIO (Semicubierto)STA. FRANCISCA JAVIER CABRINI esquina C/ Sicélidas, Madrid"
+    },
+    {
+      "pos": "BALONCESTO FUENLABRADA ''C''",
+      "nombre": "124",
+      "puntos": "EL ARROYO, PABELLONFUENTESAUCO, 1, Fuenlabrada"
+    },
+    {
+      "pos": "U.B. TORABASKET",
+      "nombre": "77",
+      "puntos": "PEDRO BRIMONIS, CEIPISLA CONEJERA, S/N, Humanes de Madrid"
+    },
+    {
+      "pos": "SAN AGUSTIN MADRID \"B\"",
+      "nombre": "99",
+      "puntos": "SAN AGUSTIN, PABELLON PRINCIPALCALLE PADRE DAMIAN, 18, Madrid"
+    },
+    {
+      "pos": "PARQUE CATALUÑA TORREJÓN NEGRO",
+      "nombre": "80",
+      "puntos": "PARQUE DE CATALUÑA, CLUB DEPORTIVOCALLE HILADOS, 2, Torrejón de Ardoz"
+    },
+    {
+      "pos": "C.B. GETAFE \"C\"",
+      "nombre": "126",
+      "puntos": "JUAN DE LA CIERVA, PABELLON Pista 3AV. ESPAÑA, 90, Getafe"
+    }
+  ],
+  "clasificacion_62": [
+    {
+      "pos": "CB NAVALCARNERO D",
+      "nombre": "9",
+      "puntos": "JOSE JALON, PABELLONLA FELGUERA, S/N, Navalcarnero"
+    },
+    {
+      "pos": "HA BASKET \"B\"",
+      "nombre": "63",
+      "puntos": "ARGANZUELA, CENTRO INTEGRADOC/ PALOS DE LA FRONTERA, 40, Madrid"
+    },
+    {
+      "pos": "C.B. MORATALAZ \"C\"",
+      "nombre": "67",
+      "puntos": "JOSE LUIS FERNANDEZ CANO, PABELLONHACIENDA DE PAVONES, 223, Madrid"
+    },
+    {
+      "pos": "PARLA BASQUET LIONS",
+      "nombre": "27",
+      "puntos": "MIGUEL DELIBES, C.P.FELIPE II, 15 (entrada por Jaime I El Conquistador), Parla"
+    },
+    {
+      "pos": "COBEÑA BASKET SPORT C.D.E.",
+      "nombre": "29",
+      "puntos": "LA DEHESA, PDVO. MPAL.CTRA. M-103 Km. 6,5 (Carretera de Cobeña a Algete), Cobeña"
+    },
+    {
+      "pos": "SAN AGUSTIN DEL GUADALIX \"B\"",
+      "nombre": "37",
+      "puntos": "SAN AGUSTIN GUADALIX, PABELLONJULIAN BERRENDERO, S/N, San Agustín de Guadalix"
+    }
+  ],
+  "clasificacion_63": [
+    {
+      "pos": "CABRINI A.P.A. BLANCO",
+      "nombre": "52",
+      "puntos": "CABRINI, COLEGIO (Semicubierto)STA. FRANCISCA JAVIER CABRINI esquina C/ Sicélidas, Madrid"
+    },
+    {
+      "pos": "U.B. TORABASKET",
+      "nombre": "54",
+      "puntos": "PEDRO BRIMONIS, CEIPISLA CONEJERA, S/N, Humanes de Madrid"
+    },
+    {
+      "pos": "SAN AGUSTIN MADRID \"B\"",
+      "nombre": "150",
+      "puntos": "SAN AGUSTIN, COLEGIO (Descubierto)CALLE PADRE DAMIAN, 18, Madrid"
+    },
+    {
+      "pos": "PARQUE CATALUÑA TORREJÓN NEGRO",
+      "nombre": "63",
+      "puntos": "PARQUE DE CATALUÑA, CLUB DEPORTIVOCALLE HILADOS, 2, Torrejón de Ardoz"
+    },
+    {
+      "pos": "C.B. GETAFE \"C\"",
+      "nombre": "52",
+      "puntos": "JUAN DE LA CIERVA, PABELLON Pista 1AV. ESPAÑA, 90, Getafe"
+    },
+    {
+      "pos": "CB NAVALCARNERO D",
+      "nombre": "14",
+      "puntos": "JOSE JALON, PABELLONLA FELGUERA, S/N, Navalcarnero"
+    }
+  ],
+  "clasificacion_64": [
+    {
+      "pos": "HA BASKET \"B\"",
+      "nombre": "31",
+      "puntos": "ARGANZUELA, CENTRO INTEGRADOC/ PALOS DE LA FRONTERA, 40, Madrid"
+    },
+    {
+      "pos": "C.B. MORATALAZ \"C\"",
+      "nombre": "93",
+      "puntos": "JOSE LUIS FERNANDEZ CANO, PABELLONHACIENDA DE PAVONES, 223, Madrid"
+    },
+    {
+      "pos": "PARLA BASQUET LIONS",
+      "nombre": "46",
+      "puntos": "SUPERA, PABELLONAVDA. DE LOS PLANETAS, 42, Parla"
+    },
+    {
+      "pos": "COBEÑA BASKET SPORT C.D.E.",
+      "nombre": "52",
+      "puntos": "LA DEHESA, PDVO. MPAL.CTRA. M-103 Km. 6,5 (Carretera de Cobeña a Algete), Cobeña"
+    },
+    {
+      "pos": "SAN AGUSTIN DEL GUADALIX \"B\"",
+      "nombre": "40",
+      "puntos": "SAN AGUSTIN GUADALIX, PABELLONJULIAN BERRENDERO, S/N, San Agustín de Guadalix"
+    },
+    {
+      "pos": "BALONCESTO FUENLABRADA ''C''",
+      "nombre": "90",
+      "puntos": "EL ARROYO, PABELLONFUENTESAUCO, 1, Fuenlabrada"
+    }
+  ],
+  "clasificacion_65": [
+    {
+      "pos": "CABRINI A.P.A. BLANCO",
+      "nombre": "75",
+      "puntos": "CABRINI, COLEGIO (Semicubierto)STA. FRANCISCA JAVIER CABRINI esquina C/ Sicélidas, Madrid"
+    },
+    {
+      "pos": "SAN AGUSTIN MADRID \"B\"",
+      "nombre": "94",
+      "puntos": "SAN AGUSTIN, PABELLON PRINCIPALCALLE PADRE DAMIAN, 18, Madrid"
+    },
+    {
+      "pos": "PARQUE CATALUÑA TORREJÓN NEGRO",
+      "nombre": "46",
+      "puntos": "PARQUE DE CATALUÑA, CLUB DEPORTIVOCALLE HILADOS, 2, Torrejón de Ardoz"
+    },
+    {
+      "pos": "C.B. GETAFE \"C\"",
+      "nombre": "84",
+      "puntos": "FELIPE REYES, PABELLON PISTA CENTRALAV. ESPAÑA, 90, Getafe"
+    },
+    {
+      "pos": "CB NAVALCARNERO D",
+      "nombre": "12",
+      "puntos": "JOSE JALON, PABELLONLA FELGUERA, S/N, Navalcarnero"
+    },
+    {
+      "pos": "HA BASKET \"B\"",
+      "nombre": "27",
+      "puntos": "ARGANZUELA, CENTRO INTEGRADOC/ PALOS DE LA FRONTERA, 40, Madrid"
+    }
+  ],
+  "clasificacion_66": [
+    {
+      "pos": "C.B. MORATALAZ \"C\"",
+      "nombre": "62",
+      "puntos": "MORATALAZ, PDVO. MPAL.VALDEBERNARDO, S/N, Madrid"
+    },
+    {
+      "pos": "PARLA BASQUET LIONS",
+      "nombre": "52",
+      "puntos": "SUPERA, PABELLONAVDA. DE LOS PLANETAS, 42, Parla"
+    },
+    {
+      "pos": "COBEÑA BASKET SPORT C.D.E.",
+      "nombre": "20",
+      "puntos": "LA DEHESA, PDVO. MPAL.CTRA. M-103 Km. 6,5 (Carretera de Cobeña a Algete), Cobeña"
+    },
+    {
+      "pos": "SAN AGUSTIN DEL GUADALIX \"B\"",
+      "nombre": "58",
+      "puntos": "SAN AGUSTIN GUADALIX, PABELLONJULIAN BERRENDERO, S/N, San Agustín de Guadalix"
+    },
+    {
+      "pos": "BALONCESTO FUENLABRADA ''C''",
+      "nombre": "99",
+      "puntos": "EL ARROYO, PABELLONFUENTESAUCO, 1, Fuenlabrada"
+    },
+    {
+      "pos": "U.B. TORABASKET",
+      "nombre": "30",
+      "puntos": "CAMPOHERMOSO, PABELLONVALDEHONDILLO, 3, Humanes de Madrid"
+    }
+  ],
+  "clasificacion_67": [
+    {
+      "pos": "CABRINI A.P.A. BLANCO",
+      "nombre": "40",
+      "puntos": "CABRINI, COLEGIO (Semicubierto)STA. FRANCISCA JAVIER CABRINI esquina C/ Sicélidas, Madrid"
+    },
+    {
+      "pos": "PARQUE CATALUÑA TORREJÓN NEGRO",
+      "nombre": "36",
+      "puntos": "PARQUE DE CATALUÑA, CLUB DEPORTIVOCALLE HILADOS, 2, Torrejón de Ardoz"
+    },
+    {
+      "pos": "C.B. GETAFE \"C\"",
+      "nombre": "39",
+      "puntos": "JUAN DE LA CIERVA, PABELLON Pista 3AV. ESPAÑA, 90, Getafe"
+    },
+    {
+      "pos": "CB NAVALCARNERO D",
+      "nombre": "12",
+      "puntos": "JOSE JALON, PABELLONLA FELGUERA, S/N, Navalcarnero"
+    },
+    {
+      "pos": "HA BASKET \"B\"",
+      "nombre": "83",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    },
+    {
+      "pos": "C.B. MORATALAZ \"C\"",
+      "nombre": "57",
+      "puntos": "JOSE LUIS FERNANDEZ CANO, PABELLONHACIENDA DE PAVONES, 223, Madrid"
+    }
+  ],
+  "clasificacion_68": [
+    {
+      "pos": "PARLA BASQUET LIONS",
+      "nombre": "55",
+      "puntos": "SUPERA, PABELLONAVDA. DE LOS PLANETAS, 42, Parla"
+    },
+    {
+      "pos": "COBEÑA BASKET SPORT C.D.E.",
+      "nombre": "16",
+      "puntos": "LA DEHESA, PDVO. MPAL.CTRA. M-103 Km. 6,5 (Carretera de Cobeña a Algete), Cobeña"
+    },
+    {
+      "pos": "SAN AGUSTIN DEL GUADALIX \"B\"",
+      "nombre": "76",
+      "puntos": "SAN AGUSTIN GUADALIX, PABELLONJULIAN BERRENDERO, S/N, San Agustín de Guadalix"
+    },
+    {
+      "pos": "BALONCESTO FUENLABRADA ''C''",
+      "nombre": "130",
+      "puntos": "EL ARROYO, PABELLONFUENTESAUCO, 1, Fuenlabrada"
+    },
+    {
+      "pos": "U.B. TORABASKET",
+      "nombre": "66",
+      "puntos": "CAMPOHERMOSO, PABELLONVALDEHONDILLO, 3, Humanes de Madrid"
+    },
+    {
+      "pos": "SAN AGUSTIN MADRID \"B\"",
+      "nombre": "73",
+      "puntos": "SAN AGUSTIN, PABELLON PRINCIPALCALLE PADRE DAMIAN, 18, Madrid"
+    }
+  ],
+  "clasificacion_69": [
+    {
+      "pos": "CABRINI A.P.A. BLANCO",
+      "nombre": "79",
+      "puntos": "CABRINI, COLEGIO (Semicubierto)STA. FRANCISCA JAVIER CABRINI esquina C/ Sicélidas, Madrid"
+    },
+    {
+      "pos": "C.B. GETAFE \"C\"",
+      "nombre": "38",
+      "puntos": "JUAN DE LA CIERVA, PABELLON Pista 1AV. ESPAÑA, 90, Getafe"
+    },
+    {
+      "pos": "CB NAVALCARNERO D",
+      "nombre": "13",
+      "puntos": "JOSE JALON, PABELLONLA FELGUERA, S/N, Navalcarnero"
+    },
+    {
+      "pos": "HA BASKET \"B\"",
+      "nombre": "24",
+      "puntos": "EL ARROYO, PABELLONFUENTESAUCO, 1, Fuenlabrada"
+    },
+    {
+      "pos": "C.B. MORATALAZ \"C\"",
+      "nombre": "45",
+      "puntos": "JOSE LUIS FERNANDEZ CANO, PABELLONHACIENDA DE PAVONES, 223, Madrid"
+    },
+    {
+      "pos": "PARLA BASQUET LIONS",
+      "nombre": "89",
+      "puntos": "MIGUEL DELIBES, C.P.FELIPE II, 15 (entrada por Jaime I El Conquistador), Parla"
+    }
+  ],
+  "clasificacion_70": [
+    {
+      "pos": "CABRINI A.P.A. BLANCO",
+      "nombre": "128",
+      "puntos": "CABRINI, COLEGIO (Semicubierto)STA. FRANCISCA JAVIER CABRINI esquina C/ Sicélidas, Madrid"
+    },
+    {
+      "pos": "SAN AGUSTIN DEL GUADALIX \"B\"",
+      "nombre": "100",
+      "puntos": "SAN AGUSTIN GUADALIX, PABELLONJULIAN BERRENDERO, S/N, San Agustín de Guadalix"
+    },
+    {
+      "pos": "BALONCESTO FUENLABRADA ''C''",
+      "nombre": "120",
+      "puntos": "EL ARROYO, PABELLONFUENTESAUCO, 1, Fuenlabrada"
+    },
+    {
+      "pos": "U.B. TORABASKET",
+      "nombre": "59",
+      "puntos": "CAMPOHERMOSO, PABELLONVALDEHONDILLO, 3, Humanes de Madrid"
+    },
+    {
+      "pos": "SAN AGUSTIN MADRID \"B\"",
+      "nombre": "111",
+      "puntos": "SAN AGUSTIN, PABELLON PRINCIPALCALLE PADRE DAMIAN, 18, Madrid"
+    },
+    {
+      "pos": "PARQUE CATALUÑA TORREJÓN NEGRO",
+      "nombre": "51",
+      "puntos": "PARQUE DE CATALUÑA, CLUB DEPORTIVOCALLE HILADOS, 2, Torrejón de Ardoz"
+    }
+  ],
+  "clasificacion_71": [
+    {
+      "pos": "C.B. GETAFE \"C\"",
+      "nombre": "54",
+      "puntos": "JUAN DE LA CIERVA, PABELLON Pista 3AV. ESPAÑA, 90, Getafe"
+    },
+    {
+      "pos": "CB NAVALCARNERO D",
+      "nombre": "36",
+      "puntos": "JOSE JALON, PABELLONLA FELGUERA, S/N, Navalcarnero"
+    },
+    {
+      "pos": "HA BASKET \"B\"",
+      "nombre": "21",
+      "puntos": "GREENFIELD, PABELLON COLEGIOCARR. DE CARABANCHEL A VILLAVERDE, 82, Madrid"
+    },
+    {
+      "pos": "C.B. MORATALAZ \"C\"",
+      "nombre": "34",
+      "puntos": "MORATALAZ, PDVO. MPAL.VALDEBERNARDO, S/N, Madrid"
+    },
+    {
+      "pos": "PARLA BASQUET LIONS",
+      "nombre": "32",
+      "puntos": "MIGUEL DELIBES, C.P.FELIPE II, 15 (entrada por Jaime I El Conquistador), Parla"
+    },
+    {
+      "pos": "COBEÑA BASKET SPORT C.D.E.",
+      "nombre": "24",
+      "puntos": "LA DEHESA, PDVO. MPAL.CTRA. M-103 Km. 6,5 (Carretera de Cobeña a Algete), Cobeña"
+    }
+  ],
+  "clasificacion_72": [
+    {
+      "pos": "SAN AGUSTIN DEL GUADALIX \"B\"",
+      "nombre": "66",
+      "puntos": "SAN AGUSTIN GUADALIX, PABELLONJULIAN BERRENDERO, S/N, San Agustín de Guadalix"
+    },
+    {
+      "pos": "COBEÑA BASKET SPORT C.D.E.",
+      "nombre": "16",
+      "puntos": "LA DEHESA, PDVO. MPAL.CTRA. M-103 Km. 6,5 (Carretera de Cobeña a Algete), Cobeña"
+    },
+    {
+      "pos": "PARLA BASQUET LIONS",
+      "nombre": "56",
+      "puntos": "SUPERA, PABELLONAVDA. DE LOS PLANETAS, 42, Parla"
+    },
+    {
+      "pos": "C.B. MORATALAZ \"C\"",
+      "nombre": "30",
+      "puntos": "JOSE LUIS FERNANDEZ CANO, PABELLONHACIENDA DE PAVONES, 223, Madrid"
+    },
+    {
+      "pos": "HA BASKET \"B\"",
+      "nombre": "40",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    },
+    {
+      "pos": "CB NAVALCARNERO D",
+      "nombre": "31",
+      "puntos": "LA ESTACION, PABELLON MUNICIPALRIO EBRO, S/N, Navalcarnero"
+    }
+  ],
+  "clasificacion_73": [
+    {
+      "pos": "CABRINI A.P.A. BLANCO",
+      "nombre": "76",
+      "puntos": "CABRINI, COLEGIO (Semicubierto)STA. FRANCISCA JAVIER CABRINI esquina C/ Sicélidas, Madrid"
+    },
+    {
+      "pos": "C.B. GETAFE \"C\"",
+      "nombre": "64",
+      "puntos": "FELIPE REYES, PABELLON PISTA CENTRALAV. ESPAÑA, 90, Getafe"
+    },
+    {
+      "pos": "PARQUE CATALUÑA TORREJÓN NEGRO",
+      "nombre": "53",
+      "puntos": "PARQUE DE CATALUÑA, CLUB DEPORTIVOCALLE HILADOS, 2, Torrejón de Ardoz"
+    },
+    {
+      "pos": "SAN AGUSTIN MADRID \"B\"",
+      "nombre": "89",
+      "puntos": "SAN AGUSTIN, PABELLON PRINCIPALCALLE PADRE DAMIAN, 18, Madrid"
+    },
+    {
+      "pos": "U.B. TORABASKET",
+      "nombre": "90",
+      "puntos": "CAMPOHERMOSO, PABELLONVALDEHONDILLO, 3, Humanes de Madrid"
+    },
+    {
+      "pos": "BALONCESTO FUENLABRADA ''C''",
+      "nombre": "95",
+      "puntos": "EL ARROYO, PABELLONFUENTESAUCO, 1, Fuenlabrada"
+    }
+  ],
+  "clasificacion_74": [
+    {
+      "pos": "BALONCESTO FUENLABRADA ''C''",
+      "nombre": "92",
+      "puntos": "EL ARROYO, PABELLONFUENTESAUCO, 1, Fuenlabrada"
+    },
+    {
+      "pos": "SAN AGUSTIN DEL GUADALIX \"B\"",
+      "nombre": "83",
+      "puntos": "SAN AGUSTIN GUADALIX, PABELLONJULIAN BERRENDERO, S/N, San Agustín de Guadalix"
+    },
+    {
+      "pos": "COBEÑA BASKET SPORT C.D.E.",
+      "nombre": "23",
+      "puntos": "LA DEHESA, PDVO. MPAL.CTRA. M-103 Km. 6,5 (Carretera de Cobeña a Algete), Cobeña"
+    },
+    {
+      "pos": "PARLA BASQUET LIONS",
+      "nombre": "69",
+      "puntos": "SUPERA, PABELLONAVDA. DE LOS PLANETAS, 42, Parla"
+    },
+    {
+      "pos": "C.B. MORATALAZ \"C\"",
+      "nombre": "44",
+      "puntos": "JOSE LUIS FERNANDEZ CANO, PABELLONHACIENDA DE PAVONES, 223, Madrid"
+    },
+    {
+      "pos": "HA BASKET \"B\"",
+      "nombre": "53",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    }
+  ],
+  "clasificacion_75": [
+    {
+      "pos": "CABRINI A.P.A. BLANCO",
+      "nombre": "79",
+      "puntos": "CABRINI, COLEGIO (Semicubierto)STA. FRANCISCA JAVIER CABRINI esquina C/ Sicélidas, Madrid"
+    },
+    {
+      "pos": "CB NAVALCARNERO D",
+      "nombre": "29",
+      "puntos": "LA ESTACION, PABELLON MUNICIPALRIO EBRO, S/N, Navalcarnero"
+    },
+    {
+      "pos": "C.B. GETAFE \"C\"",
+      "nombre": "59",
+      "puntos": "JUAN DE LA CIERVA, PABELLON Pista 3AV. ESPAÑA, 90, Getafe"
+    },
+    {
+      "pos": "PARQUE CATALUÑA TORREJÓN NEGRO",
+      "nombre": "80",
+      "puntos": "PARQUE DE CATALUÑA, CLUB DEPORTIVOCALLE HILADOS, 2, Torrejón de Ardoz"
+    },
+    {
+      "pos": "SAN AGUSTIN MADRID \"B\"",
+      "nombre": "70",
+      "puntos": "SAN AGUSTIN, PABELLON PRINCIPALCALLE PADRE DAMIAN, 18, Madrid"
+    },
+    {
+      "pos": "U.B. TORABASKET",
+      "nombre": "32",
+      "puntos": "PEDRO BRIMONIS, CEIPISLA CONEJERA, S/N, Humanes de Madrid"
+    }
+  ],
+  "clasificacion_76": [
+    {
+      "pos": "U.B. TORABASKET",
+      "nombre": "50",
+      "puntos": "CAMPOHERMOSO, PABELLONVALDEHONDILLO, 3, Humanes de Madrid"
+    },
+    {
+      "pos": "BALONCESTO FUENLABRADA ''C''",
+      "nombre": "44",
+      "puntos": "EL ARROYO, PABELLONFUENTESAUCO, 1, Fuenlabrada"
+    },
+    {
+      "pos": "SAN AGUSTIN DEL GUADALIX \"B\"",
+      "nombre": "80",
+      "puntos": "SAN AGUSTIN GUADALIX, PABELLONJULIAN BERRENDERO, S/N, San Agustín de Guadalix"
+    },
+    {
+      "pos": "COBEÑA BASKET SPORT C.D.E.",
+      "nombre": "25",
+      "puntos": "LA DEHESA, PDVO. MPAL.CTRA. M-103 Km. 6,5 (Carretera de Cobeña a Algete), Cobeña"
+    },
+    {
+      "pos": "PARLA BASQUET LIONS",
+      "nombre": "55",
+      "puntos": "SUPERA, PABELLONAVDA. DE LOS PLANETAS, 42, Parla"
+    },
+    {
+      "pos": "C.B. MORATALAZ \"C\"",
+      "nombre": "59",
+      "puntos": "JOSE LUIS FERNANDEZ CANO, PABELLONHACIENDA DE PAVONES, 223, Madrid"
+    }
+  ],
+  "clasificacion_77": [
+    {
+      "pos": "CABRINI A.P.A. BLANCO",
+      "nombre": "86",
+      "puntos": "CABRINI, COLEGIO (Semicubierto)STA. FRANCISCA JAVIER CABRINI esquina C/ Sicélidas, Madrid"
+    },
+    {
+      "pos": "HA BASKET \"B\"",
+      "nombre": "63",
+      "puntos": "GREENFIELD, PABELLON COLEGIOCARR. DE CARABANCHEL A VILLAVERDE, 82, Madrid"
+    },
+    {
+      "pos": "CB NAVALCARNERO D",
+      "nombre": "55",
+      "puntos": "JOSE JALON, PABELLONLA FELGUERA, S/N, Navalcarnero"
+    },
+    {
+      "pos": "C.B. GETAFE \"C\"",
+      "nombre": "52",
+      "puntos": "JUAN DE LA CIERVA, PABELLON Pista 3AV. ESPAÑA, 90, Getafe"
+    },
+    {
+      "pos": "PARQUE CATALUÑA TORREJÓN NEGRO",
+      "nombre": "38",
+      "puntos": "PARQUE DE CATALUÑA, CLUB DEPORTIVOCALLE HILADOS, 2, Torrejón de Ardoz"
+    },
+    {
+      "pos": "SAN AGUSTIN MADRID \"B\"",
+      "nombre": "95",
+      "puntos": "SAN AGUSTIN, PABELLON PRINCIPALCALLE PADRE DAMIAN, 18, Madrid"
+    }
+  ],
+  "clasificacion_78": [
+    {
+      "pos": "SAN AGUSTIN MADRID \"B\"",
+      "nombre": "93",
+      "puntos": "SAN AGUSTIN, PABELLON PRINCIPALCALLE PADRE DAMIAN, 18, Madrid"
+    },
+    {
+      "pos": "U.B. TORABASKET",
+      "nombre": "53",
+      "puntos": "CAMPOHERMOSO, PABELLONVALDEHONDILLO, 3, Humanes de Madrid"
+    },
+    {
+      "pos": "BALONCESTO FUENLABRADA ''C''",
+      "nombre": "89",
+      "puntos": "EL ARROYO, PABELLONFUENTESAUCO, 1, Fuenlabrada"
+    },
+    {
+      "pos": "SAN AGUSTIN DEL GUADALIX \"B\"",
+      "nombre": "88",
+      "puntos": "SAN AGUSTIN GUADALIX, PABELLONJULIAN BERRENDERO, S/N, San Agustín de Guadalix"
+    },
+    {
+      "pos": "COBEÑA BASKET SPORT C.D.E.",
+      "nombre": "49",
+      "puntos": "LA DEHESA, PDVO. MPAL.CTRA. M-103 Km. 6,5 (Carretera de Cobeña a Algete), Cobeña"
+    },
+    {
+      "pos": "PARLA BASQUET LIONS",
+      "nombre": "52",
+      "puntos": "MIGUEL DELIBES, C.P.FELIPE II, 15 (entrada por Jaime I El Conquistador), Parla"
+    }
+  ],
+  "clasificacion_79": [
+    {
+      "pos": "CABRINI A.P.A. BLANCO",
+      "nombre": "93",
+      "puntos": "CABRINI, COLEGIO (Semicubierto)STA. FRANCISCA JAVIER CABRINI esquina C/ Sicélidas, Madrid"
+    },
+    {
+      "pos": "C.B. MORATALAZ \"C\"",
+      "nombre": "102",
+      "puntos": "JOSE LUIS FERNANDEZ CANO, PABELLONHACIENDA DE PAVONES, 223, Madrid"
+    },
+    {
+      "pos": "HA BASKET \"B\"",
+      "nombre": "26",
+      "puntos": "GREENFIELD, PABELLON COLEGIOCARR. DE CARABANCHEL A VILLAVERDE, 82, Madrid"
+    },
+    {
+      "pos": "CB NAVALCARNERO D",
+      "nombre": "14",
+      "puntos": "LA ESTACION, PABELLON MUNICIPALRIO EBRO, S/N, Navalcarnero"
+    },
+    {
+      "pos": "C.B. GETAFE \"C\"",
+      "nombre": "62",
+      "puntos": "JUAN DE LA CIERVA, PABELLON Pista 1AV. ESPAÑA, 90, Getafe"
+    },
+    {
+      "pos": "PARQUE CATALUÑA TORREJÓN NEGRO",
+      "nombre": "62",
+      "puntos": "PARQUE DE CATALUÑA, CLUB DEPORTIVOCALLE HILADOS, 2, Torrejón de Ardoz"
+    }
+  ],
+  "clasificacion_80": [
+    {
+      "pos": "PARQUE CATALUÑA TORREJÓN NEGRO",
+      "nombre": "65",
+      "puntos": "PARQUE DE CATALUÑA, CLUB DEPORTIVOCALLE HILADOS, 2, Torrejón de Ardoz"
+    },
+    {
+      "pos": "SAN AGUSTIN MADRID \"B\"",
+      "nombre": "90",
+      "puntos": "SAN AGUSTIN, COLEGIO (Descubierto)CALLE PADRE DAMIAN, 18, Madrid"
+    },
+    {
+      "pos": "U.B. TORABASKET",
+      "nombre": "58",
+      "puntos": "CAMPOHERMOSO, PABELLONVALDEHONDILLO, 3, Humanes de Madrid"
+    },
+    {
+      "pos": "BALONCESTO FUENLABRADA ''C''",
+      "nombre": "114",
+      "puntos": "EL ARROYO, PABELLONFUENTESAUCO, 1, Fuenlabrada"
+    },
+    {
+      "pos": "SAN AGUSTIN DEL GUADALIX \"B\"",
+      "nombre": "78",
+      "puntos": "SAN AGUSTIN GUADALIX, PABELLONJULIAN BERRENDERO, S/N, San Agustín de Guadalix"
+    },
+    {
+      "pos": "COBEÑA BASKET SPORT C.D.E.",
+      "nombre": "26",
+      "puntos": "LA DEHESA, PDVO. MPAL.CTRA. M-103 Km. 6,5 (Carretera de Cobeña a Algete), Cobeña"
+    }
+  ],
+  "clasificacion_81": [
+    {
+      "pos": "COBEÑA BASKET SPORT C.D.E.",
+      "nombre": "26",
+      "puntos": "LA DEHESA, PDVO. MPAL.CTRA. M-103 Km. 6,5 (Carretera de Cobeña a Algete), Cobeña"
+    },
+    {
+      "pos": "PARLA BASQUET LIONS",
+      "nombre": "60",
+      "puntos": "SUPERA, PABELLONAVDA. DE LOS PLANETAS, 42, Parla"
+    },
+    {
+      "pos": "C.B. MORATALAZ \"C\"",
+      "nombre": "37",
+      "puntos": "JOSE LUIS FERNANDEZ CANO, PABELLONHACIENDA DE PAVONES, 223, Madrid"
+    },
+    {
+      "pos": "HA BASKET \"B\"",
+      "nombre": "35",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    },
+    {
+      "pos": "CB NAVALCARNERO D",
+      "nombre": "15",
+      "puntos": "LA ESTACION, PABELLON MUNICIPALRIO EBRO, S/N, Navalcarnero"
+    },
+    {
+      "pos": "C.B. GETAFE \"C\"",
+      "nombre": "64",
+      "puntos": "JUAN DE LA CIERVA, PABELLON Pista 1AV. ESPAÑA, 90, Getafe"
+    }
+  ],
+  "clasificacion_82": [
+    {
+      "pos": "CABRINI A.P.A. BLANCO",
+      "nombre": "70",
+      "puntos": "CABRINI, COLEGIO (Semicubierto)STA. FRANCISCA JAVIER CABRINI esquina C/ Sicélidas, Madrid"
+    },
+    {
+      "pos": "PARQUE CATALUÑA TORREJÓN NEGRO",
+      "nombre": "86",
+      "puntos": "PARQUE DE CATALUÑA, CLUB DEPORTIVOCALLE HILADOS, 2, Torrejón de Ardoz"
+    },
+    {
+      "pos": "SAN AGUSTIN MADRID \"B\"",
+      "nombre": "121",
+      "puntos": "SAN AGUSTIN, COLEGIO (Descubierto)CALLE PADRE DAMIAN, 18, Madrid"
+    },
+    {
+      "pos": "U.B. TORABASKET",
+      "nombre": "46",
+      "puntos": "CAMPOHERMOSO, PABELLONVALDEHONDILLO, 3, Humanes de Madrid"
+    },
+    {
+      "pos": "BALONCESTO FUENLABRADA ''C''",
+      "nombre": "97",
+      "puntos": "EL ARROYO, PABELLONFUENTESAUCO, 1, Fuenlabrada"
+    },
+    {
+      "pos": "SAN AGUSTIN DEL GUADALIX \"B\"",
+      "nombre": "97",
+      "puntos": "SAN AGUSTIN GUADALIX, PABELLONJULIAN BERRENDERO, S/N, San Agustín de Guadalix"
+    }
+  ],
+  "clasificacion_83": [
+    {
+      "pos": "HUMANITAS C.D.E. VERDE",
+      "nombre": "78",
+      "puntos": "HUMANITAS, PABELLON COLEGIOAVDA. SALVADOR DALI, 3, Torrejón de Ardoz"
+    },
+    {
+      "pos": "EXTRANJERÍA JUSTA C.B. VALDEBASKET LAGOMAR",
+      "nombre": "69",
+      "puntos": "LAGOMAR, PABELLON COLEGIOAV. DEL MAR ADRIATICO, 5, Valdemoro"
+    },
+    {
+      "pos": "HA BASKET \"A\"",
+      "nombre": "123",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    },
+    {
+      "pos": "VALDEFUENTES BASKET FUTURO A",
+      "nombre": "91",
+      "puntos": "VALDEFUENTES, PABELLON COLEGIOANA DE AUSTRIA, 6, Madrid"
+    },
+    {
+      "pos": "LA PAZ C.D. AMARILLO",
+      "nombre": "62",
+      "puntos": "MIGUEL DELIBES, C.P.FELIPE II, 15 (entrada por Jaime I El Conquistador), Parla"
+    },
+    {
+      "pos": "ESTUDIO C",
+      "nombre": "49",
+      "puntos": "PACO HERNANDEZ, PABELLONVALDELINARES, 7, Aravaca"
+    },
+    {
+      "pos": "COLMENAR VIEJO MORADO",
+      "nombre": "61",
+      "puntos": "JUAN ANTONIO SAMARANCH, CDAD. DPTVA.AVDA. JUAN PABLO II, 13, Colmenar Viejo"
+    },
+    {
+      "pos": "LIONS BASKET ARROYOMOLINOS \"B\"",
+      "nombre": "67",
+      "puntos": "ANGEL DURANGO, PDVO. MPAL.CALLE DE AVILA, 1, Arroyomolinos"
+    }
+  ],
+  "clasificacion_84": [
+    {
+      "pos": "DENTAL COMPANY CIEMPOBASKET",
+      "nombre": "",
+      "puntos": "CIEMPOZUELOS, CIUDAD DEPORTIVACRUZ VERDE, S/N, Ciempozuelos"
+    },
+    {
+      "pos": "COLEGIO CLARET MADRID",
+      "nombre": "",
+      "puntos": "CLARET, PABELLON COLEGIOCLARA DEL REY, 6, Madrid"
+    },
+    {
+      "pos": "VIRGEN DE ATOCHA C",
+      "nombre": "",
+      "puntos": "ANTONIO FRAGUAS \"FORGES\", IESCALLE ALBECHE (ENTRADA FRENTE A MENDEZ ALVARO 56), Madrid"
+    },
+    {
+      "pos": "MEJORADA 2012 C.B.",
+      "nombre": "",
+      "puntos": "MEJORADA, PABELLON MPAL.JOAN MIRO, S/N, Mejorada del Campo"
+    },
+    {
+      "pos": "BOADILLA MONSTERS",
+      "nombre": "",
+      "puntos": "REY FELIPE VI, PABELLONMIGUEL ANGEL CANTERO OLIVA, 4, Boadilla del Monte"
+    },
+    {
+      "pos": "OROQUIETA ESPINILLO C.D.E.",
+      "nombre": "",
+      "puntos": "FELIX RUBIO, PABELLONALIANZA, S/N, Madrid"
+    },
+    {
+      "pos": "VILLALBA OPTI- K",
+      "nombre": "",
+      "puntos": "LOS NEGRALES, POLIDEPORTIVOSANTA EMILIA, 70 (LOS NEGRALES), Alpedrete"
+    },
+    {
+      "pos": "UROS DE RIVAS `E´",
+      "nombre": "",
+      "puntos": "FUHEM HIPATIA, COLEGIOAVDA. OCHO DE MARZO, S/N, Rivas-Vaciamadrid"
+    }
+  ],
+  "clasificacion_91": [
+    {
+      "pos": "COLEGIO ESTUDIANTES LAS TABLAS \"A\"",
+      "nombre": "31",
+      "puntos": "ESTUDIANTES LAS TABLAS, COLEGIOFROMISTA, 1, Madrid"
+    },
+    {
+      "pos": "LA PAZ C.D.",
+      "nombre": "56",
+      "puntos": "MIGUEL DELIBES, C.P.FELIPE II, 15 (entrada por Jaime I El Conquistador), Parla"
+    },
+    {
+      "pos": "REVOLUTION",
+      "nombre": "14",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    },
+    {
+      "pos": "ARGANZUELA CENTRO BLANCO",
+      "nombre": "61",
+      "puntos": "ARGANZUELA, CENTRO INTEGRADOC/ PALOS DE LA FRONTERA, 40, Madrid"
+    },
+    {
+      "pos": "PUREZA DE MARIA",
+      "nombre": "34",
+      "puntos": "PUREZA DE MARIA, COLEGIOLIRA, 10, Madrid"
+    },
+    {
+      "pos": "C.B. MORATALAZ \"B\"",
+      "nombre": "11",
+      "puntos": "MORATALAZ, PDVO. MPAL.VALDEBERNARDO, S/N, Madrid"
+    }
+  ],
+  "clasificacion_92": [
+    {
+      "pos": "BASKET TORREJON \"A\"",
+      "nombre": "59",
+      "puntos": "JAVI LIMONES, PABELLON (PISTA CENTRAL)JOAQUIN BLUME, S/N, Torrejón de Ardoz"
+    },
+    {
+      "pos": "C.B. CIUDAD DE MÓSTOLES \"B\"",
+      "nombre": "80",
+      "puntos": "LOS ROSALES, PABELLONLILAS, S/N, Móstoles"
+    },
+    {
+      "pos": "BOADILLA MONSTERS",
+      "nombre": "43",
+      "puntos": "REY FELIPE VI, PABELLONMIGUEL ANGEL CANTERO OLIVA, 4, Boadilla del Monte"
+    },
+    {
+      "pos": "RICOPIA FUNBAL ALCALA CBJA \"A\"",
+      "nombre": "48",
+      "puntos": "JUAN DE AUSTRIA, PABELLON (PISTA CENTRAL)JOSE CABALLERO, S/N, Alcalá de Henares"
+    },
+    {
+      "pos": "HA BASKET",
+      "nombre": "43",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    },
+    {
+      "pos": "MOVISTAR ESTUDIANTES SAGI VELA",
+      "nombre": "69",
+      "puntos": "I.E.S. BLANCA FERNANDEZ OCHOACALLE DEL MONASTERIO DE EL PAULAR, 3, Madrid"
+    }
+  ],
+  "clasificacion_93": [
+    {
+      "pos": "COLEGIO ESTUDIANTES LAS TABLAS \"A\"",
+      "nombre": "31",
+      "puntos": "ESTUDIANTES LAS TABLAS, COLEGIOFROMISTA, 1, Madrid"
+    },
+    {
+      "pos": "REVOLUTION",
+      "nombre": "36",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    },
+    {
+      "pos": "ARGANZUELA CENTRO BLANCO",
+      "nombre": "55",
+      "puntos": "SALESIANOS CARABANCHEL, SEMICUBIERTARONDA DON BOSCO, 3, Madrid"
+    },
+    {
+      "pos": "PUREZA DE MARIA",
+      "nombre": "32",
+      "puntos": "PUREZA DE MARIA, COLEGIOLIRA, 10, Madrid"
+    },
+    {
+      "pos": "C.B. MORATALAZ \"B\"",
+      "nombre": "48",
+      "puntos": "MORATALAZ, PDVO. MPAL.VALDEBERNARDO, S/N, Madrid"
+    },
+    {
+      "pos": "BASKET TORREJON \"A\"",
+      "nombre": "67",
+      "puntos": "JAVI LIMONES, PABELLON (PISTA CENTRAL)JOAQUIN BLUME, S/N, Torrejón de Ardoz"
+    }
+  ],
+  "clasificacion_94": [
+    {
+      "pos": "C.B. CIUDAD DE MÓSTOLES \"B\"",
+      "nombre": "18",
+      "puntos": "LOS ROSALES, PABELLONLILAS, S/N, Móstoles"
+    },
+    {
+      "pos": "BOADILLA MONSTERS",
+      "nombre": "22",
+      "puntos": "REY FELIPE VI, PABELLONMIGUEL ANGEL CANTERO OLIVA, 4, Boadilla del Monte"
+    },
+    {
+      "pos": "RICOPIA FUNBAL ALCALA CBJA \"A\"",
+      "nombre": "53",
+      "puntos": "JUAN DE AUSTRIA, PABELLON (PISTA CENTRAL)JOSE CABALLERO, S/N, Alcalá de Henares"
+    },
+    {
+      "pos": "HA BASKET",
+      "nombre": "39",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    },
+    {
+      "pos": "MOVISTAR ESTUDIANTES SAGI VELA",
+      "nombre": "52",
+      "puntos": "I.E.S. BLANCA FERNANDEZ OCHOACALLE DEL MONASTERIO DE EL PAULAR, 3, Madrid"
+    },
+    {
+      "pos": "LA PAZ C.D.",
+      "nombre": "47",
+      "puntos": "MIGUEL DELIBES, C.P.FELIPE II, 15 (entrada por Jaime I El Conquistador), Parla"
+    }
+  ],
+  "clasificacion_95": [
+    {
+      "pos": "COLEGIO ESTUDIANTES LAS TABLAS \"A\"",
+      "nombre": "46",
+      "puntos": "ESTUDIANTES LAS TABLAS, COLEGIOFROMISTA, 1, Madrid"
+    },
+    {
+      "pos": "ARGANZUELA CENTRO BLANCO",
+      "nombre": "61",
+      "puntos": "SALESIANOS CARABANCHEL, SEMICUBIERTARONDA DON BOSCO, 3, Madrid"
+    },
+    {
+      "pos": "PUREZA DE MARIA",
+      "nombre": "30",
+      "puntos": "PUREZA DE MARIA, COLEGIOLIRA, 10, Madrid"
+    },
+    {
+      "pos": "C.B. MORATALAZ \"B\"",
+      "nombre": "40",
+      "puntos": "MORATALAZ, PDVO. MPAL.VALDEBERNARDO, S/N, Madrid"
+    },
+    {
+      "pos": "BASKET TORREJON \"A\"",
+      "nombre": "52",
+      "puntos": "JAVI LIMONES, PABELLON (PISTA CENTRAL)JOAQUIN BLUME, S/N, Torrejón de Ardoz"
+    },
+    {
+      "pos": "C.B. CIUDAD DE MÓSTOLES \"B\"",
+      "nombre": "53",
+      "puntos": "BENITO PEREZ GALDOS, C.P.PASEO ARROYOMOLINOS, 44, Móstoles"
+    }
+  ],
+  "clasificacion_96": [
+    {
+      "pos": "BOADILLA MONSTERS",
+      "nombre": "52",
+      "puntos": "HIGHLANDS SCHOOL LOS FRESNOS, PABELLON COLEGIOCALLE DE LA COMUNIDAD CANARIA, 8, Boadilla del Monte"
+    },
+    {
+      "pos": "RICOPIA FUNBAL ALCALA CBJA \"A\"",
+      "nombre": "65",
+      "puntos": "JUAN DE AUSTRIA, C.P.AVDA. JUAN DE AUSTRIA, 17, Alcalá de Henares"
+    },
+    {
+      "pos": "HA BASKET",
+      "nombre": "26",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    },
+    {
+      "pos": "MOVISTAR ESTUDIANTES SAGI VELA",
+      "nombre": "51",
+      "puntos": "MOVISTAR ACADEMY MAGARIÑOS, Pista 2C/ SERRANO, 129, Madrid"
+    },
+    {
+      "pos": "LA PAZ C.D.",
+      "nombre": "77",
+      "puntos": "MIGUEL DELIBES, C.P.FELIPE II, 15 (entrada por Jaime I El Conquistador), Parla"
+    },
+    {
+      "pos": "REVOLUTION",
+      "nombre": "39",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    }
+  ],
+  "clasificacion_97": [
+    {
+      "pos": "COLEGIO ESTUDIANTES LAS TABLAS \"A\"",
+      "nombre": "39",
+      "puntos": "ESTUDIANTES LAS TABLAS, COLEGIOFROMISTA, 1, Madrid"
+    },
+    {
+      "pos": "PUREZA DE MARIA",
+      "nombre": "43",
+      "puntos": "PUREZA DE MARIA, COLEGIOLIRA, 10, Madrid"
+    },
+    {
+      "pos": "C.B. MORATALAZ \"B\"",
+      "nombre": "37",
+      "puntos": "JOSE LUIS FERNANDEZ CANO, PABELLONHACIENDA DE PAVONES, 223, Madrid"
+    },
+    {
+      "pos": "BASKET TORREJON \"A\"",
+      "nombre": "58",
+      "puntos": "JAVI LIMONES, PABELLON (PISTA CENTRAL)JOAQUIN BLUME, S/N, Torrejón de Ardoz"
+    },
+    {
+      "pos": "C.B. CIUDAD DE MÓSTOLES \"B\"",
+      "nombre": "90",
+      "puntos": "LOS ROSALES, PABELLONLILAS, S/N, Móstoles"
+    },
+    {
+      "pos": "BOADILLA MONSTERS",
+      "nombre": "10",
+      "puntos": "REY FELIPE VI, PABELLONMIGUEL ANGEL CANTERO OLIVA, 4, Boadilla del Monte"
+    }
+  ],
+  "clasificacion_98": [
+    {
+      "pos": "RICOPIA FUNBAL ALCALA CBJA \"A\"",
+      "nombre": "64",
+      "puntos": "MIGUEL HERNANDEZ, PABELLON COLEGIOLUIS MADRONA, 15, Alcalá de Henares"
+    },
+    {
+      "pos": "HA BASKET",
+      "nombre": "42",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    },
+    {
+      "pos": "MOVISTAR ESTUDIANTES SAGI VELA",
+      "nombre": "59",
+      "puntos": "MOVISTAR ACADEMY MAGARIÑOS, Pista 2C/ SERRANO, 129, Madrid"
+    },
+    {
+      "pos": "LA PAZ C.D.",
+      "nombre": "54",
+      "puntos": "MIGUEL DELIBES, C.P.FELIPE II, 15 (entrada por Jaime I El Conquistador), Parla"
+    },
+    {
+      "pos": "REVOLUTION",
+      "nombre": "81",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    },
+    {
+      "pos": "ARGANZUELA CENTRO BLANCO",
+      "nombre": "64",
+      "puntos": "ARGANZUELA, CENTRO INTEGRADOC/ PALOS DE LA FRONTERA, 40, Madrid"
+    }
+  ],
+  "clasificacion_99": [
+    {
+      "pos": "COLEGIO ESTUDIANTES LAS TABLAS \"A\"",
+      "nombre": "50",
+      "puntos": "ESTUDIANTES LAS TABLAS, COLEGIOFROMISTA, 1, Madrid"
+    },
+    {
+      "pos": "C.B. MORATALAZ \"B\"",
+      "nombre": "21",
+      "puntos": "JOSE LUIS FERNANDEZ CANO, PABELLONHACIENDA DE PAVONES, 223, Madrid"
+    },
+    {
+      "pos": "BASKET TORREJON \"A\"",
+      "nombre": "57",
+      "puntos": "JAVI LIMONES, PABELLON (PISTA CENTRAL)JOAQUIN BLUME, S/N, Torrejón de Ardoz"
+    },
+    {
+      "pos": "C.B. CIUDAD DE MÓSTOLES \"B\"",
+      "nombre": "46",
+      "puntos": "PIO BAROJA, C.P.CAMINO CARRASQUILLAS, S/N, Móstoles"
+    },
+    {
+      "pos": "BOADILLA MONSTERS",
+      "nombre": "34",
+      "puntos": "HIGHLANDS SCHOOL LOS FRESNOS, PABELLON COLEGIOCALLE DE LA COMUNIDAD CANARIA, 8, Boadilla del Monte"
+    },
+    {
+      "pos": "RICOPIA FUNBAL ALCALA CBJA \"A\"",
+      "nombre": "65",
+      "puntos": "MIGUEL HERNANDEZ, PABELLON COLEGIOLUIS MADRONA, 15, Alcalá de Henares"
+    }
+  ],
+  "clasificacion_100": [
+    {
+      "pos": "COLEGIO ESTUDIANTES LAS TABLAS \"A\"",
+      "nombre": "37",
+      "puntos": "ESTUDIANTES LAS TABLAS, COLEGIOFROMISTA, 1, Madrid"
+    },
+    {
+      "pos": "MOVISTAR ESTUDIANTES SAGI VELA",
+      "nombre": "57",
+      "puntos": "LA CAJA MAGICA INDOOR NORTE Pista 5CAMINO DE PERALES, 23, Madrid"
+    },
+    {
+      "pos": "LA PAZ C.D.",
+      "nombre": "81",
+      "puntos": "MIGUEL DELIBES, C.P.FELIPE II, 15 (entrada por Jaime I El Conquistador), Parla"
+    },
+    {
+      "pos": "REVOLUTION",
+      "nombre": "58",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    },
+    {
+      "pos": "ARGANZUELA CENTRO BLANCO",
+      "nombre": "54",
+      "puntos": "ARGANZUELA, CENTRO INTEGRADOC/ PALOS DE LA FRONTERA, 40, Madrid"
+    },
+    {
+      "pos": "PUREZA DE MARIA",
+      "nombre": "34",
+      "puntos": "PUREZA DE MARIA, COLEGIOLIRA, 10, Madrid"
+    }
+  ],
+  "clasificacion_101": [
+    {
+      "pos": "C.B. MORATALAZ \"B\"",
+      "nombre": "21",
+      "puntos": "MORATALAZ, PDVO. MPAL.VALDEBERNARDO, S/N, Madrid"
+    },
+    {
+      "pos": "BASKET TORREJON \"A\"",
+      "nombre": "82",
+      "puntos": "JAVI LIMONES, PABELLON (PISTA CENTRAL)JOAQUIN BLUME, S/N, Torrejón de Ardoz"
+    },
+    {
+      "pos": "C.B. CIUDAD DE MÓSTOLES \"B\"",
+      "nombre": "71",
+      "puntos": "BENITO PEREZ GALDOS, C.P.PASEO ARROYOMOLINOS, 44, Móstoles"
+    },
+    {
+      "pos": "BOADILLA MONSTERS",
+      "nombre": "51",
+      "puntos": "REY FELIPE VI, PABELLONMIGUEL ANGEL CANTERO OLIVA, 4, Boadilla del Monte"
+    },
+    {
+      "pos": "RICOPIA FUNBAL ALCALA CBJA \"A\"",
+      "nombre": "86",
+      "puntos": "MIGUEL HERNANDEZ, PABELLON COLEGIOLUIS MADRONA, 15, Alcalá de Henares"
+    },
+    {
+      "pos": "HA BASKET",
+      "nombre": "39",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    }
+  ],
+  "clasificacion_102": [
+    {
+      "pos": "MOVISTAR ESTUDIANTES SAGI VELA",
+      "nombre": "48",
+      "puntos": "I.E.S. BLANCA FERNANDEZ OCHOACALLE DEL MONASTERIO DE EL PAULAR, 3, Madrid"
+    },
+    {
+      "pos": "HA BASKET",
+      "nombre": "40",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    },
+    {
+      "pos": "RICOPIA FUNBAL ALCALA CBJA \"A\"",
+      "nombre": "64",
+      "puntos": "MIGUEL HERNANDEZ, PABELLON COLEGIOLUIS MADRONA, 15, Alcalá de Henares"
+    },
+    {
+      "pos": "BOADILLA MONSTERS",
+      "nombre": "35",
+      "puntos": "HIGHLANDS SCHOOL LOS FRESNOS, PABELLON COLEGIOCALLE DE LA COMUNIDAD CANARIA, 8, Boadilla del Monte"
+    },
+    {
+      "pos": "C.B. CIUDAD DE MÓSTOLES \"B\"",
+      "nombre": "41",
+      "puntos": "LOS ROSALES, PABELLONLILAS, S/N, Móstoles"
+    },
+    {
+      "pos": "BASKET TORREJON \"A\"",
+      "nombre": "64",
+      "puntos": "JAVI LIMONES, PABELLON (PISTA CENTRAL)JOAQUIN BLUME, S/N, Torrejón de Ardoz"
+    }
+  ],
+  "clasificacion_103": [
+    {
+      "pos": "COLEGIO ESTUDIANTES LAS TABLAS \"A\"",
+      "nombre": "37",
+      "puntos": "ESTUDIANTES LAS TABLAS, COLEGIOFROMISTA, 1, Madrid"
+    },
+    {
+      "pos": "C.B. MORATALAZ \"B\"",
+      "nombre": "34",
+      "puntos": "MORATALAZ, PDVO. MPAL.VALDEBERNARDO, S/N, Madrid"
+    },
+    {
+      "pos": "PUREZA DE MARIA",
+      "nombre": "47",
+      "puntos": "PUREZA DE MARIA, COLEGIOLIRA, 10, Madrid"
+    },
+    {
+      "pos": "ARGANZUELA CENTRO BLANCO",
+      "nombre": "43",
+      "puntos": "SALESIANOS CARABANCHEL, PABELLON COLEGIORONDA DON BOSCO, 3, Madrid"
+    },
+    {
+      "pos": "REVOLUTION",
+      "nombre": "61",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    },
+    {
+      "pos": "LA PAZ C.D.",
+      "nombre": "60",
+      "puntos": "MIGUEL DELIBES, C.P.FELIPE II, 15 (entrada por Jaime I El Conquistador), Parla"
+    }
+  ],
+  "clasificacion_104": [
+    {
+      "pos": "LA PAZ C.D.",
+      "nombre": "62",
+      "puntos": "MIGUEL DELIBES, C.P.FELIPE II, 15 (entrada por Jaime I El Conquistador), Parla"
+    },
+    {
+      "pos": "MOVISTAR ESTUDIANTES SAGI VELA",
+      "nombre": "83",
+      "puntos": "MOVISTAR ACADEMY MAGARIÑOS, Pista 1C/ SERRANO, 129, Madrid"
+    },
+    {
+      "pos": "HA BASKET",
+      "nombre": "23",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    },
+    {
+      "pos": "RICOPIA FUNBAL ALCALA CBJA \"A\"",
+      "nombre": "61",
+      "puntos": "MIGUEL HERNANDEZ, PABELLON COLEGIOLUIS MADRONA, 15, Alcalá de Henares"
+    },
+    {
+      "pos": "BOADILLA MONSTERS",
+      "nombre": "60",
+      "puntos": "REY FELIPE VI, PABELLONMIGUEL ANGEL CANTERO OLIVA, 4, Boadilla del Monte"
+    },
+    {
+      "pos": "C.B. CIUDAD DE MÓSTOLES \"B\"",
+      "nombre": "17",
+      "puntos": "LOS ROSALES, PABELLONLILAS, S/N, Móstoles"
+    }
+  ],
+  "clasificacion_105": [
+    {
+      "pos": "COLEGIO ESTUDIANTES LAS TABLAS \"A\"",
+      "nombre": "39",
+      "puntos": "ESTUDIANTES LAS TABLAS, COLEGIOFROMISTA, 1, Madrid"
+    },
+    {
+      "pos": "BASKET TORREJON \"A\"",
+      "nombre": "71",
+      "puntos": "JAVI LIMONES, PABELLON (PISTA CENTRAL)JOAQUIN BLUME, S/N, Torrejón de Ardoz"
+    },
+    {
+      "pos": "C.B. MORATALAZ \"B\"",
+      "nombre": "9",
+      "puntos": "JOSE LUIS FERNANDEZ CANO, PABELLONHACIENDA DE PAVONES, 223, Madrid"
+    },
+    {
+      "pos": "PUREZA DE MARIA",
+      "nombre": "46",
+      "puntos": "PUREZA DE MARIA, COLEGIOLIRA, 10, Madrid"
+    },
+    {
+      "pos": "ARGANZUELA CENTRO BLANCO",
+      "nombre": "55",
+      "puntos": "ARGANZUELA, CENTRO INTEGRADOC/ PALOS DE LA FRONTERA, 40, Madrid"
+    },
+    {
+      "pos": "REVOLUTION",
+      "nombre": "41",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    }
+  ],
+  "clasificacion_106": [
+    {
+      "pos": "REVOLUTION",
+      "nombre": "48",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    },
+    {
+      "pos": "LA PAZ C.D.",
+      "nombre": "75",
+      "puntos": "MIGUEL DELIBES, C.P.FELIPE II, 15 (entrada por Jaime I El Conquistador), Parla"
+    },
+    {
+      "pos": "MOVISTAR ESTUDIANTES SAGI VELA",
+      "nombre": "59",
+      "puntos": "LA CAJA MAGICA INDOOR NORTE Pista 5CAMINO DE PERALES, 23, Madrid"
+    },
+    {
+      "pos": "HA BASKET",
+      "nombre": "72",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    },
+    {
+      "pos": "RICOPIA FUNBAL ALCALA CBJA \"A\"",
+      "nombre": "84",
+      "puntos": "JUAN DE AUSTRIA, PABELLON (PISTA CENTRAL)JOSE CABALLERO, S/N, Alcalá de Henares"
+    },
+    {
+      "pos": "BOADILLA MONSTERS",
+      "nombre": "47",
+      "puntos": "REY FELIPE VI, PABELLONMIGUEL ANGEL CANTERO OLIVA, 4, Boadilla del Monte"
+    }
+  ],
+  "clasificacion_107": [
+    {
+      "pos": "COLEGIO ESTUDIANTES LAS TABLAS \"A\"",
+      "nombre": "65",
+      "puntos": "ESTUDIANTES LAS TABLAS, COLEGIOFROMISTA, 1, Madrid"
+    },
+    {
+      "pos": "C.B. CIUDAD DE MÓSTOLES \"B\"",
+      "nombre": "72",
+      "puntos": "PIO BAROJA, C.P.CAMINO CARRASQUILLAS, S/N, Móstoles"
+    },
+    {
+      "pos": "BASKET TORREJON \"A\"",
+      "nombre": "59",
+      "puntos": "JAVI LIMONES, PABELLON (PISTA CENTRAL)JOAQUIN BLUME, S/N, Torrejón de Ardoz"
+    },
+    {
+      "pos": "C.B. MORATALAZ \"B\"",
+      "nombre": "17",
+      "puntos": "JOSE LUIS FERNANDEZ CANO, PABELLONHACIENDA DE PAVONES, 223, Madrid"
+    },
+    {
+      "pos": "PUREZA DE MARIA",
+      "nombre": "33",
+      "puntos": "PUREZA DE MARIA, COLEGIOLIRA, 10, Madrid"
+    },
+    {
+      "pos": "ARGANZUELA CENTRO BLANCO",
+      "nombre": "72",
+      "puntos": "ARGANZUELA, CENTRO INTEGRADOC/ PALOS DE LA FRONTERA, 40, Madrid"
+    }
+  ],
+  "clasificacion_108": [
+    {
+      "pos": "ARGANZUELA CENTRO BLANCO",
+      "nombre": "63",
+      "puntos": "SALESIANOS CARABANCHEL, SEMICUBIERTARONDA DON BOSCO, 3, Madrid"
+    },
+    {
+      "pos": "REVOLUTION",
+      "nombre": "50",
+      "puntos": "ALUCHE, PDVO. MPAL.AVDA. DE LAS AGUILAS, 14, Madrid"
+    },
+    {
+      "pos": "LA PAZ C.D.",
+      "nombre": "62",
+      "puntos": "MIGUEL DELIBES, C.P.FELIPE II, 15 (entrada por Jaime I El Conquistador), Parla"
+    },
+    {
+      "pos": "MOVISTAR ESTUDIANTES SAGI VELA",
+      "nombre": "58",
+      "puntos": "MOVISTAR ACADEMY MAGARIÑOS, Pista 1C/ SERRANO, 129, Madrid"
+    },
+    {
+      "pos": "HA BASKET",
+      "nombre": "48",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    },
+    {
+      "pos": "RICOPIA FUNBAL ALCALA CBJA \"A\"",
+      "nombre": "71",
+      "puntos": "JUAN DE AUSTRIA, PABELLON (PISTA CENTRAL)JOSE CABALLERO, S/N, Alcalá de Henares"
+    }
+  ],
+  "clasificacion_109": [
+    {
+      "pos": "COLEGIO ESTUDIANTES LAS TABLAS \"A\"",
+      "nombre": "36",
+      "puntos": "ESTUDIANTES LAS TABLAS, COLEGIOFROMISTA, 1, Madrid"
+    },
+    {
+      "pos": "BOADILLA MONSTERS",
+      "nombre": "52",
+      "puntos": "REY FELIPE VI, PABELLONMIGUEL ANGEL CANTERO OLIVA, 4, Boadilla del Monte"
+    },
+    {
+      "pos": "C.B. CIUDAD DE MÓSTOLES \"B\"",
+      "nombre": "51",
+      "puntos": "BENITO PEREZ GALDOS, C.P.PASEO ARROYOMOLINOS, 44, Móstoles"
+    },
+    {
+      "pos": "BASKET TORREJON \"A\"",
+      "nombre": "66",
+      "puntos": "JAVI LIMONES, PABELLON (PISTA CENTRAL)JOAQUIN BLUME, S/N, Torrejón de Ardoz"
+    },
+    {
+      "pos": "C.B. MORATALAZ \"B\"",
+      "nombre": "35",
+      "puntos": "MORATALAZ, PDVO. MPAL.VALDEBERNARDO, S/N, Madrid"
+    },
+    {
+      "pos": "PUREZA DE MARIA",
+      "nombre": "45",
+      "puntos": "PUREZA DE MARIA, COLEGIOLIRA, 10, Madrid"
+    }
+  ],
+  "clasificacion_110": [
+    {
+      "pos": "PUREZA DE MARIA",
+      "nombre": "1",
+      "puntos": "PUREZA DE MARIA, COLEGIOLIRA, 10, Madrid"
+    },
+    {
+      "pos": "ARGANZUELA CENTRO BLANCO",
+      "nombre": "64",
+      "puntos": "ARGANZUELA, CENTRO INTEGRADOC/ PALOS DE LA FRONTERA, 40, Madrid"
+    },
+    {
+      "pos": "REVOLUTION",
+      "nombre": "16",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    },
+    {
+      "pos": "LA PAZ C.D.",
+      "nombre": "80",
+      "puntos": "MIGUEL DELIBES, C.P.FELIPE II, 15 (entrada por Jaime I El Conquistador), Parla"
+    },
+    {
+      "pos": "MOVISTAR ESTUDIANTES SAGI VELA",
+      "nombre": "78",
+      "puntos": "I.E.S. BLANCA FERNANDEZ OCHOACALLE DEL MONASTERIO DE EL PAULAR, 3, Madrid"
+    },
+    {
+      "pos": "HA BASKET",
+      "nombre": "18",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    }
+  ],
+  "clasificacion_111": [
+    {
+      "pos": "HA BASKET",
+      "nombre": "39",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    },
+    {
+      "pos": "RICOPIA FUNBAL ALCALA CBJA \"A\"",
+      "nombre": "65",
+      "puntos": "MIGUEL HERNANDEZ, PABELLON COLEGIOLUIS MADRONA, 15, Alcalá de Henares"
+    },
+    {
+      "pos": "BOADILLA MONSTERS",
+      "nombre": "32",
+      "puntos": "REY FELIPE VI, PABELLONMIGUEL ANGEL CANTERO OLIVA, 4, Boadilla del Monte"
+    },
+    {
+      "pos": "C.B. CIUDAD DE MÓSTOLES \"B\"",
+      "nombre": "40",
+      "puntos": "LOS ROSALES, PABELLONLILAS, S/N, Móstoles"
+    },
+    {
+      "pos": "BASKET TORREJON \"A\"",
+      "nombre": "46",
+      "puntos": "JAVI LIMONES, PABELLON (PISTA CENTRAL)JOAQUIN BLUME, S/N, Torrejón de Ardoz"
+    },
+    {
+      "pos": "C.B. MORATALAZ \"B\"",
+      "nombre": "51",
+      "puntos": "JOSE LUIS FERNANDEZ CANO, PABELLONHACIENDA DE PAVONES, 223, Madrid"
+    }
+  ],
+  "clasificacion_112": [
+    {
+      "pos": "COLEGIO ESTUDIANTES LAS TABLAS \"A\"",
+      "nombre": "69",
+      "puntos": "ESTUDIANTES LAS TABLAS, COLEGIOFROMISTA, 1, Madrid"
+    },
+    {
+      "pos": "PUREZA DE MARIA",
+      "nombre": "20",
+      "puntos": "PUREZA DE MARIA, COLEGIOLIRA, 10, Madrid"
+    },
+    {
+      "pos": "ARGANZUELA CENTRO BLANCO",
+      "nombre": "71",
+      "puntos": "ARGANZUELA, CENTRO INTEGRADOC/ PALOS DE LA FRONTERA, 40, Madrid"
+    },
+    {
+      "pos": "REVOLUTION",
+      "nombre": "48",
+      "puntos": "GALLUR, PDVO. MPAL.GALLUR, 2, Madrid"
+    },
+    {
+      "pos": "LA PAZ C.D.",
+      "nombre": "35",
+      "puntos": "MIGUEL DELIBES, C.P.FELIPE II, 15 (entrada por Jaime I El Conquistador), Parla"
+    },
+    {
+      "pos": "MOVISTAR ESTUDIANTES SAGI VELA",
+      "nombre": "56",
+      "puntos": "RAMIRO DE MAEZTU 1, INSTITUTOSERRANO, 129, Madrid"
+    }
+  ]
+}
