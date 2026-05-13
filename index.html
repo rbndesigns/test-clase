@@ -12,602 +12,431 @@
   <style>
     :root {
       --navy:   #0F1D33;
-      --navy-2: #162236;
-      --navy-3: #1e2f47;
       --yellow: #F7D10C;
-      --yellow-dim: rgba(247,209,12,0.12);
-      --white:  #ffffff;
-      --white-60: rgba(255,255,255,0.6);
-      --white-30: rgba(255,255,255,0.3);
-      --white-10: rgba(255,255,255,0.08);
+      --bg:     #ffffff;
+      --card:   #f6f7f9;
+      --border: #e2e4e8;
+      --text:   #0F1D33;
+      --muted:  #6b7280;
+      --light:  #9ca3af;
     }
 
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html { scroll-behavior: smooth; }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
     body {
-      background: var(--navy);
-      color: var(--white);
+      background: var(--bg);
+      color: var(--text);
       font-family: 'Barlow', Arial, sans-serif;
       min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    /* ─── Noise texture overlay ─── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 0;
     }
 
     /* ─── HEADER ─── */
-    header {
-      position: relative;
-      z-index: 1;
-      padding: 0 clamp(20px, 5vw, 80px);
-      border-bottom: 1px solid var(--white-10);
-    }
+    .header-wrap { border-bottom: 1px solid var(--border); }
 
-    .header-inner {
+    header {
       max-width: 1200px;
       margin: 0 auto;
+      padding: 18px clamp(20px, 5vw, 80px);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 20px 0 18px;
-      gap: 16px;
     }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    /* SVG shield icon inline — matches brand symbol silhouette */
-    .brand-icon {
-      width: 48px;
-      height: 48px;
-      flex-shrink: 0;
-    }
-
-    .brand-text {}
 
     .brand-name {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 32px;
+      font-size: 26px;
       letter-spacing: 2px;
-      line-height: 1;
-      color: var(--white);
+      color: var(--navy);
     }
 
-    .brand-name span {
-      color: var(--yellow);
-    }
+    .brand-name span { color: var(--yellow); -webkit-text-stroke: 1px var(--navy); }
 
     .brand-sub {
       font-family: 'Barlow Condensed', sans-serif;
       font-size: 11px;
       font-weight: 600;
-      letter-spacing: 3px;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
-      color: var(--white-60);
-      margin-top: 2px;
+      color: var(--muted);
+      margin-top: 1px;
     }
 
-    .header-badge {
+    .header-url {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: var(--navy);
-      background: var(--yellow);
-      padding: 5px 12px;
-      border-radius: 3px;
+      color: var(--muted);
     }
 
-    /* ─── HERO STRIPE ─── */
+    /* ─── HERO ─── */
+    .hero-wrap { border-bottom: 3px solid var(--yellow); }
+
     .hero {
-      position: relative;
-      z-index: 1;
-      padding: clamp(36px, 6vw, 64px) clamp(20px, 5vw, 80px) clamp(28px, 4vw, 48px);
-      border-bottom: 2px solid var(--yellow);
-    }
-
-    .hero-inner {
       max-width: 1200px;
       margin: 0 auto;
+      padding: clamp(32px,5vw,56px) clamp(20px,5vw,80px) clamp(24px,4vw,40px);
     }
 
     .hero-label {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
       letter-spacing: 4px;
       text-transform: uppercase;
-      color: var(--yellow);
-      margin-bottom: 10px;
+      color: var(--muted);
+      margin-bottom: 8px;
     }
 
     .hero-title {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(52px, 9vw, 96px);
-      line-height: 0.9;
-      letter-spacing: 2px;
-      color: var(--white);
+      font-size: clamp(48px, 8vw, 80px);
+      line-height: 0.95;
+      letter-spacing: 1px;
+      color: var(--navy);
     }
 
     .hero-title em {
-      color: var(--yellow);
       font-style: normal;
-    }
-
-    .hero-meta {
-      margin-top: 16px;
-      font-family: 'Barlow', sans-serif;
-      font-size: 14px;
-      color: var(--white-60);
+      color: var(--yellow);
+      -webkit-text-stroke: 1.5px var(--navy);
     }
 
     /* ─── MAIN ─── */
     main {
-      position: relative;
-      z-index: 1;
-      padding: clamp(32px, 5vw, 56px) clamp(20px, 5vw, 80px);
-    }
-
-    .main-inner {
       max-width: 1200px;
       margin: 0 auto;
+      padding: clamp(28px,4vw,48px) clamp(20px,5vw,80px);
     }
 
-    /* ─── SECTION LABEL ─── */
     .section-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 20px;
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 28px;
+      gap: 10px;
     }
 
     .section-label::before {
       content: '';
       display: block;
-      width: 4px;
-      height: 22px;
+      width: 20px;
+      height: 2px;
       background: var(--yellow);
-      border-radius: 2px;
-      flex-shrink: 0;
-    }
-
-    .section-label span {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--white-60);
+      border-radius: 1px;
     }
 
     /* ─── GRID ─── */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      gap: 16px;
     }
 
-    /* ─── MATCH CARD ─── */
+    /* ─── CARD ─── */
     .card {
-      background: var(--navy-2);
-      border: 1px solid var(--white-10);
-      border-radius: 12px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
       overflow: hidden;
-      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
       display: flex;
       flex-direction: column;
+      transition: box-shadow .18s, border-color .18s;
+      animation: fadeUp .35s ease both;
     }
 
     .card:hover {
-      transform: translateY(-3px);
-      border-color: var(--yellow);
-      box-shadow: 0 8px 32px rgba(247, 209, 12, 0.1);
+      border-color: var(--navy);
+      box-shadow: 0 4px 20px rgba(15,29,51,.1);
     }
 
-    /* Card top strip */
+    /* Date + time strip */
     .card-header {
       display: flex;
       align-items: stretch;
-      border-bottom: 1px solid var(--white-10);
+      border-bottom: 1px solid var(--border);
     }
 
-    .card-fecha-block {
-      background: var(--yellow);
-      color: var(--navy);
-      padding: 12px 16px;
+    .card-fecha {
+      background: var(--navy);
+      color: #fff;
+      padding: 12px 14px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-width: 72px;
+      min-width: 66px;
       text-align: center;
       flex-shrink: 0;
     }
 
-    .card-dia-num {
+    .fecha-dia {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 36px;
+      font-size: 34px;
       line-height: 1;
     }
 
-    .card-mes {
+    .fecha-mes {
       font-family: 'Barlow Condensed', sans-serif;
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      margin-top: 1px;
+      opacity: .8;
     }
 
-    .card-dia-semana {
+    .fecha-dow {
       font-family: 'Barlow Condensed', sans-serif;
       font-size: 10px;
       font-weight: 600;
       letter-spacing: 1px;
       text-transform: uppercase;
-      opacity: 0.75;
+      opacity: .5;
       margin-top: 2px;
     }
 
     .card-meta {
       flex: 1;
-      padding: 12px 16px;
+      padding: 10px 14px;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 4px;
+      gap: 5px;
     }
 
-    .card-hora {
+    .hora-badge {
       display: inline-flex;
       align-items: center;
-      gap: 5px;
+      gap: 4px;
       font-family: 'Barlow Condensed', sans-serif;
       font-size: 13px;
       font-weight: 700;
-      letter-spacing: 1.5px;
-      color: var(--white);
+      letter-spacing: 1px;
+      color: var(--navy);
     }
 
-    .card-hora::before {
-      content: '⏱';
-      font-size: 11px;
-    }
-
-    .card-categoria-pill {
+    .cat-pill {
       display: inline-block;
       font-family: 'Barlow Condensed', sans-serif;
       font-size: 10px;
       font-weight: 700;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: var(--yellow);
-      background: var(--yellow-dim);
-      border: 1px solid rgba(247,209,12,0.25);
-      padding: 2px 8px;
-      border-radius: 3px;
-      max-width: fit-content;
-    }
-
-    /* Card body */
-    .card-body {
-      padding: 20px 20px 16px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    /* Encounter */
-    .encuentro-wrapper {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .equipo-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .equipo-indicator {
-      width: 3px;
-      height: 28px;
-      border-radius: 2px;
-      background: var(--white-30);
-      flex-shrink: 0;
-    }
-
-    .equipo-indicator.local {
       background: var(--yellow);
-    }
-
-    .equipo-nombre {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      line-height: 1.15;
-      color: var(--white);
-    }
-
-    .equipo-nombre.ha-basket {
-      color: var(--yellow);
-    }
-
-    .vs-divider {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding-left: 13px;
-    }
-
-    .vs-divider::before,
-    .vs-divider::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--white-10);
-    }
-
-    .vs-text {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 13px;
-      letter-spacing: 2px;
-      color: var(--white-30);
-    }
-
-    /* Competition info */
-    .competicion-info {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-    }
-
-    .competicion-nombre {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      color: var(--white-60);
-      text-transform: uppercase;
-    }
-
-    .fase-badge {
-      display: inline-block;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--white-60);
-      border: 1px solid var(--white-10);
+      color: var(--navy);
       padding: 2px 7px;
       border-radius: 3px;
       max-width: fit-content;
     }
 
-    /* Card footer — venue */
-    .card-footer {
-      border-top: 1px solid var(--white-10);
-      padding: 12px 20px;
+    /* Body */
+    .card-body {
+      padding: 16px 16px 12px;
+      flex: 1;
       display: flex;
-      align-items: flex-start;
-      gap: 8px;
+      flex-direction: column;
+      gap: 12px;
     }
 
-    .venue-icon {
-      font-size: 13px;
-      margin-top: 1px;
+    .equipos { display: flex; flex-direction: column; gap: 4px; }
+
+    .equipo { display: flex; align-items: center; gap: 8px; }
+
+    .equipo-bar {
+      width: 3px;
+      height: 22px;
+      border-radius: 2px;
+      background: var(--border);
       flex-shrink: 0;
     }
 
-    .venue-info {
-      display: flex;
-      flex-direction: column;
-      gap: 1px;
+    .equipo-bar.ha { background: var(--navy); }
+
+    .equipo-nombre {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 19px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--text);
     }
+
+    .equipo-nombre.ha { color: var(--navy); }
+
+    .vs-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding-left: 11px;
+    }
+
+    .vs-row::before, .vs-row::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .vs-label {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: var(--light);
+    }
+
+    .comp { display: flex; flex-direction: column; gap: 3px; }
+
+    .comp-nombre {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .fase-tag {
+      display: inline-block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 1px 6px;
+      border-radius: 3px;
+      max-width: fit-content;
+    }
+
+    /* Footer — venue */
+    .card-footer {
+      border-top: 1px solid var(--border);
+      padding: 10px 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
+    .venue-pin { font-size: 12px; margin-top: 1px; flex-shrink: 0; }
 
     .venue-nombre {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      color: var(--white);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .5px;
       text-transform: uppercase;
+      color: var(--text);
     }
 
     .venue-dir {
-      font-family: 'Barlow', sans-serif;
-      font-size: 12px;
-      color: var(--white-60);
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 1px;
       line-height: 1.4;
     }
 
-    /* ─── EMPTY / ERROR ─── */
-    .estado {
-      grid-column: 1 / -1;
-      padding: 60px 24px;
-      text-align: center;
-    }
+    /* ─── States ─── */
+    .estado { grid-column: 1/-1; padding: 60px 0; text-align: center; }
 
     .estado-titulo {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 36px;
-      letter-spacing: 2px;
-      color: var(--white-60);
-      margin-bottom: 8px;
+      font-size: 32px;
+      color: var(--muted);
+      margin-bottom: 6px;
     }
 
-    .estado-sub {
-      font-size: 14px;
-      color: var(--white-30);
-    }
+    .estado-sub { font-size: 14px; color: var(--light); }
 
-    /* Loading skeleton */
     .skeleton {
-      background: var(--navy-2);
-      border: 1px solid var(--white-10);
-      border-radius: 12px;
-      height: 220px;
-      animation: skeleton-pulse 1.4s ease-in-out infinite;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      height: 210px;
+      animation: pulse 1.3s ease-in-out infinite;
     }
 
-    @keyframes skeleton-pulse {
-      0%, 100% { opacity: 0.5; }
-      50%       { opacity: 1; }
-    }
+    @keyframes pulse { 0%,100%{opacity:.6} 50%{opacity:1} }
 
     /* ─── FOOTER ─── */
-    footer {
-      position: relative;
-      z-index: 1;
-      padding: 20px clamp(20px, 5vw, 80px);
-      border-top: 1px solid var(--white-10);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+    .footer-wrap { border-top: 1px solid var(--border); }
 
-    .footer-inner {
+    footer {
       max-width: 1200px;
-      width: 100%;
       margin: 0 auto;
+      padding: 16px clamp(20px,5vw,80px);
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
     }
 
     .footer-brand {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--white-60);
+      color: var(--muted);
     }
 
-    .footer-updated {
-      font-size: 12px;
-      color: var(--white-30);
-    }
+    .footer-updated { font-size: 12px; color: var(--light); }
 
-    /* ─── Responsive ─── */
-    @media (max-width: 600px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-      .hero-title {
-        font-size: 52px;
-      }
-    }
+    @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
 
-    /* ─── Fade-in cards ─── */
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(18px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .card {
-      animation: fadeUp 0.4s ease both;
+      from { opacity:0; transform:translateY(14px); }
+      to   { opacity:1; transform:translateY(0); }
     }
   </style>
 </head>
 <body>
 
-  <!-- ─── HEADER ─── -->
-  <header>
-    <div class="header-inner">
-      <div class="brand">
-        <!-- Inline SVG shield/warrior icon matching HA Basket symbol -->
-        <svg class="brand-icon" viewBox="0 0 48 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- shield base -->
-          <path d="M24 2L4 10V28C4 39 13 47 24 50C35 47 44 39 44 28V10L24 2Z" fill="#F7D10C" opacity="0.15" stroke="#F7D10C" stroke-width="1.5"/>
-          <!-- basketball lines on head -->
-          <circle cx="24" cy="18" r="8" fill="none" stroke="#F7D10C" stroke-width="1.5"/>
-          <path d="M16 18H32M24 10V26M18 12.5C20 16 20 20 18 23.5M30 12.5C28 16 28 20 30 23.5" stroke="#F7D10C" stroke-width="1"/>
-          <!-- wings hint -->
-          <path d="M8 20L4 16L8 22" stroke="#F7D10C" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M40 20L44 16L40 22" stroke="#F7D10C" stroke-width="1.5" stroke-linecap="round"/>
-          <!-- face -->
-          <path d="M20 24.5C20 24.5 21.5 26 24 26C26.5 26 28 24.5 28 24.5" stroke="#F7D10C" stroke-width="1.2" stroke-linecap="round" fill="none"/>
-          <!-- HA text bottom -->
-          <text x="24" y="45" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="8" fill="#F7D10C" letter-spacing="2">HAB</text>
-        </svg>
-        <div class="brand-text">
-          <div class="brand-name">HA <span>BASKET</span></div>
-          <div class="brand-sub">Highstep Academy · Club de Baloncesto</div>
-        </div>
+  <div class="header-wrap">
+    <header>
+      <div>
+        <div class="brand-name">HA <span>BASKET</span></div>
+        <div class="brand-sub">Highstep Academy · Club de Baloncesto</div>
       </div>
-      <div class="header-badge">habasket.es</div>
-    </div>
-  </header>
+      <div class="header-url">habasket.es</div>
+    </header>
+  </div>
 
-  <!-- ─── HERO ─── -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-label">Calendario competición</div>
+  <div class="hero-wrap">
+    <section class="hero">
+      <div class="hero-label">Calendario de competición</div>
       <h1 class="hero-title">PRÓXIMOS<br><em>PARTIDOS</em></h1>
-      <p class="hero-meta">Datos actualizados automáticamente desde la Federación de Baloncesto de Madrid</p>
-    </div>
-  </section>
+    </section>
+  </div>
 
-  <!-- ─── MAIN ─── -->
   <main>
-    <div class="main-inner">
+    <div class="section-label" id="conteo">Cargando...</div>
 
-      <div class="section-label">
-        <span id="conteo">Cargando partidos...</span>
-      </div>
-
-      <div class="grid" id="partidos">
-        <!-- Skeletons while loading -->
-        <div class="skeleton"></div>
-        <div class="skeleton"></div>
-        <div class="skeleton"></div>
-      </div>
-
+    <div class="grid" id="partidos">
+      <div class="skeleton"></div>
+      <div class="skeleton"></div>
+      <div class="skeleton"></div>
     </div>
   </main>
 
-  <!-- ─── FOOTER ─── -->
-  <footer>
-    <div class="footer-inner">
+  <div class="footer-wrap">
+    <footer>
       <span class="footer-brand">HA Basket · Highstep Academy</span>
       <span class="footer-updated" id="updated"></span>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
   <script>
-
-    /* ── Helpers ── */
     const MESES = ['ENE','FEB','MAR','ABR','MAY','JUN','JUL','AGO','SEP','OCT','NOV','DIC'];
     const DIAS  = ['DOM','LUN','MAR','MIÉ','JUE','VIE','SÁB'];
 
     function parseFecha(str) {
-      // "16/05/2026 09:00"
       const [datePart, timePart] = str.split(' ');
       const [d, m, y] = datePart.split('/').map(Number);
       const date = new Date(y, m - 1, d);
@@ -619,77 +448,65 @@
       };
     }
 
-    function isHABasket(nombre) {
-      return nombre.toUpperCase().includes('HA BASKET') ||
-             nombre.toUpperCase().includes('HA BASKET');
-    }
+    function isHA(n) { return n.toUpperCase().includes('HA BASKET'); }
 
     function renderPartido(partido, index) {
       const { diaNum, mes, diaSemana, hora } = parseFecha(partido.fecha);
 
-      // Split multi-line fields
       const catLines   = partido.categoria.split('\n').map(s => s.trim()).filter(Boolean);
       const eqLines    = partido.encuentro.split('\n').map(s => s.trim()).filter(Boolean);
       const campoLines = partido.campo.split('\n').map(s => s.trim()).filter(Boolean);
 
-      const ageGroup    = catLines[0]  || '';
-      const competicion = catLines[1]  || '';
-      const fase        = catLines[2]  || '';
-
-      const eq1 = eqLines[0] || '';
-      const eq2 = eqLines[1] || '';
-
+      const ageGroup    = catLines[0] || '';
+      const competicion = catLines[1] || '';
+      const fase        = catLines[2] || '';
+      const eq1         = eqLines[0]  || '';
+      const eq2         = eqLines[1]  || '';
       const venueNombre = campoLines[0] || '';
       const venueDir    = campoLines.slice(1).join(' — ') || '';
 
-      const eq1IsHA = isHABasket(eq1);
-      const eq2IsHA = isHABasket(eq2);
-
-      // Determine home/away: in basketball fixtures the home team is usually listed first
-      const eq1Local = true; // first listed = home
-      const eq2Local = false;
-
       const card = document.createElement('div');
       card.className = 'card';
-      card.style.animationDelay = (index * 80) + 'ms';
+      card.style.animationDelay = (index * 70) + 'ms';
 
       card.innerHTML = `
         <div class="card-header">
-          <div class="card-fecha-block">
-            <div class="card-dia-num">${diaNum}</div>
-            <div class="card-mes">${mes}</div>
-            <div class="card-dia-semana">${diaSemana}</div>
+          <div class="card-fecha">
+            <div class="fecha-dia">${diaNum}</div>
+            <div class="fecha-mes">${mes}</div>
+            <div class="fecha-dow">${diaSemana}</div>
           </div>
           <div class="card-meta">
-            <div class="card-hora">${hora}h</div>
-            <div class="card-categoria-pill">${ageGroup}</div>
+            <div class="hora-badge">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              ${hora}h
+            </div>
+            <div class="cat-pill">${ageGroup}</div>
           </div>
         </div>
 
         <div class="card-body">
-
-          <div class="encuentro-wrapper">
-            <div class="equipo-row">
-              <div class="equipo-indicator ${eq1Local ? 'local' : ''}"></div>
-              <div class="equipo-nombre ${eq1IsHA ? 'ha-basket' : ''}">${eq1}</div>
+          <div class="equipos">
+            <div class="equipo">
+              <div class="equipo-bar ${isHA(eq1) ? 'ha' : ''}"></div>
+              <div class="equipo-nombre ${isHA(eq1) ? 'ha' : ''}">${eq1}</div>
             </div>
-            <div class="vs-divider"><span class="vs-text">VS</span></div>
-            <div class="equipo-row">
-              <div class="equipo-indicator ${eq2Local ? 'local' : ''}"></div>
-              <div class="equipo-nombre ${eq2IsHA ? 'ha-basket' : ''}">${eq2}</div>
+            <div class="vs-row"><span class="vs-label">VS</span></div>
+            <div class="equipo">
+              <div class="equipo-bar ${isHA(eq2) ? 'ha' : ''}"></div>
+              <div class="equipo-nombre ${isHA(eq2) ? 'ha' : ''}">${eq2}</div>
             </div>
           </div>
 
-          <div class="competicion-info">
-            ${competicion ? `<div class="competicion-nombre">${competicion}</div>` : ''}
-            ${fase        ? `<div class="fase-badge">${fase}</div>` : ''}
+          <div class="comp">
+            ${competicion ? `<div class="comp-nombre">${competicion}</div>` : ''}
+            ${fase        ? `<div class="fase-tag">${fase}</div>` : ''}
           </div>
-
         </div>
 
         <div class="card-footer">
-          <span class="venue-icon">📍</span>
-          <div class="venue-info">
+          <span class="venue-pin">📍</span>
+          <div>
             <div class="venue-nombre">${venueNombre}</div>
             ${venueDir ? `<div class="venue-dir">${venueDir}</div>` : ''}
           </div>
@@ -699,52 +516,36 @@
       return card;
     }
 
-    /* ── Main loader ── */
     async function cargarPartidos() {
       try {
         const response = await fetch('./public/partidos.json?t=' + Date.now());
         const data     = await response.json();
-
         const container = document.getElementById('partidos');
         const conteo    = document.getElementById('conteo');
         container.innerHTML = '';
 
         if (!data.partidos || data.partidos.length === 0) {
           conteo.textContent = '0 partidos disponibles';
-          container.innerHTML = `
-            <div class="estado">
-              <div class="estado-titulo">Sin partidos</div>
-              <div class="estado-sub">No hay partidos programados en este momento.</div>
-            </div>
-          `;
+          container.innerHTML = `<div class="estado"><div class="estado-titulo">Sin partidos</div><div class="estado-sub">No hay partidos programados.</div></div>`;
           return;
         }
 
         const total = data.partidos.length;
         conteo.textContent = total + ' partido' + (total !== 1 ? 's' : '') + ' programado' + (total !== 1 ? 's' : '');
-
-        data.partidos.forEach((partido, i) => {
-          container.appendChild(renderPartido(partido, i));
-        });
+        data.partidos.forEach((p, i) => container.appendChild(renderPartido(p, i)));
 
         document.getElementById('updated').textContent =
-          'Última actualización: ' +
-          new Date(data.actualizado).toLocaleString('es-ES');
+          'Actualizado: ' + new Date(data.actualizado).toLocaleString('es-ES');
 
       } catch (err) {
         console.error(err);
         document.getElementById('conteo').textContent = 'Error al cargar';
-        document.getElementById('partidos').innerHTML = `
-          <div class="estado">
-            <div class="estado-titulo">Error de carga</div>
-            <div class="estado-sub">No se pudo leer el archivo partidos.json</div>
-          </div>
-        `;
+        document.getElementById('partidos').innerHTML =
+          `<div class="estado"><div class="estado-titulo">Error</div><div class="estado-sub">No se pudo leer partidos.json</div></div>`;
       }
     }
 
     cargarPartidos();
-
   </script>
 </body>
 </html>
