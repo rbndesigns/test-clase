@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-05-23T06:11:50.479Z",
+  "actualizado": "2026-05-24T06:36:27.315Z",
   "total": 4,
   "partidos": [
     {
@@ -10,21 +10,21 @@
     },
     {
       "categoria": "Infantil Masc. Pref.\nCLASIFICACION Y DESCENSO 2ª DIVISION\nPUESTOS 25 AL 28",
-      "encuentro": "HA BASKET\nCOLEGIO MIRAMADRID PARACUELLOS \"A\"",
-      "fecha": "23/05/2026 17:15",
-      "campo": "GALLUR, PDVO. MPAL.\nGALLUR, 2, Madrid"
+      "encuentro": "LICEO FRANCES CLAUDIA\nHA BASKET",
+      "fecha": "30/05/2026 13:00",
+      "campo": "LICEO FRANCES, PABELLON COLEGIO\nAVDA. DE LOS MADROÑOS frente nº 42, Madrid"
     },
     {
       "categoria": "2ª Div Aut Masc BRONCE\nELIMINATORIAS 1/4 FINAL\nCUARTOS DE FINAL",
-      "encuentro": "HA BASKET\nUROS DE RIVAS",
-      "fecha": "23/05/2026 19:00",
-      "campo": "GALLUR, PDVO. MPAL.\nGALLUR, 2, Madrid"
+      "encuentro": "UROS DE RIVAS\nHA BASKET",
+      "fecha": "24/05/2026 16:30",
+      "campo": "LOS ALMENDROS, PABELLON\nAIGUES TORTES, S/N, Rivas-Vaciamadrid"
     },
     {
       "categoria": "Cadete Masc. Pref.\nELIMINATORIAS 1/4 FINAL 4ª DIVISION\nCUARTOS DE FINAL",
-      "encuentro": "HA BASKET \"A\"\nOROQUIETA ESPINILLO C.D.E.",
-      "fecha": "23/05/2026 16:15",
-      "campo": "GALLUR, PDVO. MPAL.\nGALLUR, 2, Madrid"
+      "encuentro": "OROQUIETA ESPINILLO C.D.E.\nHA BASKET \"A\"",
+      "fecha": "24/05/2026 12:00",
+      "campo": "FELIX RUBIO, PABELLON\nALIANZA, S/N, Madrid"
     }
   ]
 }
