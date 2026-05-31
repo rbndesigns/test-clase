@@ -1,24 +1,12 @@
 {
-  "actualizado": "2026-05-30T06:22:27.360Z",
-  "total": 3,
+  "actualizado": "2026-05-31T06:56:58.078Z",
+  "total": 1,
   "partidos": [
     {
-      "categoria": "Cadete Masc. Pref.\nCLASIFICACION Y DESCENSO 5ª DIVISION\nDESCENSO D2",
-      "encuentro": "HA BASKET \"B\"\nLA PAZ C.D. ROSA",
-      "fecha": "30/05/2026 13:00",
-      "campo": "ARGANZUELA, CENTRO INTEGRADO\nC/ PALOS DE LA FRONTERA, 40, Madrid"
-    },
-    {
-      "categoria": "Infantil Masc. Pref.\nCLASIFICACION Y DESCENSO 2ª DIVISION\nPUESTOS 25 AL 28",
-      "encuentro": "LICEO FRANCES CLAUDIA\nHA BASKET",
-      "fecha": "30/05/2026 13:00",
-      "campo": "LICEO FRANCES, PABELLON COLEGIO\nAVDA. DE LOS MADROÑOS frente nº 42, Madrid"
-    },
-    {
       "categoria": "Cadete Masc. Pref.\nELIMINATORIAS POR EL TITULO 4ª DIVISION\nELIMINATORIAS POR EL TITULO",
-      "encuentro": "EXTRANJERÍA JUSTA C.B. VALDEBASKET LAGOMAR\nHA BASKET \"A\"",
-      "fecha": "30/05/2026 19:00",
-      "campo": "LAGOMAR, PABELLON COLEGIO\nAV. DEL MAR ADRIATICO, 5, Valdemoro"
+      "encuentro": "HA BASKET \"A\"\nEXTRANJERÍA JUSTA C.B. VALDEBASKET LAGOMAR",
+      "fecha": "31/05/2026 18:00",
+      "campo": "GALLUR, PDVO. MPAL.\nGALLUR, 2, Madrid"
     }
   ]
 }
