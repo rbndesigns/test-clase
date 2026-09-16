@@ -1,5 +1,12 @@
 {
-  "actualizado": "2026-09-15T08:21:55.116Z",
-  "total": 0,
-  "partidos": []
+  "actualizado": "2026-09-16T08:15:42.592Z",
+  "total": 1,
+  "partidos": [
+    {
+      "categoria": "Junior Masc. Pref.\nPRIMERA 4ª DIVISION\nGRUPO 3",
+      "encuentro": "HA BASKET\nONDA VERDE",
+      "fecha": "26/09/2026",
+      "campo": "GALLUR, PDVO. MPAL.\nGALLUR, 2, Madrid"
+    }
+  ]
 }
