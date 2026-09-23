@@ -1,12 +1,24 @@
 {
-  "actualizado": "2026-09-22T08:13:50.214Z",
-  "total": 1,
+  "actualizado": "2026-09-23T08:15:54.575Z",
+  "total": 3,
   "partidos": [
     {
       "categoria": "Junior Masc. Pref.\nPRIMERA 4ª DIVISION\nGRUPO 3",
       "encuentro": "HA BASKET\nONDA VERDE",
       "fecha": "26/09/2026 17:15",
       "campo": "GALLUR, PDVO. MPAL.\nGALLUR, 2, Madrid"
+    },
+    {
+      "categoria": "Cadete Masc. Pref.\nPRIMERA 3ª DIVISION\nGRUPO 3",
+      "encuentro": "TRIPLE CHAMBERI\nHA BASKET \"A\"",
+      "fecha": "03/10/2026 10:30",
+      "campo": "SANTO ANGEL DE LA GUARDA, PABELLON COLEGIO\nEDUARDO TERAN, 8, Madrid"
+    },
+    {
+      "categoria": "Infantil Masc. Pref.\nPRIMERA 2ª DIVISION\nGRUPO 1",
+      "encuentro": "VILLAVICIOSA DE ODON A.B.\nHA BASKET",
+      "fecha": "03/10/2026",
+      "campo": "CHEMA MARTINEZ, PABELLON\nCAMINO DE SACEDON, 15, Villaviciosa de Odón"
     }
   ]
 }
