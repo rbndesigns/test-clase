@@ -1,18 +1,18 @@
 {
-  "actualizado": "2026-09-27T08:55:21.695Z",
+  "actualizado": "2026-09-28T09:20:30.962Z",
   "total": 3,
   "partidos": [
-    {
-      "categoria": "Junior Masc. Pref.\nPRIMERA 4ª DIVISION\nGRUPO 3",
-      "encuentro": "HA BASKET\nONDA VERDE",
-      "fecha": "26/09/2026 17:15",
-      "campo": "GALLUR, PDVO. MPAL.\nGALLUR, 2, Madrid"
-    },
     {
       "categoria": "Cadete Masc. Pref.\nPRIMERA 3ª DIVISION\nGRUPO 3",
       "encuentro": "TRIPLE CHAMBERI\nHA BASKET \"A\"",
       "fecha": "03/10/2026 10:30",
       "campo": "SANTO ANGEL DE LA GUARDA, PABELLON COLEGIO\nEDUARDO TERAN, 8, Madrid"
+    },
+    {
+      "categoria": "Junior Masc. Pref.\nPRIMERA 4ª DIVISION\nGRUPO 3",
+      "encuentro": "CDEBSMV NEGRO\nHA BASKET",
+      "fecha": "03/10/2026 12:00",
+      "campo": "SAN MARTIN DE LA VEGA, PABELLON\nAVDA. ABOGADOS DE ATOCHA, 17, San Martín de la Vega"
     },
     {
       "categoria": "Infantil Masc. Pref.\nPRIMERA 2ª DIVISION\nGRUPO 1",
