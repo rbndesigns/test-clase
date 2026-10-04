@@ -1,13 +1,7 @@
 {
-  "actualizado": "2026-10-03T08:51:00.213Z",
+  "actualizado": "2026-10-04T09:19:09.365Z",
   "total": 3,
   "partidos": [
-    {
-      "categoria": "Cadete Masc. Pref.\nPRIMERA 3ª DIVISION\nGRUPO 3",
-      "encuentro": "TRIPLE CHAMBERI\nHA BASKET \"A\"",
-      "fecha": "03/10/2026 10:30",
-      "campo": "SANTO ANGEL DE LA GUARDA, PABELLON COLEGIO\nEDUARDO TERAN, 8, Madrid"
-    },
     {
       "categoria": "Junior Masc. Pref.\nPRIMERA 4ª DIVISION\nGRUPO 3",
       "encuentro": "CDEBSMV NEGRO\nHA BASKET",
@@ -15,10 +9,16 @@
       "campo": "SAN MARTIN DE LA VEGA, PABELLON\nAVDA. ABOGADOS DE ATOCHA, 17, San Martín de la Vega"
     },
     {
+      "categoria": "Cadete Masc. Pref.\nPRIMERA 3ª DIVISION\nGRUPO 3",
+      "encuentro": "HA BASKET \"A\"\nBALONCESTO DAGANZO 12 ISUZU REVEIN",
+      "fecha": "17/10/2026 19:45",
+      "campo": "GALLUR, PDVO. MPAL.\nGALLUR, 2, Madrid"
+    },
+    {
       "categoria": "Infantil Masc. Pref.\nPRIMERA 2ª DIVISION\nGRUPO 1",
-      "encuentro": "VILLAVICIOSA DE ODON A.B.\nHA BASKET",
-      "fecha": "03/10/2026 17:00",
-      "campo": "CHEMA MARTINEZ, PABELLON\nCAMINO DE SACEDON, 15, Villaviciosa de Odón"
+      "encuentro": "HA BASKET\nBALONCESTO SAN FERNANDO",
+      "fecha": "17/10/2026 18:15",
+      "campo": "GALLUR, PDVO. MPAL.\nGALLUR, 2, Madrid"
     }
   ]
 }
