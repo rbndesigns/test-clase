@@ -1,18 +1,18 @@
 {
-  "actualizado": "2026-10-04T09:19:09.365Z",
+  "actualizado": "2026-10-05T09:59:33.274Z",
   "total": 3,
   "partidos": [
-    {
-      "categoria": "Junior Masc. Pref.\nPRIMERA 4ª DIVISION\nGRUPO 3",
-      "encuentro": "CDEBSMV NEGRO\nHA BASKET",
-      "fecha": "03/10/2026 12:00",
-      "campo": "SAN MARTIN DE LA VEGA, PABELLON\nAVDA. ABOGADOS DE ATOCHA, 17, San Martín de la Vega"
-    },
     {
       "categoria": "Cadete Masc. Pref.\nPRIMERA 3ª DIVISION\nGRUPO 3",
       "encuentro": "HA BASKET \"A\"\nBALONCESTO DAGANZO 12 ISUZU REVEIN",
       "fecha": "17/10/2026 19:45",
       "campo": "GALLUR, PDVO. MPAL.\nGALLUR, 2, Madrid"
+    },
+    {
+      "categoria": "Junior Masc. Pref.\nPRIMERA 4ª DIVISION\nGRUPO 3",
+      "encuentro": "HA BASKET\nVALLEKAS BASKET C",
+      "fecha": "10/10/2026 12:45",
+      "campo": "ARGANZUELA, CENTRO INTEGRADO\nC/ PALOS DE LA FRONTERA, 40, Madrid"
     },
     {
       "categoria": "Infantil Masc. Pref.\nPRIMERA 2ª DIVISION\nGRUPO 1",
