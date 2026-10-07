@@ -1,6 +1,6 @@
 {
-  "actualizado": "2026-10-06T09:45:28.939Z",
-  "total": 3,
+  "actualizado": "2026-10-07T09:46:15.981Z",
+  "total": 4,
   "partidos": [
     {
       "categoria": "Cadete Masc. Pref.\nPRIMERA 3ª DIVISION\nGRUPO 3",
@@ -13,6 +13,12 @@
       "encuentro": "HA BASKET\nVALLEKAS BASKET C",
       "fecha": "10/10/2026 12:45",
       "campo": "ARGANZUELA, CENTRO INTEGRADO\nC/ PALOS DE LA FRONTERA, 40, Madrid"
+    },
+    {
+      "categoria": "2ª Div Aut Masc BRONCE\nPRIMERA FASE\nGRUPO 1",
+      "encuentro": "DESCANSA\nHA BASKET",
+      "fecha": "18/10/2026",
+      "campo": ".\nRONDA DEL SUR, 46, Arganda del Rey"
     },
     {
       "categoria": "Infantil Masc. Pref.\nPRIMERA 2ª DIVISION\nGRUPO 1",
