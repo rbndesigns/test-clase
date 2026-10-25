@@ -1,12 +1,12 @@
 {
-  "actualizado": "2026-10-24T07:52:21.707Z",
+  "actualizado": "2026-10-25T08:05:32.844Z",
   "total": 4,
   "partidos": [
     {
       "categoria": "Cadete Masc. Pref.\nPRIMERA 3ª DIVISION\nGRUPO 3",
-      "encuentro": "COLMENAR VIEJO C\nHA BASKET \"A\"",
-      "fecha": "24/10/2026 11:30",
-      "campo": "JUAN ANTONIO SAMARANCH, CDAD. DPTVA. (PISTA CENTRAL)\nAVDA. JUAN PABLO II, 13, Colmenar Viejo"
+      "encuentro": "HA BASKET \"A\"\nBALONCESTO PARACUELLOS AZUL",
+      "fecha": "07/11/2026",
+      "campo": "ARGANZUELA, CENTRO INTEGRADO\nC/ PALOS DE LA FRONTERA, 40, Madrid"
     },
     {
       "categoria": "Junior Masc. Pref.\nPRIMERA 4ª DIVISION\nGRUPO 3",
@@ -22,9 +22,9 @@
     },
     {
       "categoria": "Infantil Masc. Pref.\nPRIMERA 2ª DIVISION\nGRUPO 1",
-      "encuentro": "REVOLUTION\nHA BASKET",
-      "fecha": "24/10/2026 19:30",
-      "campo": "ALUCHE, PDVO. MPAL.\nAVDA. DE LAS AGUILAS, 14, Madrid"
+      "encuentro": "HA BASKET\nUROS DE RIVAS `C´",
+      "fecha": "07/11/2026",
+      "campo": "GALLUR, PDVO. MPAL.\nGALLUR, 2, Madrid"
     }
   ]
 }
