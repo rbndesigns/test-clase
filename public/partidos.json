@@ -1,30 +1,30 @@
 {
-  "actualizado": "2026-10-25T08:05:32.844Z",
+  "actualizado": "2026-10-26T08:29:47.177Z",
   "total": 4,
   "partidos": [
     {
       "categoria": "Cadete Masc. Pref.\nPRIMERA 3ª DIVISION\nGRUPO 3",
       "encuentro": "HA BASKET \"A\"\nBALONCESTO PARACUELLOS AZUL",
-      "fecha": "07/11/2026",
-      "campo": "ARGANZUELA, CENTRO INTEGRADO\nC/ PALOS DE LA FRONTERA, 40, Madrid"
-    },
-    {
-      "categoria": "Junior Masc. Pref.\nPRIMERA 4ª DIVISION\nGRUPO 3",
-      "encuentro": "HA BASKET\nYELMO TEAM C.D.E.",
-      "fecha": "24/10/2026 19:45",
+      "fecha": "07/11/2026 15:15",
       "campo": "GALLUR, PDVO. MPAL.\nGALLUR, 2, Madrid"
     },
     {
+      "categoria": "Junior Masc. Pref.\nPRIMERA 4ª DIVISION\nGRUPO 3",
+      "encuentro": "SAN AGUSTIN LOS NEGRALES\nHA BASKET",
+      "fecha": "07/11/2026",
+      "campo": "COLEGIO SAN AGUSTIN LOS NEGRALES, PABELLON\nSANTA EMILIA, 72 (LOS NEGRALES), Guadarrama"
+    },
+    {
       "categoria": "2ª Div Aut Masc BRONCE\nPRIMERA FASE\nGRUPO 1",
-      "encuentro": "HA BASKET\nLOS NEGRALES´22",
-      "fecha": "25/10/2026 12:45",
-      "campo": "ARGANZUELA, CENTRO INTEGRADO\nC/ PALOS DE LA FRONTERA, 40, Madrid"
+      "encuentro": "VALLEKAS BASKET\nHA BASKET",
+      "fecha": "08/11/2026 16:00",
+      "campo": "ENTREVIAS, PDVO. MPAL.\nRONDA DEL SUR esquina STA. RAFAELA MARIA DEL , Madrid"
     },
     {
       "categoria": "Infantil Masc. Pref.\nPRIMERA 2ª DIVISION\nGRUPO 1",
       "encuentro": "HA BASKET\nUROS DE RIVAS `C´",
-      "fecha": "07/11/2026",
-      "campo": "GALLUR, PDVO. MPAL.\nGALLUR, 2, Madrid"
+      "fecha": "07/11/2026 12:45",
+      "campo": "ARGANZUELA, CENTRO INTEGRADO\nC/ PALOS DE LA FRONTERA, 40, Madrid"
     }
   ]
 }
