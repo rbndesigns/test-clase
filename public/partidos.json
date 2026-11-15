@@ -1,12 +1,12 @@
 {
-  "actualizado": "2026-11-14T09:47:37.499Z",
+  "actualizado": "2026-11-15T10:22:13.283Z",
   "total": 4,
   "partidos": [
     {
       "categoria": "Cadete Masc. Pref.\nPRIMERA 3ª DIVISION\nGRUPO 3",
-      "encuentro": "LICEO FRANCES 2012\nHA BASKET \"A\"",
-      "fecha": "14/11/2026 18:15",
-      "campo": "LICEO FRANCES, PABELLON COLEGIO\nAVDA. DE LOS MADROÑOS frente nº 42, Madrid"
+      "encuentro": "HA BASKET \"A\"\nCOLMENAR VIEJO B",
+      "fecha": "21/11/2026 19:45",
+      "campo": "GALLUR, PDVO. MPAL.\nGALLUR, 2, Madrid"
     },
     {
       "categoria": "Junior Masc. Pref.\nPRIMERA 4ª DIVISION\nGRUPO 3",
@@ -22,9 +22,9 @@
     },
     {
       "categoria": "Infantil Masc. Pref.\nPRIMERA 2ª DIVISION\nGRUPO 1",
-      "encuentro": "BALONCESTO RIVAS SURESTE C\nHA BASKET",
-      "fecha": "14/11/2026 16:30",
-      "campo": "DULCE CHACON, PABELLON\nFEDERICA MONTSENY, 3, Rivas-Vaciamadrid"
+      "encuentro": "HA BASKET\nBALONCESTO PARACUELLOS AZUL",
+      "fecha": "21/11/2026 18:15",
+      "campo": "GALLUR, PDVO. MPAL.\nGALLUR, 2, Madrid"
     }
   ]
 }
